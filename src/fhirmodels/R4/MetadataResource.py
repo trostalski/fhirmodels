@@ -1,9 +1,8 @@
 """
 Generated class for MetadataResource. 
-Time: 2024-06-14 18:37:17
+Time: 2024-06-14 18:55:42
 """
-
-from fhirmodels.generator import FhirBaseModel
+from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4.CodeableConcept import *
 from fhirmodels.R4.ContactDetail import *
 from fhirmodels.R4.Extension import *
@@ -14,7 +13,7 @@ from fhirmodels.R4.UsageContext import *
 
 
 class MetadataResource(FhirBaseModel):
-    """Common Ancestor declaration for conformance and knowledge artifact resources.
+    """ Common Ancestor declaration for conformance and knowledge artifact resources.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -36,70 +35,75 @@ class MetadataResource(FhirBaseModel):
     :param UsageContext useContext: The context that the content is intended to support
     :param CodeableConcept jurisdiction: Intended jurisdiction for metadata resource (if applicable)
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        version: "str" = None,
-        name: "str" = None,
-        title: "str" = None,
-        status: "str" = None,
-        experimental: "bool" = None,
-        date: "str" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        description: "str" = None,
-        useContext: list["UsageContext"] = None,
-        jurisdiction: list["CodeableConcept"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  version:  'str'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None, ):
+        
         self.resourceType = "MetadataResource"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
-        self.version = version
-        self.name = name
-        self.title = title
-        self.status = status
-        self.experimental = experimental
-        self.date = date
-        self.publisher = publisher
+        self.url = url 
+        self.version = version 
+        self.name = name 
+        self.title = title 
+        self.status = status 
+        self.experimental = experimental 
+        self.date = date 
+        self.publisher = publisher 
         self.contact = contact or []
-        self.description = description
+        self.description = description 
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MetadataResource":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MetadataResource":
         return super().from_obj(obj)

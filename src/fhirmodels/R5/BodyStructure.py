@@ -1,8 +1,7 @@
 """
 Generated class for BodyStructure. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -18,39 +17,40 @@ from fhirmodels.R5.Resource import *
 
 
 class DistanceFromLandmark(FhirBaseModel):
-    """The distance in centimeters a certain observation is made from a body landmark.:param str id: Unique id for inter-element referencing
+    """ The distance in centimeters a certain observation is made from a body landmark.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableReference device: Measurement device
     :param Quantity value: Measured distance from body landmark
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "device": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "value": {"class_name": "Quantity", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        device: list["CodeableReference"] = None,
-        value: list["Quantity"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  device:  list['CodeableReference']  = None,  value:  list['Quantity']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.device = device or []
         self.value = value or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "BodyStructure":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "BodyStructure":
         return super().from_obj(obj)
@@ -59,8 +59,12 @@ class DistanceFromLandmark(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class BodyLandmarkOrientation(FhirBaseModel):
-    """Body locations in relation to a specific body landmark (tatoo, scar, other body structure).:param str id: Unique id for inter-element referencing
+    """ Body locations in relation to a specific body landmark (tatoo, scar, other body structure).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept landmarkDescription: Body ]andmark description
@@ -68,42 +72,42 @@ class BodyLandmarkOrientation(FhirBaseModel):
     :param DistanceFromLandmark distanceFromLandmark: Landmark relative location
     :param CodeableConcept surfaceOrientation: Relative landmark surface orientation
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "landmarkDescription": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "clockFacePosition": {"class_name": "CodeableConcept", "is_contained": False},
-        "distanceFromLandmark": {
-            "class_name": "DistanceFromLandmark",
-            "is_contained": True,
-        },
+        
+        
+        "distanceFromLandmark": {"class_name": "DistanceFromLandmark", "is_contained": True},
+        
+        
         "surfaceOrientation": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        landmarkDescription: list["CodeableConcept"] = None,
-        clockFacePosition: list["CodeableConcept"] = None,
-        distanceFromLandmark: list["DistanceFromLandmark"] = None,
-        surfaceOrientation: list["CodeableConcept"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  landmarkDescription:  list['CodeableConcept']  = None,  clockFacePosition:  list['CodeableConcept']  = None,  distanceFromLandmark:  list['DistanceFromLandmark']  = None,  surfaceOrientation:  list['CodeableConcept']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.landmarkDescription = landmarkDescription or []
         self.clockFacePosition = clockFacePosition or []
         self.distanceFromLandmark = distanceFromLandmark or []
         self.surfaceOrientation = surfaceOrientation or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "BodyStructure":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "BodyStructure":
         return super().from_obj(obj)
@@ -112,8 +116,12 @@ class BodyLandmarkOrientation(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class IncludedStructure(FhirBaseModel):
-    """The anatomical location(s) or region(s) of the specimen, lesion, or body structure.:param str id: Unique id for inter-element referencing
+    """ The anatomical location(s) or region(s) of the specimen, lesion, or body structure.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept structure: Code that represents the included structure
@@ -122,45 +130,46 @@ class IncludedStructure(FhirBaseModel):
     :param Reference spatialReference: Cartesian reference for structure
     :param CodeableConcept qualifier: Code that represents the included structure qualifier
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "structure": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "laterality": {"class_name": "CodeableConcept", "is_contained": False},
-        "bodyLandmarkOrientation": {
-            "class_name": "BodyLandmarkOrientation",
-            "is_contained": True,
-        },
+        
+        
+        "bodyLandmarkOrientation": {"class_name": "BodyLandmarkOrientation", "is_contained": True},
+        
+        
         "spatialReference": {"class_name": "Reference", "is_contained": False},
+        
+        
         "qualifier": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        structure: "CodeableConcept" = None,
-        laterality: "CodeableConcept" = None,
-        bodyLandmarkOrientation: list["BodyLandmarkOrientation"] = None,
-        spatialReference: list["Reference"] = None,
-        qualifier: list["CodeableConcept"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  structure:  'CodeableConcept'  = None,  laterality:  'CodeableConcept'  = None,  bodyLandmarkOrientation:  list['BodyLandmarkOrientation']  = None,  spatialReference:  list['Reference']  = None,  qualifier:  list['CodeableConcept']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.structure = structure
-        self.laterality = laterality
+        self.structure = structure 
+        self.laterality = laterality 
         self.bodyLandmarkOrientation = bodyLandmarkOrientation or []
         self.spatialReference = spatialReference or []
         self.qualifier = qualifier or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "BodyStructure":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "BodyStructure":
         return super().from_obj(obj)
@@ -170,7 +179,7 @@ class IncludedStructure(FhirBaseModel):
 
 
 class BodyStructure(DomainResource):
-    """Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.
+    """ Record details about an anatomical structure.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -188,65 +197,73 @@ class BodyStructure(DomainResource):
     :param Attachment image: Attached images
     :param Reference patient: Who this is about
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
         "morphology": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "includedStructure": {"class_name": "IncludedStructure", "is_contained": True},
+        
+        
         "excludedStructure": {"class_name": "ExcludedStructure", "is_contained": True},
+        
+        
+        
         "image": {"class_name": "Attachment", "is_contained": False},
+        
+        
         "patient": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        active: "bool" = None,
-        morphology: "CodeableConcept" = None,
-        includedStructure: list["IncludedStructure"] = None,
-        excludedStructure: list["ExcludedStructure"] = None,
-        description: "str" = None,
-        image: list["Attachment"] = None,
-        patient: "Reference" = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  active:  'bool'  = None,  morphology:  'CodeableConcept'  = None,  includedStructure:  list['IncludedStructure']  = None,  excludedStructure:  list['ExcludedStructure']  = None,  description:  'str'  = None,  image:  list['Attachment']  = None,  patient:  'Reference'  = None, ):
+        
         self.resourceType = "BodyStructure"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.active = active
-        self.morphology = morphology
+        self.active = active 
+        self.morphology = morphology 
         self.includedStructure = includedStructure or []
         self.excludedStructure = excludedStructure or []
-        self.description = description
+        self.description = description 
         self.image = image or []
-        self.patient = patient
+        self.patient = patient 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "BodyStructure":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "BodyStructure":
         return super().from_obj(obj)

@@ -1,8 +1,7 @@
 """
 Generated class for MedicinalProductIngredient. 
-Time: 2024-06-14 18:37:17
+Time: 2024-06-14 18:55:42
 """
-
 from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
 from fhirmodels.R4.DomainResource import *
@@ -16,7 +15,7 @@ from fhirmodels.R4.Resource import *
 
 
 class ReferenceStrength(FhirBaseModel):
-    """Strength expressed in terms of a reference substance.:param str id: Unique id for inter-element referencing
+    """ Strength expressed in terms of a reference substance.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept substance: Relevant reference substance
@@ -25,41 +24,44 @@ class ReferenceStrength(FhirBaseModel):
     :param str measurementPoint: For when strength is measured at a particular point or distance
     :param CodeableConcept country: The country or countries for which the strength range applies
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "substance": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "strength": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "strengthLowLimit": {"class_name": "Ratio", "is_contained": False},
+        
+        
+        
         "country": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        substance: "CodeableConcept" = None,
-        strength: "Ratio" = None,
-        strengthLowLimit: "Ratio" = None,
-        measurementPoint: "str" = None,
-        country: list["CodeableConcept"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  substance:  'CodeableConcept'  = None,  strength:  'Ratio'  = None,  strengthLowLimit:  'Ratio'  = None,  measurementPoint:  'str'  = None,  country:  list['CodeableConcept']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.substance = substance
-        self.strength = strength
-        self.strengthLowLimit = strengthLowLimit
-        self.measurementPoint = measurementPoint
+        self.substance = substance 
+        self.strength = strength 
+        self.strengthLowLimit = strengthLowLimit 
+        self.measurementPoint = measurementPoint 
         self.country = country or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MedicinalProductIngredient":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MedicinalProductIngredient":
         return super().from_obj(obj)
@@ -68,8 +70,12 @@ class ReferenceStrength(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class Strength(FhirBaseModel):
-    """Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.:param str id: Unique id for inter-element referencing
+    """ Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Ratio presentation: The quantity of substance in the unit of presentation, or in the volume (or mass) of the single pharmaceutical product or manufactured item
@@ -80,47 +86,52 @@ class Strength(FhirBaseModel):
     :param CodeableConcept country: The country or countries for which the strength range applies
     :param ReferenceStrength referenceStrength: Strength expressed in terms of a reference substance
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "presentation": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "presentationLowLimit": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "concentration": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "concentrationLowLimit": {"class_name": "Ratio", "is_contained": False},
+        
+        
+        
         "country": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "referenceStrength": {"class_name": "ReferenceStrength", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        presentation: "Ratio" = None,
-        presentationLowLimit: "Ratio" = None,
-        concentration: "Ratio" = None,
-        concentrationLowLimit: "Ratio" = None,
-        measurementPoint: "str" = None,
-        country: list["CodeableConcept"] = None,
-        referenceStrength: list["ReferenceStrength"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  presentation:  'Ratio'  = None,  presentationLowLimit:  'Ratio'  = None,  concentration:  'Ratio'  = None,  concentrationLowLimit:  'Ratio'  = None,  measurementPoint:  'str'  = None,  country:  list['CodeableConcept']  = None,  referenceStrength:  list['ReferenceStrength']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.presentation = presentation
-        self.presentationLowLimit = presentationLowLimit
-        self.concentration = concentration
-        self.concentrationLowLimit = concentrationLowLimit
-        self.measurementPoint = measurementPoint
+        self.presentation = presentation 
+        self.presentationLowLimit = presentationLowLimit 
+        self.concentration = concentration 
+        self.concentrationLowLimit = concentrationLowLimit 
+        self.measurementPoint = measurementPoint 
         self.country = country or []
         self.referenceStrength = referenceStrength or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MedicinalProductIngredient":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MedicinalProductIngredient":
         return super().from_obj(obj)
@@ -129,8 +140,12 @@ class Strength(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class SpecifiedSubstance(FhirBaseModel):
-    """A specified substance that comprises this ingredient.:param str id: Unique id for inter-element referencing
+    """ A specified substance that comprises this ingredient.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: The specified substance
@@ -138,39 +153,42 @@ class SpecifiedSubstance(FhirBaseModel):
     :param CodeableConcept confidentiality: Confidentiality level of the specified substance as the ingredient
     :param Strength strength: Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "group": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "confidentiality": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "strength": {"class_name": "Strength", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        group: "CodeableConcept" = None,
-        confidentiality: "CodeableConcept" = None,
-        strength: list["Strength"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  group:  'CodeableConcept'  = None,  confidentiality:  'CodeableConcept'  = None,  strength:  list['Strength']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
-        self.group = group
-        self.confidentiality = confidentiality
+        self.code = code 
+        self.group = group 
+        self.confidentiality = confidentiality 
         self.strength = strength or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MedicinalProductIngredient":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MedicinalProductIngredient":
         return super().from_obj(obj)
@@ -179,40 +197,44 @@ class SpecifiedSubstance(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Substance(FhirBaseModel):
-    """The ingredient substance.:param str id: Unique id for inter-element referencing
+    """ The ingredient substance.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: The ingredient substance
     :param Strength strength: Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "strength": {"class_name": "Strength", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        strength: list["Strength"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  strength:  list['Strength']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
+        self.code = code 
         self.strength = strength or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MedicinalProductIngredient":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MedicinalProductIngredient":
         return super().from_obj(obj)
@@ -222,7 +244,7 @@ class Substance(FhirBaseModel):
 
 
 class MedicinalProductIngredient(DomainResource):
-    """An ingredient of a manufactured item or pharmaceutical product.
+    """ An ingredient of a manufactured item or pharmaceutical product.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -238,63 +260,67 @@ class MedicinalProductIngredient(DomainResource):
     :param SpecifiedSubstance specifiedSubstance: A specified substance that comprises this ingredient
     :param Substance substance: The ingredient substance
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "role": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "manufacturer": {"class_name": "Reference", "is_contained": False},
-        "specifiedSubstance": {
-            "class_name": "SpecifiedSubstance",
-            "is_contained": True,
-        },
+        
+        
+        "specifiedSubstance": {"class_name": "SpecifiedSubstance", "is_contained": True},
+        
+        
         "substance": {"class_name": "Substance", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: "Identifier" = None,
-        role: "CodeableConcept" = None,
-        allergenicIndicator: "bool" = None,
-        manufacturer: list["Reference"] = None,
-        specifiedSubstance: list["SpecifiedSubstance"] = None,
-        substance: "Substance" = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  'Identifier'  = None,  role:  'CodeableConcept'  = None,  allergenicIndicator:  'bool'  = None,  manufacturer:  list['Reference']  = None,  specifiedSubstance:  list['SpecifiedSubstance']  = None,  substance:  'Substance'  = None, ):
+        
         self.resourceType = "MedicinalProductIngredient"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.identifier = identifier
-        self.role = role
-        self.allergenicIndicator = allergenicIndicator
+        self.identifier = identifier 
+        self.role = role 
+        self.allergenicIndicator = allergenicIndicator 
         self.manufacturer = manufacturer or []
         self.specifiedSubstance = specifiedSubstance or []
-        self.substance = substance
+        self.substance = substance 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MedicinalProductIngredient":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MedicinalProductIngredient":
         return super().from_obj(obj)

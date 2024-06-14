@@ -1,8 +1,7 @@
 """
 Generated class for Basic. 
-Time: 2024-06-14 18:37:17
+Time: 2024-06-14 18:55:42
 """
-
 from fhirmodels.R4.CodeableConcept import *
 from fhirmodels.R4.DomainResource import *
 from fhirmodels.R4.Extension import *
@@ -14,7 +13,7 @@ from fhirmodels.R4.Resource import *
 
 
 class Basic(DomainResource):
-    """Basic is used for handling concepts not yet defined in FHIR, narrative-only resources that don't map to an existing resource, and custom resources not appropriate for inclusion in the FHIR specification.
+    """ Basic is used for handling concepts not yet defined in FHIR, narrative-only resources that don't map to an existing resource, and custom resources not appropriate for inclusion in the FHIR specification.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -29,57 +28,63 @@ class Basic(DomainResource):
     :param str created: When created
     :param Reference author: Who created
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "subject": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "author": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        code: "CodeableConcept" = None,
-        subject: "Reference" = None,
-        created: "str" = None,
-        author: "Reference" = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  code:  'CodeableConcept'  = None,  subject:  'Reference'  = None,  created:  'str'  = None,  author:  'Reference'  = None, ):
+        
         self.resourceType = "Basic"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.code = code
-        self.subject = subject
-        self.created = created
-        self.author = author
+        self.code = code 
+        self.subject = subject 
+        self.created = created 
+        self.author = author 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Basic":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Basic":
         return super().from_obj(obj)

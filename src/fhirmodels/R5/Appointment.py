@@ -1,8 +1,7 @@
 """
 Generated class for Appointment. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -20,7 +19,7 @@ from fhirmodels.R5.VirtualServiceDetail import *
 
 
 class Participant(FhirBaseModel):
-    """List of participants involved in the appointment.:param str id: Unique id for inter-element referencing
+    """ List of participants involved in the appointment.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: Role of participant in the appointment
@@ -29,40 +28,42 @@ class Participant(FhirBaseModel):
     :param bool required: The participant is required to attend (optional when false)
     :param str status: accepted | declined | tentative | needs-action
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "period": {"class_name": "Period", "is_contained": False},
+        
+        
         "actor": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: list["CodeableConcept"] = None,
-        period: "Period" = None,
-        actor: "Reference" = None,
-        required: "bool" = None,
-        status: "str" = None,
-    ):
-        self.id = id
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  list['CodeableConcept']  = None,  period:  'Period'  = None,  actor:  'Reference'  = None,  required:  'bool'  = None,  status:  'str'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.type = type or []
-        self.period = period
-        self.actor = actor
-        self.required = required
-        self.status = status
+        self.period = period 
+        self.actor = actor 
+        self.required = required 
+        self.status = status 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)
@@ -71,8 +72,13 @@ class Participant(FhirBaseModel):
         return super().as_dict()
 
 
+    
+        
+    
+    
+
 class WeeklyTemplate(FhirBaseModel):
-    """Information about weekly recurring appointments.:param str id: Unique id for inter-element referencing
+    """ Information about weekly recurring appointments.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param bool monday: Recurs on Mondays
@@ -84,43 +90,42 @@ class WeeklyTemplate(FhirBaseModel):
     :param bool sunday: Recurs on Sunday
     :param int weekInterval: Recurs every nth week
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        monday: "bool" = None,
-        tuesday: "bool" = None,
-        wednesday: "bool" = None,
-        thursday: "bool" = None,
-        friday: "bool" = None,
-        saturday: "bool" = None,
-        sunday: "bool" = None,
-        weekInterval: "int" = None,
-    ):
-        self.id = id
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  monday:  'bool'  = None,  tuesday:  'bool'  = None,  wednesday:  'bool'  = None,  thursday:  'bool'  = None,  friday:  'bool'  = None,  saturday:  'bool'  = None,  sunday:  'bool'  = None,  weekInterval:  'int'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.monday = monday
-        self.tuesday = tuesday
-        self.wednesday = wednesday
-        self.thursday = thursday
-        self.friday = friday
-        self.saturday = saturday
-        self.sunday = sunday
-        self.weekInterval = weekInterval
+        self.monday = monday 
+        self.tuesday = tuesday 
+        self.wednesday = wednesday 
+        self.thursday = thursday 
+        self.friday = friday 
+        self.saturday = saturday 
+        self.sunday = sunday 
+        self.weekInterval = weekInterval 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)
@@ -129,8 +134,11 @@ class WeeklyTemplate(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class MonthlyTemplate(FhirBaseModel):
-    """Information about monthly recurring appointments.:param str id: Unique id for inter-element referencing
+    """ Information about monthly recurring appointments.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param int dayOfMonth: Recurs on a specific day of the month
@@ -138,37 +146,38 @@ class MonthlyTemplate(FhirBaseModel):
     :param Coding dayOfWeek: Indicates which day of the week the appointment should occur
     :param int monthInterval: Recurs every nth month
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "nthWeekOfMonth": {"class_name": "Coding", "is_contained": False},
+        
+        
         "dayOfWeek": {"class_name": "Coding", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        dayOfMonth: "int" = None,
-        nthWeekOfMonth: "Coding" = None,
-        dayOfWeek: "Coding" = None,
-        monthInterval: "int" = None,
-    ):
-        self.id = id
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  dayOfMonth:  'int'  = None,  nthWeekOfMonth:  'Coding'  = None,  dayOfWeek:  'Coding'  = None,  monthInterval:  'int'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.dayOfMonth = dayOfMonth
-        self.nthWeekOfMonth = nthWeekOfMonth
-        self.dayOfWeek = dayOfWeek
-        self.monthInterval = monthInterval
+        self.dayOfMonth = dayOfMonth 
+        self.nthWeekOfMonth = nthWeekOfMonth 
+        self.dayOfWeek = dayOfWeek 
+        self.monthInterval = monthInterval 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)
@@ -177,35 +186,37 @@ class MonthlyTemplate(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class YearlyTemplate(FhirBaseModel):
-    """Information about yearly recurring appointments.:param str id: Unique id for inter-element referencing
+    """ Information about yearly recurring appointments.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param int yearInterval: Recurs every nth year
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        yearInterval: "int" = None,
-    ):
-        self.id = id
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  yearInterval:  'int'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.yearInterval = yearInterval
+        self.yearInterval = yearInterval 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)
@@ -214,8 +225,12 @@ class YearlyTemplate(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class RecurrenceTemplate(FhirBaseModel):
-    """The details of the recurrence pattern or template that is used to generate recurring appointments.:param str id: Unique id for inter-element referencing
+    """ The details of the recurrence pattern or template that is used to generate recurring appointments.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept timezone: The timezone of the occurrences
@@ -229,52 +244,56 @@ class RecurrenceTemplate(FhirBaseModel):
     :param str excludingDate: Any dates that should be excluded from the series
     :param int excludingRecurrenceId: Any recurrence IDs that should be excluded from the recurrence
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "timezone": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "recurrenceType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
+        
         "weeklyTemplate": {"class_name": "WeeklyTemplate", "is_contained": True},
+        
+        
         "monthlyTemplate": {"class_name": "MonthlyTemplate", "is_contained": True},
+        
+        
         "yearlyTemplate": {"class_name": "YearlyTemplate", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        timezone: "CodeableConcept" = None,
-        recurrenceType: "CodeableConcept" = None,
-        lastOccurrenceDate: "str" = None,
-        occurrenceCount: "int" = None,
-        occurrenceDate: list["str"] = None,
-        weeklyTemplate: "WeeklyTemplate" = None,
-        monthlyTemplate: "MonthlyTemplate" = None,
-        yearlyTemplate: "YearlyTemplate" = None,
-        excludingDate: list["str"] = None,
-        excludingRecurrenceId: list["int"] = None,
-    ):
-        self.id = id
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  timezone:  'CodeableConcept'  = None,  recurrenceType:  'CodeableConcept'  = None,  lastOccurrenceDate:  'str'  = None,  occurrenceCount:  'int'  = None,  occurrenceDate:  list['str']  = None,  weeklyTemplate:  'WeeklyTemplate'  = None,  monthlyTemplate:  'MonthlyTemplate'  = None,  yearlyTemplate:  'YearlyTemplate'  = None,  excludingDate:  list['str']  = None,  excludingRecurrenceId:  list['int']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.timezone = timezone
-        self.recurrenceType = recurrenceType
-        self.lastOccurrenceDate = lastOccurrenceDate
-        self.occurrenceCount = occurrenceCount
+        self.timezone = timezone 
+        self.recurrenceType = recurrenceType 
+        self.lastOccurrenceDate = lastOccurrenceDate 
+        self.occurrenceCount = occurrenceCount 
         self.occurrenceDate = occurrenceDate or []
-        self.weeklyTemplate = weeklyTemplate
-        self.monthlyTemplate = monthlyTemplate
-        self.yearlyTemplate = yearlyTemplate
+        self.weeklyTemplate = weeklyTemplate 
+        self.monthlyTemplate = monthlyTemplate 
+        self.yearlyTemplate = yearlyTemplate 
         self.excludingDate = excludingDate or []
         self.excludingRecurrenceId = excludingRecurrenceId or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)
@@ -284,7 +303,7 @@ class RecurrenceTemplate(FhirBaseModel):
 
 
 class Appointment(DomainResource):
-    """A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
+    """ A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -326,136 +345,155 @@ class Appointment(DomainResource):
     :param bool occurrenceChanged: Indicates that this appointment varies from a recurrence pattern
     :param RecurrenceTemplate recurrenceTemplate: Details of the recurrence pattern/template used to generate occurrences
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
         "cancellationReason": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "_class": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "serviceCategory": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "serviceType": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "specialty": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "appointmentType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "reason": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "priority": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "replaces": {"class_name": "Reference", "is_contained": False},
+        
+        
         "virtualService": {"class_name": "VirtualServiceDetail", "is_contained": False},
+        
+        
         "supportingInformation": {"class_name": "Reference", "is_contained": False},
+        
+        
         "previousAppointment": {"class_name": "Reference", "is_contained": False},
+        
+        
         "originatingAppointment": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
+        
+        
         "requestedPeriod": {"class_name": "Period", "is_contained": False},
+        
+        
         "slot": {"class_name": "Reference", "is_contained": False},
+        
+        
         "account": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
+        
         "note": {"class_name": "Annotation", "is_contained": False},
-        "patientInstruction": {
-            "class_name": "CodeableReference",
-            "is_contained": False,
-        },
+        
+        
+        "patientInstruction": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "basedOn": {"class_name": "Reference", "is_contained": False},
+        
+        
         "subject": {"class_name": "Reference", "is_contained": False},
+        
+        
         "participant": {"class_name": "Participant", "is_contained": True},
-        "recurrenceTemplate": {
-            "class_name": "RecurrenceTemplate",
-            "is_contained": True,
-        },
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        status: "str" = None,
-        cancellationReason: "CodeableConcept" = None,
-        _class: list["CodeableConcept"] = None,
-        serviceCategory: list["CodeableConcept"] = None,
-        serviceType: list["CodeableReference"] = None,
-        specialty: list["CodeableConcept"] = None,
-        appointmentType: "CodeableConcept" = None,
-        reason: list["CodeableReference"] = None,
-        priority: "CodeableConcept" = None,
-        description: "str" = None,
-        replaces: list["Reference"] = None,
-        virtualService: list["VirtualServiceDetail"] = None,
-        supportingInformation: list["Reference"] = None,
-        previousAppointment: "Reference" = None,
-        originatingAppointment: "Reference" = None,
-        start: "str" = None,
-        end: "str" = None,
-        minutesDuration: "int" = None,
-        requestedPeriod: list["Period"] = None,
-        slot: list["Reference"] = None,
-        account: list["Reference"] = None,
-        created: "str" = None,
-        cancellationDate: "str" = None,
-        note: list["Annotation"] = None,
-        patientInstruction: list["CodeableReference"] = None,
-        basedOn: list["Reference"] = None,
-        subject: "Reference" = None,
-        participant: list["Participant"] = None,
-        recurrenceId: "int" = None,
-        occurrenceChanged: "bool" = None,
-        recurrenceTemplate: list["RecurrenceTemplate"] = None,
-    ):
-
+        
+        
+        
+        
+        "recurrenceTemplate": {"class_name": "RecurrenceTemplate", "is_contained": True},
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  status:  'str'  = None,  cancellationReason:  'CodeableConcept'  = None,  _class:  list['CodeableConcept']  = None,  serviceCategory:  list['CodeableConcept']  = None,  serviceType:  list['CodeableReference']  = None,  specialty:  list['CodeableConcept']  = None,  appointmentType:  'CodeableConcept'  = None,  reason:  list['CodeableReference']  = None,  priority:  'CodeableConcept'  = None,  description:  'str'  = None,  replaces:  list['Reference']  = None,  virtualService:  list['VirtualServiceDetail']  = None,  supportingInformation:  list['Reference']  = None,  previousAppointment:  'Reference'  = None,  originatingAppointment:  'Reference'  = None,  start:  'str'  = None,  end:  'str'  = None,  minutesDuration:  'int'  = None,  requestedPeriod:  list['Period']  = None,  slot:  list['Reference']  = None,  account:  list['Reference']  = None,  created:  'str'  = None,  cancellationDate:  'str'  = None,  note:  list['Annotation']  = None,  patientInstruction:  list['CodeableReference']  = None,  basedOn:  list['Reference']  = None,  subject:  'Reference'  = None,  participant:  list['Participant']  = None,  recurrenceId:  'int'  = None,  occurrenceChanged:  'bool'  = None,  recurrenceTemplate:  list['RecurrenceTemplate']  = None, ):
+        
         self.resourceType = "Appointment"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.status = status
-        self.cancellationReason = cancellationReason
+        self.status = status 
+        self.cancellationReason = cancellationReason 
         self._class = _class or []
         self.serviceCategory = serviceCategory or []
         self.serviceType = serviceType or []
         self.specialty = specialty or []
-        self.appointmentType = appointmentType
+        self.appointmentType = appointmentType 
         self.reason = reason or []
-        self.priority = priority
-        self.description = description
+        self.priority = priority 
+        self.description = description 
         self.replaces = replaces or []
         self.virtualService = virtualService or []
         self.supportingInformation = supportingInformation or []
-        self.previousAppointment = previousAppointment
-        self.originatingAppointment = originatingAppointment
-        self.start = start
-        self.end = end
-        self.minutesDuration = minutesDuration
+        self.previousAppointment = previousAppointment 
+        self.originatingAppointment = originatingAppointment 
+        self.start = start 
+        self.end = end 
+        self.minutesDuration = minutesDuration 
         self.requestedPeriod = requestedPeriod or []
         self.slot = slot or []
         self.account = account or []
-        self.created = created
-        self.cancellationDate = cancellationDate
+        self.created = created 
+        self.cancellationDate = cancellationDate 
         self.note = note or []
         self.patientInstruction = patientInstruction or []
         self.basedOn = basedOn or []
-        self.subject = subject
+        self.subject = subject 
         self.participant = participant or []
-        self.recurrenceId = recurrenceId
-        self.occurrenceChanged = occurrenceChanged
+        self.recurrenceId = recurrenceId 
+        self.occurrenceChanged = occurrenceChanged 
         self.recurrenceTemplate = recurrenceTemplate or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Appointment":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Appointment":
         return super().from_obj(obj)

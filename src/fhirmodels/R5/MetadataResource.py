@@ -1,8 +1,7 @@
 """
 Generated class for MetadataResource. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
 from fhirmodels.R5.ContactDetail import *
@@ -18,7 +17,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class MetadataResource(DomainResource):
-    """Common Interface declaration for conformance and knowledge artifact resources.
+    """ Common Interface declaration for conformance and knowledge artifact resources.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -55,109 +54,123 @@ class MetadataResource(DomainResource):
     :param ContactDetail endorser: Who endorsed the {{title}}
     :param RelatedArtifact relatedArtifact: Additional documentation, citations, etc
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
+        
+        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "author": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "editor": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "reviewer": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "endorser": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "relatedArtifact": {"class_name": "RelatedArtifact", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        identifier: list["Identifier"] = None,
-        version: "str" = None,
-        versionAlgorithmString: "str" = None,
-        versionAlgorithmCoding: "Coding" = None,
-        name: "str" = None,
-        title: "str" = None,
-        status: "str" = None,
-        experimental: "bool" = None,
-        date: "str" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        description: "str" = None,
-        useContext: list["UsageContext"] = None,
-        jurisdiction: list["CodeableConcept"] = None,
-        purpose: "str" = None,
-        copyright: "str" = None,
-        copyrightLabel: "str" = None,
-        approvalDate: "str" = None,
-        lastReviewDate: "str" = None,
-        effectivePeriod: "Period" = None,
-        topic: list["CodeableConcept"] = None,
-        author: list["ContactDetail"] = None,
-        editor: list["ContactDetail"] = None,
-        reviewer: list["ContactDetail"] = None,
-        endorser: list["ContactDetail"] = None,
-        relatedArtifact: list["RelatedArtifact"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  topic:  list['CodeableConcept']  = None,  author:  list['ContactDetail']  = None,  editor:  list['ContactDetail']  = None,  reviewer:  list['ContactDetail']  = None,  endorser:  list['ContactDetail']  = None,  relatedArtifact:  list['RelatedArtifact']  = None, ):
+        
         self.resourceType = "MetadataResource"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
+        self.url = url 
         self.identifier = identifier or []
-        self.version = version
-        self.versionAlgorithmString = versionAlgorithmString
-        self.versionAlgorithmCoding = versionAlgorithmCoding
-        self.name = name
-        self.title = title
-        self.status = status
-        self.experimental = experimental
-        self.date = date
-        self.publisher = publisher
+        self.version = version 
+        self.versionAlgorithmString = versionAlgorithmString 
+        self.versionAlgorithmCoding = versionAlgorithmCoding 
+        self.name = name 
+        self.title = title 
+        self.status = status 
+        self.experimental = experimental 
+        self.date = date 
+        self.publisher = publisher 
         self.contact = contact or []
-        self.description = description
+        self.description = description 
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose
-        self.copyright = copyright
-        self.copyrightLabel = copyrightLabel
-        self.approvalDate = approvalDate
-        self.lastReviewDate = lastReviewDate
-        self.effectivePeriod = effectivePeriod
+        self.purpose = purpose 
+        self.copyright = copyright 
+        self.copyrightLabel = copyrightLabel 
+        self.approvalDate = approvalDate 
+        self.lastReviewDate = lastReviewDate 
+        self.effectivePeriod = effectivePeriod 
         self.topic = topic or []
         self.author = author or []
         self.editor = editor or []
         self.reviewer = reviewer or []
         self.endorser = endorser or []
         self.relatedArtifact = relatedArtifact or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "MetadataResource":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "MetadataResource":
         return super().from_obj(obj)

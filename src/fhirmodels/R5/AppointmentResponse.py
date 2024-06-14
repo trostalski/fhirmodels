@@ -1,8 +1,7 @@
 """
 Generated class for AppointmentResponse. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.DomainResource import *
 from fhirmodels.R5.Extension import *
@@ -14,7 +13,7 @@ from fhirmodels.R5.Resource import *
 
 
 class AppointmentResponse(DomainResource):
-    """A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
+    """ A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -36,71 +35,77 @@ class AppointmentResponse(DomainResource):
     :param str occurrenceDate: Original date within a recurring request
     :param int recurrenceId: The recurrence ID of the specific recurring request
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "appointment": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
+        
+        
         "participantType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "actor": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        appointment: "Reference" = None,
-        proposedNewTime: "bool" = None,
-        start: "str" = None,
-        end: "str" = None,
-        participantType: list["CodeableConcept"] = None,
-        actor: "Reference" = None,
-        participantStatus: "str" = None,
-        comment: "str" = None,
-        recurring: "bool" = None,
-        occurrenceDate: "str" = None,
-        recurrenceId: "int" = None,
-    ):
-
+        
+        
+        
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  appointment:  'Reference'  = None,  proposedNewTime:  'bool'  = None,  start:  'str'  = None,  end:  'str'  = None,  participantType:  list['CodeableConcept']  = None,  actor:  'Reference'  = None,  participantStatus:  'str'  = None,  comment:  'str'  = None,  recurring:  'bool'  = None,  occurrenceDate:  'str'  = None,  recurrenceId:  'int'  = None, ):
+        
         self.resourceType = "AppointmentResponse"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.appointment = appointment
-        self.proposedNewTime = proposedNewTime
-        self.start = start
-        self.end = end
+        self.appointment = appointment 
+        self.proposedNewTime = proposedNewTime 
+        self.start = start 
+        self.end = end 
         self.participantType = participantType or []
-        self.actor = actor
-        self.participantStatus = participantStatus
-        self.comment = comment
-        self.recurring = recurring
-        self.occurrenceDate = occurrenceDate
-        self.recurrenceId = recurrenceId
+        self.actor = actor 
+        self.participantStatus = participantStatus 
+        self.comment = comment 
+        self.recurring = recurring 
+        self.occurrenceDate = occurrenceDate 
+        self.recurrenceId = recurrenceId 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "AppointmentResponse":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "AppointmentResponse":
         return super().from_obj(obj)

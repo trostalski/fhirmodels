@@ -1,15 +1,14 @@
 """
 Generated class for HumanName. 
-Time: 2024-06-14 18:37:17
+Time: 2024-06-14 18:55:42
 """
-
-from fhirmodels.generator import FhirBaseModel
+from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4.Extension import *
 from fhirmodels.R4.Period import *
 
 
 class HumanName(FhirBaseModel):
-    """Base StructureDefinition for HumanName Type: A human's name with the ability to identify parts and usage.
+    """ Base StructureDefinition for HumanName Type: A human's name with the ability to identify parts and usage.
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param str use: usual | official | temp | nickname | anonymous | old | maiden
@@ -20,40 +19,39 @@ class HumanName(FhirBaseModel):
     :param str suffix: Parts that come after the name
     :param Period period: Time period when name was/is in use
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
         "period": {"class_name": "Period", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        use: "str" = None,
-        text: "str" = None,
-        family: "str" = None,
-        given: list["str"] = None,
-        prefix: list["str"] = None,
-        suffix: list["str"] = None,
-        period: "Period" = None,
-    ):
-
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  use:  'str'  = None,  text:  'str'  = None,  family:  'str'  = None,  given:  list['str']  = None,  prefix:  list['str']  = None,  suffix:  list['str']  = None,  period:  'Period'  = None, ):
+        
+        self.id = id 
         self.extension = extension or []
-        self.use = use
-        self.text = text
-        self.family = family
+        self.use = use 
+        self.text = text 
+        self.family = family 
         self.given = given or []
         self.prefix = prefix or []
         self.suffix = suffix or []
-        self.period = period
+        self.period = period 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "HumanName":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "HumanName":
         return super().from_obj(obj)

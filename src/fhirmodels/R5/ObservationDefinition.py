@@ -1,8 +1,7 @@
 """
 Generated class for ObservationDefinition. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -20,7 +19,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class QualifiedValue(FhirBaseModel):
-    """A set of qualified values associated with a context and a set of conditions -  provides a range for quantitative and ordinal observations and a collection of value sets for qualitative observations.:param str id: Unique id for inter-element referencing
+    """ A set of qualified values associated with a context and a set of conditions -  provides a range for quantitative and ordinal observations and a collection of value sets for qualitative observations.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept context: Context qualifier for the set of qualified values
@@ -36,56 +35,60 @@ class QualifiedValue(FhirBaseModel):
     :param str abnormalCodedValueSet: Value set of abnormal coded values as part of this set of qualified values
     :param str criticalCodedValueSet: Value set of critical coded values as part of this set of qualified values
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "context": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "appliesTo": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "age": {"class_name": "Range", "is_contained": False},
+        
+        
         "gestationalAge": {"class_name": "Range", "is_contained": False},
+        
+        
+        
+        
         "range": {"class_name": "Range", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        context: "CodeableConcept" = None,
-        appliesTo: list["CodeableConcept"] = None,
-        gender: "str" = None,
-        age: "Range" = None,
-        gestationalAge: "Range" = None,
-        condition: "str" = None,
-        rangeCategory: "str" = None,
-        range: "Range" = None,
-        validCodedValueSet: "str" = None,
-        normalCodedValueSet: "str" = None,
-        abnormalCodedValueSet: "str" = None,
-        criticalCodedValueSet: "str" = None,
-    ):
-        self.id = id
+        
+        
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  context:  'CodeableConcept'  = None,  appliesTo:  list['CodeableConcept']  = None,  gender:  'str'  = None,  age:  'Range'  = None,  gestationalAge:  'Range'  = None,  condition:  'str'  = None,  rangeCategory:  'str'  = None,  range:  'Range'  = None,  validCodedValueSet:  'str'  = None,  normalCodedValueSet:  'str'  = None,  abnormalCodedValueSet:  'str'  = None,  criticalCodedValueSet:  'str'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.context = context
+        self.context = context 
         self.appliesTo = appliesTo or []
-        self.gender = gender
-        self.age = age
-        self.gestationalAge = gestationalAge
-        self.condition = condition
-        self.rangeCategory = rangeCategory
-        self.range = range
-        self.validCodedValueSet = validCodedValueSet
-        self.normalCodedValueSet = normalCodedValueSet
-        self.abnormalCodedValueSet = abnormalCodedValueSet
-        self.criticalCodedValueSet = criticalCodedValueSet
+        self.gender = gender 
+        self.age = age 
+        self.gestationalAge = gestationalAge 
+        self.condition = condition 
+        self.rangeCategory = rangeCategory 
+        self.range = range 
+        self.validCodedValueSet = validCodedValueSet 
+        self.normalCodedValueSet = normalCodedValueSet 
+        self.abnormalCodedValueSet = abnormalCodedValueSet 
+        self.criticalCodedValueSet = criticalCodedValueSet 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ObservationDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ObservationDefinition":
         return super().from_obj(obj)
@@ -94,8 +97,11 @@ class QualifiedValue(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Component(FhirBaseModel):
-    """Some observations have multiple component observations, expressed as separate code value pairs.:param str id: Unique id for inter-element referencing
+    """ Some observations have multiple component observations, expressed as separate code value pairs.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: Type of observation
@@ -103,38 +109,40 @@ class Component(FhirBaseModel):
     :param Coding permittedUnit: Unit for quantitative results
     :param QualifiedValue qualifiedValue: Set of qualified values for observation results
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "permittedUnit": {"class_name": "Coding", "is_contained": False},
+        
+        
         "qualifiedValue": {"class_name": "QualifiedValue", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        permittedDataType: list["str"] = None,
-        permittedUnit: list["Coding"] = None,
-        qualifiedValue: list["QualifiedValue"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  permittedDataType:  list['str']  = None,  permittedUnit:  list['Coding']  = None,  qualifiedValue:  list['QualifiedValue']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
+        self.code = code 
         self.permittedDataType = permittedDataType or []
         self.permittedUnit = permittedUnit or []
         self.qualifiedValue = qualifiedValue or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ObservationDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ObservationDefinition":
         return super().from_obj(obj)
@@ -144,7 +152,7 @@ class Component(FhirBaseModel):
 
 
 class ObservationDefinition(DomainResource):
-    """Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
+    """ Set of definitional characteristics for a kind of observation or measurement produced or consumed by an orderable health care service.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -192,137 +200,157 @@ class ObservationDefinition(DomainResource):
     :param Reference hasMember: Definitions of related resources belonging to this kind of observation group
     :param Component component: Component results
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
+        
+        
+        
+        
         "subject": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "performerType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
         "bodySite": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "method": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "specimen": {"class_name": "Reference", "is_contained": False},
+        
+        
         "device": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "permittedUnit": {"class_name": "Coding", "is_contained": False},
+        
+        
         "qualifiedValue": {"class_name": "QualifiedValue", "is_contained": True},
+        
+        
         "hasMember": {"class_name": "Reference", "is_contained": False},
+        
+        
         "component": {"class_name": "Component", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        identifier: "Identifier" = None,
-        version: "str" = None,
-        versionAlgorithmString: "str" = None,
-        versionAlgorithmCoding: "Coding" = None,
-        name: "str" = None,
-        title: "str" = None,
-        status: "str" = None,
-        experimental: "bool" = None,
-        date: "str" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        description: "str" = None,
-        useContext: list["UsageContext"] = None,
-        jurisdiction: list["CodeableConcept"] = None,
-        purpose: "str" = None,
-        copyright: "str" = None,
-        copyrightLabel: "str" = None,
-        approvalDate: "str" = None,
-        lastReviewDate: "str" = None,
-        effectivePeriod: "Period" = None,
-        derivedFromCanonical: list["str"] = None,
-        derivedFromUri: list["str"] = None,
-        subject: list["CodeableConcept"] = None,
-        performerType: "CodeableConcept" = None,
-        category: list["CodeableConcept"] = None,
-        code: "CodeableConcept" = None,
-        permittedDataType: list["str"] = None,
-        multipleResultsAllowed: "bool" = None,
-        bodySite: "CodeableConcept" = None,
-        method: "CodeableConcept" = None,
-        specimen: list["Reference"] = None,
-        device: list["Reference"] = None,
-        preferredReportName: "str" = None,
-        permittedUnit: list["Coding"] = None,
-        qualifiedValue: list["QualifiedValue"] = None,
-        hasMember: list["Reference"] = None,
-        component: list["Component"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  'Identifier'  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  derivedFromCanonical:  list['str']  = None,  derivedFromUri:  list['str']  = None,  subject:  list['CodeableConcept']  = None,  performerType:  'CodeableConcept'  = None,  category:  list['CodeableConcept']  = None,  code:  'CodeableConcept'  = None,  permittedDataType:  list['str']  = None,  multipleResultsAllowed:  'bool'  = None,  bodySite:  'CodeableConcept'  = None,  method:  'CodeableConcept'  = None,  specimen:  list['Reference']  = None,  device:  list['Reference']  = None,  preferredReportName:  'str'  = None,  permittedUnit:  list['Coding']  = None,  qualifiedValue:  list['QualifiedValue']  = None,  hasMember:  list['Reference']  = None,  component:  list['Component']  = None, ):
+        
         self.resourceType = "ObservationDefinition"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
-        self.identifier = identifier
-        self.version = version
-        self.versionAlgorithmString = versionAlgorithmString
-        self.versionAlgorithmCoding = versionAlgorithmCoding
-        self.name = name
-        self.title = title
-        self.status = status
-        self.experimental = experimental
-        self.date = date
-        self.publisher = publisher
+        self.url = url 
+        self.identifier = identifier 
+        self.version = version 
+        self.versionAlgorithmString = versionAlgorithmString 
+        self.versionAlgorithmCoding = versionAlgorithmCoding 
+        self.name = name 
+        self.title = title 
+        self.status = status 
+        self.experimental = experimental 
+        self.date = date 
+        self.publisher = publisher 
         self.contact = contact or []
-        self.description = description
+        self.description = description 
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose
-        self.copyright = copyright
-        self.copyrightLabel = copyrightLabel
-        self.approvalDate = approvalDate
-        self.lastReviewDate = lastReviewDate
-        self.effectivePeriod = effectivePeriod
+        self.purpose = purpose 
+        self.copyright = copyright 
+        self.copyrightLabel = copyrightLabel 
+        self.approvalDate = approvalDate 
+        self.lastReviewDate = lastReviewDate 
+        self.effectivePeriod = effectivePeriod 
         self.derivedFromCanonical = derivedFromCanonical or []
         self.derivedFromUri = derivedFromUri or []
         self.subject = subject or []
-        self.performerType = performerType
+        self.performerType = performerType 
         self.category = category or []
-        self.code = code
+        self.code = code 
         self.permittedDataType = permittedDataType or []
-        self.multipleResultsAllowed = multipleResultsAllowed
-        self.bodySite = bodySite
-        self.method = method
+        self.multipleResultsAllowed = multipleResultsAllowed 
+        self.bodySite = bodySite 
+        self.method = method 
         self.specimen = specimen or []
         self.device = device or []
-        self.preferredReportName = preferredReportName
+        self.preferredReportName = preferredReportName 
         self.permittedUnit = permittedUnit or []
         self.qualifiedValue = qualifiedValue or []
         self.hasMember = hasMember or []
         self.component = component or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ObservationDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ObservationDefinition":
         return super().from_obj(obj)

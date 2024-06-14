@@ -1,9 +1,8 @@
 """
 Generated class for UsageContext. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
-from fhirmodels.generator import FhirBaseModel
+from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
 from fhirmodels.R5.Extension import *
@@ -13,7 +12,7 @@ from fhirmodels.R5.Reference import *
 
 
 class UsageContext(FhirBaseModel):
-    """UsageContext Type: Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
+    """ UsageContext Type: Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Coding code: Type of context being specified
@@ -22,43 +21,43 @@ class UsageContext(FhirBaseModel):
     :param Range valueRange: Value that defines the context
     :param Reference valueReference: Value that defines the context
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "Coding", "is_contained": False},
-        "valueCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "valueRange": {"class_name": "Range", "is_contained": False},
+        
+        
         "valueReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        code: "Coding" = None,
-        valueCodeableConcept: "CodeableConcept" = None,
-        valueQuantity: "Quantity" = None,
-        valueRange: "Range" = None,
-        valueReference: "Reference" = None,
-    ):
-
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  code:  'Coding'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueQuantity:  'Quantity'  = None,  valueRange:  'Range'  = None,  valueReference:  'Reference'  = None, ):
+        
+        self.id = id 
         self.extension = extension or []
-        self.code = code
-        self.valueCodeableConcept = valueCodeableConcept
-        self.valueQuantity = valueQuantity
-        self.valueRange = valueRange
-        self.valueReference = valueReference
+        self.code = code 
+        self.valueCodeableConcept = valueCodeableConcept 
+        self.valueQuantity = valueQuantity 
+        self.valueRange = valueRange 
+        self.valueReference = valueReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "UsageContext":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "UsageContext":
         return super().from_obj(obj)

@@ -1,8 +1,7 @@
 """
 Generated class for CoverageEligibilityRequest. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.DomainResource import *
@@ -18,42 +17,43 @@ from fhirmodels.R5.Resource import *
 
 
 class Event(FhirBaseModel):
-    """Information code for an event with a corresponding date or period.:param str id: Unique id for inter-element referencing
+    """ Information code for an event with a corresponding date or period.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: Specific event
     :param str whenDateTime: Occurance date or period
     :param Period whenPeriod: Occurance date or period
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "whenPeriod": {"class_name": "Period", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: "CodeableConcept" = None,
-        whenDateTime: "str" = None,
-        whenPeriod: "Period" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'CodeableConcept'  = None,  whenDateTime:  'str'  = None,  whenPeriod:  'Period'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type
-        self.whenDateTime = whenDateTime
-        self.whenPeriod = whenPeriod
+        self.type = type 
+        self.whenDateTime = whenDateTime 
+        self.whenPeriod = whenPeriod 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)
@@ -62,42 +62,45 @@ class Event(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class SupportingInfo(FhirBaseModel):
-    """Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.:param str id: Unique id for inter-element referencing
+    """ Additional information codes regarding exceptions, special considerations, the condition, situation, prior or concurrent issues.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param int sequence: Information instance identifier
     :param Reference information: Data to be provided
     :param bool appliesToAll: Applies to all items
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "information": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        sequence: "int" = None,
-        information: "Reference" = None,
-        appliesToAll: "bool" = None,
-    ):
-        self.id = id
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  sequence:  'int'  = None,  information:  'Reference'  = None,  appliesToAll:  'bool'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.sequence = sequence
-        self.information = information
-        self.appliesToAll = appliesToAll
+        self.sequence = sequence 
+        self.information = information 
+        self.appliesToAll = appliesToAll 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)
@@ -106,42 +109,45 @@ class SupportingInfo(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Insurance(FhirBaseModel):
-    """Financial instruments for reimbursement for the health care products and services.:param str id: Unique id for inter-element referencing
+    """ Financial instruments for reimbursement for the health care products and services.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param bool focal: Applicable coverage
     :param Reference coverage: Insurance information
     :param str businessArrangement: Additional provider contract number
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "coverage": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        focal: "bool" = None,
-        coverage: "Reference" = None,
-        businessArrangement: "str" = None,
-    ):
-        self.id = id
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  focal:  'bool'  = None,  coverage:  'Reference'  = None,  businessArrangement:  'str'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.focal = focal
-        self.coverage = coverage
-        self.businessArrangement = businessArrangement
+        self.focal = focal 
+        self.coverage = coverage 
+        self.businessArrangement = businessArrangement 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)
@@ -150,43 +156,46 @@ class Insurance(FhirBaseModel):
         return super().as_dict()
 
 
+    
+        
+    
+    
+
 class Diagnosis(FhirBaseModel):
-    """Patient diagnosis for which care is sought.:param str id: Unique id for inter-element referencing
+    """ Patient diagnosis for which care is sought.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept diagnosisCodeableConcept: Nature of illness or problem
     :param Reference diagnosisReference: Nature of illness or problem
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        "diagnosisCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "diagnosisCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "diagnosisReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        diagnosisCodeableConcept: "CodeableConcept" = None,
-        diagnosisReference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  diagnosisCodeableConcept:  'CodeableConcept'  = None,  diagnosisReference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.diagnosisCodeableConcept = diagnosisCodeableConcept
-        self.diagnosisReference = diagnosisReference
+        self.diagnosisCodeableConcept = diagnosisCodeableConcept 
+        self.diagnosisReference = diagnosisReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)
@@ -195,8 +204,12 @@ class Diagnosis(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class Item(FhirBaseModel):
-    """Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.:param str id: Unique id for inter-element referencing
+    """ Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param int supportingInfoSequence: Applicable exception or supporting information
@@ -210,56 +223,64 @@ class Item(FhirBaseModel):
     :param Diagnosis diagnosis: Applicable diagnosis
     :param Reference detail: Product or service details
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "productOrService": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "modifier": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "provider": {"class_name": "Reference", "is_contained": False},
+        
+        
         "quantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "unitPrice": {"class_name": "Money", "is_contained": False},
+        
+        
         "facility": {"class_name": "Reference", "is_contained": False},
+        
+        
         "diagnosis": {"class_name": "Diagnosis", "is_contained": True},
+        
+        
         "detail": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        supportingInfoSequence: list["int"] = None,
-        category: "CodeableConcept" = None,
-        productOrService: "CodeableConcept" = None,
-        modifier: list["CodeableConcept"] = None,
-        provider: "Reference" = None,
-        quantity: "Quantity" = None,
-        unitPrice: "Money" = None,
-        facility: "Reference" = None,
-        diagnosis: list["Diagnosis"] = None,
-        detail: list["Reference"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  supportingInfoSequence:  list['int']  = None,  category:  'CodeableConcept'  = None,  productOrService:  'CodeableConcept'  = None,  modifier:  list['CodeableConcept']  = None,  provider:  'Reference'  = None,  quantity:  'Quantity'  = None,  unitPrice:  'Money'  = None,  facility:  'Reference'  = None,  diagnosis:  list['Diagnosis']  = None,  detail:  list['Reference']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.supportingInfoSequence = supportingInfoSequence or []
-        self.category = category
-        self.productOrService = productOrService
+        self.category = category 
+        self.productOrService = productOrService 
         self.modifier = modifier or []
-        self.provider = provider
-        self.quantity = quantity
-        self.unitPrice = unitPrice
-        self.facility = facility
+        self.provider = provider 
+        self.quantity = quantity 
+        self.unitPrice = unitPrice 
+        self.facility = facility 
         self.diagnosis = diagnosis or []
         self.detail = detail or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)
@@ -269,7 +290,7 @@ class Item(FhirBaseModel):
 
 
 class CoverageEligibilityRequest(DomainResource):
-    """The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
+    """ The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -295,87 +316,101 @@ class CoverageEligibilityRequest(DomainResource):
     :param Insurance insurance: Patient insurance information
     :param Item item: Item to be evaluated for eligibiity
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
         "priority": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "patient": {"class_name": "Reference", "is_contained": False},
+        
+        
         "event": {"class_name": "Event", "is_contained": True},
+        
+        
+        
         "servicedPeriod": {"class_name": "Period", "is_contained": False},
+        
+        
+        
         "enterer": {"class_name": "Reference", "is_contained": False},
+        
+        
         "provider": {"class_name": "Reference", "is_contained": False},
+        
+        
         "insurer": {"class_name": "Reference", "is_contained": False},
+        
+        
         "facility": {"class_name": "Reference", "is_contained": False},
+        
+        
         "supportingInfo": {"class_name": "SupportingInfo", "is_contained": True},
+        
+        
         "insurance": {"class_name": "Insurance", "is_contained": True},
+        
+        
         "item": {"class_name": "Item", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        status: "str" = None,
-        priority: "CodeableConcept" = None,
-        purpose: list["str"] = None,
-        patient: "Reference" = None,
-        event: list["Event"] = None,
-        servicedDate: "str" = None,
-        servicedPeriod: "Period" = None,
-        created: "str" = None,
-        enterer: "Reference" = None,
-        provider: "Reference" = None,
-        insurer: "Reference" = None,
-        facility: "Reference" = None,
-        supportingInfo: list["SupportingInfo"] = None,
-        insurance: list["Insurance"] = None,
-        item: list["Item"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  status:  'str'  = None,  priority:  'CodeableConcept'  = None,  purpose:  list['str']  = None,  patient:  'Reference'  = None,  event:  list['Event']  = None,  servicedDate:  'str'  = None,  servicedPeriod:  'Period'  = None,  created:  'str'  = None,  enterer:  'Reference'  = None,  provider:  'Reference'  = None,  insurer:  'Reference'  = None,  facility:  'Reference'  = None,  supportingInfo:  list['SupportingInfo']  = None,  insurance:  list['Insurance']  = None,  item:  list['Item']  = None, ):
+        
         self.resourceType = "CoverageEligibilityRequest"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.status = status
-        self.priority = priority
+        self.status = status 
+        self.priority = priority 
         self.purpose = purpose or []
-        self.patient = patient
+        self.patient = patient 
         self.event = event or []
-        self.servicedDate = servicedDate
-        self.servicedPeriod = servicedPeriod
-        self.created = created
-        self.enterer = enterer
-        self.provider = provider
-        self.insurer = insurer
-        self.facility = facility
+        self.servicedDate = servicedDate 
+        self.servicedPeriod = servicedPeriod 
+        self.created = created 
+        self.enterer = enterer 
+        self.provider = provider 
+        self.insurer = insurer 
+        self.facility = facility 
         self.supportingInfo = supportingInfo or []
         self.insurance = insurance or []
         self.item = item or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "CoverageEligibilityRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "CoverageEligibilityRequest":
         return super().from_obj(obj)

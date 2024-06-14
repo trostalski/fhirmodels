@@ -1,8 +1,7 @@
 """
 Generated class for Provenance. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
@@ -17,7 +16,7 @@ from fhirmodels.R5.Signature import *
 
 
 class Agent(FhirBaseModel):
-    """An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.:param str id: Unique id for inter-element referencing
+    """ An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: How the agent participated
@@ -25,39 +24,42 @@ class Agent(FhirBaseModel):
     :param Reference who: The agent that participated in the event
     :param Reference onBehalfOf: The agent that delegated
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "role": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "who": {"class_name": "Reference", "is_contained": False},
+        
+        
         "onBehalfOf": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: "CodeableConcept" = None,
-        role: list["CodeableConcept"] = None,
-        who: "Reference" = None,
-        onBehalfOf: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'CodeableConcept'  = None,  role:  list['CodeableConcept']  = None,  who:  'Reference'  = None,  onBehalfOf:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type
+        self.type = type 
         self.role = role or []
-        self.who = who
-        self.onBehalfOf = onBehalfOf
+        self.who = who 
+        self.onBehalfOf = onBehalfOf 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Provenance":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Provenance":
         return super().from_obj(obj)
@@ -66,43 +68,47 @@ class Agent(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Entity(FhirBaseModel):
-    """An entity used in this activity.:param str id: Unique id for inter-element referencing
+    """ An entity used in this activity.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str role: revision | quotation | source | instantiates | removal
     :param Reference what: Identity of entity
     :param Agent agent: Entity is attributed to this agent
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "what": {"class_name": "Reference", "is_contained": False},
+        
+        
         "agent": {"class_name": "Agent", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        role: "str" = None,
-        what: "Reference" = None,
-        agent: list["Agent"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  role:  'str'  = None,  what:  'Reference'  = None,  agent:  list['Agent']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.role = role
-        self.what = what
+        self.role = role 
+        self.what = what 
         self.agent = agent or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Provenance":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Provenance":
         return super().from_obj(obj)
@@ -112,7 +118,7 @@ class Entity(FhirBaseModel):
 
 
 class Provenance(DomainResource):
-    """Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
+    """ Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -136,82 +142,95 @@ class Provenance(DomainResource):
     :param Entity entity: An entity used in this activity
     :param Signature signature: Signature on target
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "target": {"class_name": "Reference", "is_contained": False},
+        
+        
         "occurredPeriod": {"class_name": "Period", "is_contained": False},
+        
+        
+        
+        
+        
         "location": {"class_name": "Reference", "is_contained": False},
+        
+        
         "authorization": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "activity": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "basedOn": {"class_name": "Reference", "is_contained": False},
+        
+        
         "patient": {"class_name": "Reference", "is_contained": False},
+        
+        
         "encounter": {"class_name": "Reference", "is_contained": False},
+        
+        
         "agent": {"class_name": "Agent", "is_contained": True},
+        
+        
         "entity": {"class_name": "Entity", "is_contained": True},
+        
+        
         "signature": {"class_name": "Signature", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        target: list["Reference"] = None,
-        occurredPeriod: "Period" = None,
-        occurredDateTime: "str" = None,
-        recorded: "str" = None,
-        policy: list["str"] = None,
-        location: "Reference" = None,
-        authorization: list["CodeableReference"] = None,
-        activity: "CodeableConcept" = None,
-        basedOn: list["Reference"] = None,
-        patient: "Reference" = None,
-        encounter: "Reference" = None,
-        agent: list["Agent"] = None,
-        entity: list["Entity"] = None,
-        signature: list["Signature"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  target:  list['Reference']  = None,  occurredPeriod:  'Period'  = None,  occurredDateTime:  'str'  = None,  recorded:  'str'  = None,  policy:  list['str']  = None,  location:  'Reference'  = None,  authorization:  list['CodeableReference']  = None,  activity:  'CodeableConcept'  = None,  basedOn:  list['Reference']  = None,  patient:  'Reference'  = None,  encounter:  'Reference'  = None,  agent:  list['Agent']  = None,  entity:  list['Entity']  = None,  signature:  list['Signature']  = None, ):
+        
         self.resourceType = "Provenance"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.target = target or []
-        self.occurredPeriod = occurredPeriod
-        self.occurredDateTime = occurredDateTime
-        self.recorded = recorded
+        self.occurredPeriod = occurredPeriod 
+        self.occurredDateTime = occurredDateTime 
+        self.recorded = recorded 
         self.policy = policy or []
-        self.location = location
+        self.location = location 
         self.authorization = authorization or []
-        self.activity = activity
+        self.activity = activity 
         self.basedOn = basedOn or []
-        self.patient = patient
-        self.encounter = encounter
+        self.patient = patient 
+        self.encounter = encounter 
         self.agent = agent or []
         self.entity = entity or []
         self.signature = signature or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Provenance":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Provenance":
         return super().from_obj(obj)

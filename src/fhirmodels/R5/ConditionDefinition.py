@@ -1,8 +1,7 @@
 """
 Generated class for ConditionDefinition. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -19,39 +18,40 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Observation(FhirBaseModel):
-    """Observations particularly relevant to this condition.:param str id: Unique id for inter-element referencing
+    """ Observations particularly relevant to this condition.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept category: Category that is relevant
     :param CodeableConcept code: Code for relevant Observation
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        category: "CodeableConcept" = None,
-        code: "CodeableConcept" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  category:  'CodeableConcept'  = None,  code:  'CodeableConcept'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.category = category
-        self.code = code
+        self.category = category 
+        self.code = code 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)
@@ -60,40 +60,44 @@ class Observation(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Medication(FhirBaseModel):
-    """Medications particularly relevant for this condition.:param str id: Unique id for inter-element referencing
+    """ Medications particularly relevant for this condition.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept category: Category that is relevant
     :param CodeableConcept code: Code for relevant Medication
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        category: "CodeableConcept" = None,
-        code: "CodeableConcept" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  category:  'CodeableConcept'  = None,  code:  'CodeableConcept'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.category = category
-        self.code = code
+        self.category = category 
+        self.code = code 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)
@@ -102,8 +106,11 @@ class Medication(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Precondition(FhirBaseModel):
-    """An observation that suggests that this condition applies.:param str id: Unique id for inter-element referencing
+    """ An observation that suggests that this condition applies.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str type: sensitive | specific
@@ -111,41 +118,40 @@ class Precondition(FhirBaseModel):
     :param CodeableConcept valueCodeableConcept: Value of Observation
     :param Quantity valueQuantity: Value of Observation
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        "valueCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: "str" = None,
-        code: "CodeableConcept" = None,
-        valueCodeableConcept: "CodeableConcept" = None,
-        valueQuantity: "Quantity" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'str'  = None,  code:  'CodeableConcept'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueQuantity:  'Quantity'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type
-        self.code = code
-        self.valueCodeableConcept = valueCodeableConcept
-        self.valueQuantity = valueQuantity
+        self.type = type 
+        self.code = code 
+        self.valueCodeableConcept = valueCodeableConcept 
+        self.valueQuantity = valueQuantity 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)
@@ -154,39 +160,42 @@ class Precondition(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Questionnaire(FhirBaseModel):
-    """Questionnaire for this condition.:param str id: Unique id for inter-element referencing
+    """ Questionnaire for this condition.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str purpose: preadmit | diff-diagnosis | outcome
     :param Reference reference: Specific Questionnaire
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "reference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        purpose: "str" = None,
-        reference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  purpose:  'str'  = None,  reference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.purpose = purpose
-        self.reference = reference
+        self.purpose = purpose 
+        self.reference = reference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)
@@ -195,40 +204,44 @@ class Questionnaire(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Plan(FhirBaseModel):
-    """Plan that is appropriate.:param str id: Unique id for inter-element referencing
+    """ Plan that is appropriate.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept role: Use for the plan
     :param Reference reference: The actual plan
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "role": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "reference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        role: "CodeableConcept" = None,
-        reference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  role:  'CodeableConcept'  = None,  reference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.role = role
-        self.reference = reference
+        self.role = role 
+        self.reference = reference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)
@@ -238,7 +251,7 @@ class Plan(FhirBaseModel):
 
 
 class ConditionDefinition(DomainResource):
-    """A definition of a condition and information relevant to managing it.
+    """ A definition of a condition and information relevant to managing it.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -278,106 +291,122 @@ class ConditionDefinition(DomainResource):
     :param Questionnaire questionnaire: Questionnaire for this condition
     :param Plan plan: Plan that is appropriate
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "severity": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "bodySite": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "stage": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
+        
+        
         "observation": {"class_name": "Observation", "is_contained": True},
+        
+        
         "medication": {"class_name": "Medication", "is_contained": True},
+        
+        
         "precondition": {"class_name": "Precondition", "is_contained": True},
+        
+        
         "team": {"class_name": "Reference", "is_contained": False},
+        
+        
         "questionnaire": {"class_name": "Questionnaire", "is_contained": True},
+        
+        
         "plan": {"class_name": "Plan", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        identifier: list["Identifier"] = None,
-        version: "str" = None,
-        versionAlgorithmString: "str" = None,
-        versionAlgorithmCoding: "Coding" = None,
-        name: "str" = None,
-        title: "str" = None,
-        subtitle: "str" = None,
-        status: "str" = None,
-        experimental: "bool" = None,
-        date: "str" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        description: "str" = None,
-        useContext: list["UsageContext"] = None,
-        jurisdiction: list["CodeableConcept"] = None,
-        code: "CodeableConcept" = None,
-        severity: "CodeableConcept" = None,
-        bodySite: "CodeableConcept" = None,
-        stage: "CodeableConcept" = None,
-        hasSeverity: "bool" = None,
-        hasBodySite: "bool" = None,
-        hasStage: "bool" = None,
-        definition: list["str"] = None,
-        observation: list["Observation"] = None,
-        medication: list["Medication"] = None,
-        precondition: list["Precondition"] = None,
-        team: list["Reference"] = None,
-        questionnaire: list["Questionnaire"] = None,
-        plan: list["Plan"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  subtitle:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  code:  'CodeableConcept'  = None,  severity:  'CodeableConcept'  = None,  bodySite:  'CodeableConcept'  = None,  stage:  'CodeableConcept'  = None,  hasSeverity:  'bool'  = None,  hasBodySite:  'bool'  = None,  hasStage:  'bool'  = None,  definition:  list['str']  = None,  observation:  list['Observation']  = None,  medication:  list['Medication']  = None,  precondition:  list['Precondition']  = None,  team:  list['Reference']  = None,  questionnaire:  list['Questionnaire']  = None,  plan:  list['Plan']  = None, ):
+        
         self.resourceType = "ConditionDefinition"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
+        self.url = url 
         self.identifier = identifier or []
-        self.version = version
-        self.versionAlgorithmString = versionAlgorithmString
-        self.versionAlgorithmCoding = versionAlgorithmCoding
-        self.name = name
-        self.title = title
-        self.subtitle = subtitle
-        self.status = status
-        self.experimental = experimental
-        self.date = date
-        self.publisher = publisher
+        self.version = version 
+        self.versionAlgorithmString = versionAlgorithmString 
+        self.versionAlgorithmCoding = versionAlgorithmCoding 
+        self.name = name 
+        self.title = title 
+        self.subtitle = subtitle 
+        self.status = status 
+        self.experimental = experimental 
+        self.date = date 
+        self.publisher = publisher 
         self.contact = contact or []
-        self.description = description
+        self.description = description 
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.code = code
-        self.severity = severity
-        self.bodySite = bodySite
-        self.stage = stage
-        self.hasSeverity = hasSeverity
-        self.hasBodySite = hasBodySite
-        self.hasStage = hasStage
+        self.code = code 
+        self.severity = severity 
+        self.bodySite = bodySite 
+        self.stage = stage 
+        self.hasSeverity = hasSeverity 
+        self.hasBodySite = hasBodySite 
+        self.hasStage = hasStage 
         self.definition = definition or []
         self.observation = observation or []
         self.medication = medication or []
@@ -385,11 +414,12 @@ class ConditionDefinition(DomainResource):
         self.team = team or []
         self.questionnaire = questionnaire or []
         self.plan = plan or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ConditionDefinition":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ConditionDefinition":
         return super().from_obj(obj)

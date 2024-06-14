@@ -1,8 +1,7 @@
 """
 Generated class for Medication. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
@@ -18,7 +17,7 @@ from fhirmodels.R5.Resource import *
 
 
 class Ingredient(FhirBaseModel):
-    """Identifies a particular constituent of interest in the product.:param str id: Unique id for inter-element referencing
+    """ Identifies a particular constituent of interest in the product.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableReference item: The ingredient (substance or medication) that the ingredient.strength relates to
@@ -27,44 +26,44 @@ class Ingredient(FhirBaseModel):
     :param CodeableConcept strengthCodeableConcept: Quantity of ingredient present
     :param Quantity strengthQuantity: Quantity of ingredient present
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "item": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
+        
         "strengthRatio": {"class_name": "Ratio", "is_contained": False},
-        "strengthCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "strengthCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "strengthQuantity": {"class_name": "Quantity", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        item: "CodeableReference" = None,
-        isActive: "bool" = None,
-        strengthRatio: "Ratio" = None,
-        strengthCodeableConcept: "CodeableConcept" = None,
-        strengthQuantity: "Quantity" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  item:  'CodeableReference'  = None,  isActive:  'bool'  = None,  strengthRatio:  'Ratio'  = None,  strengthCodeableConcept:  'CodeableConcept'  = None,  strengthQuantity:  'Quantity'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.item = item
-        self.isActive = isActive
-        self.strengthRatio = strengthRatio
-        self.strengthCodeableConcept = strengthCodeableConcept
-        self.strengthQuantity = strengthQuantity
+        self.item = item 
+        self.isActive = isActive 
+        self.strengthRatio = strengthRatio 
+        self.strengthCodeableConcept = strengthCodeableConcept 
+        self.strengthQuantity = strengthQuantity 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Medication":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Medication":
         return super().from_obj(obj)
@@ -73,38 +72,40 @@ class Ingredient(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Batch(FhirBaseModel):
-    """Information that only applies to packages (not products).:param str id: Unique id for inter-element referencing
+    """ Information that only applies to packages (not products).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str lotNumber: Identifier assigned to batch
     :param str expirationDate: When batch will expire
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        lotNumber: "str" = None,
-        expirationDate: "str" = None,
-    ):
-        self.id = id
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  lotNumber:  'str'  = None,  expirationDate:  'str'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.lotNumber = lotNumber
-        self.expirationDate = expirationDate
+        self.lotNumber = lotNumber 
+        self.expirationDate = expirationDate 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Medication":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Medication":
         return super().from_obj(obj)
@@ -114,7 +115,7 @@ class Batch(FhirBaseModel):
 
 
 class Medication(DomainResource):
-    """This resource is primarily used for the identification and definition of a medication, including ingredients, for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
+    """ This resource is primarily used for the identification and definition of a medication, including ingredients, for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -133,72 +134,79 @@ class Medication(DomainResource):
     :param Batch batch: Details about packaged medications
     :param Reference definition: Knowledge about this medication
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        "marketingAuthorizationHolder": {
-            "class_name": "Reference",
-            "is_contained": False,
-        },
+        
+        
+        
+        "marketingAuthorizationHolder": {"class_name": "Reference", "is_contained": False},
+        
+        
         "doseForm": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "totalVolume": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "ingredient": {"class_name": "Ingredient", "is_contained": True},
+        
+        
         "batch": {"class_name": "Batch", "is_contained": True},
+        
+        
         "definition": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        code: "CodeableConcept" = None,
-        status: "str" = None,
-        marketingAuthorizationHolder: "Reference" = None,
-        doseForm: "CodeableConcept" = None,
-        totalVolume: "Quantity" = None,
-        ingredient: list["Ingredient"] = None,
-        batch: "Batch" = None,
-        definition: "Reference" = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  code:  'CodeableConcept'  = None,  status:  'str'  = None,  marketingAuthorizationHolder:  'Reference'  = None,  doseForm:  'CodeableConcept'  = None,  totalVolume:  'Quantity'  = None,  ingredient:  list['Ingredient']  = None,  batch:  'Batch'  = None,  definition:  'Reference'  = None, ):
+        
         self.resourceType = "Medication"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.code = code
-        self.status = status
-        self.marketingAuthorizationHolder = marketingAuthorizationHolder
-        self.doseForm = doseForm
-        self.totalVolume = totalVolume
+        self.code = code 
+        self.status = status 
+        self.marketingAuthorizationHolder = marketingAuthorizationHolder 
+        self.doseForm = doseForm 
+        self.totalVolume = totalVolume 
         self.ingredient = ingredient or []
-        self.batch = batch
-        self.definition = definition
+        self.batch = batch 
+        self.definition = definition 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Medication":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Medication":
         return super().from_obj(obj)

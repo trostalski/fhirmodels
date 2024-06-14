@@ -1,8 +1,7 @@
 """
 Generated class for HealthcareService. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.Availability import *
 from fhirmodels.R5.BackboneElement import *
@@ -18,38 +17,38 @@ from fhirmodels.R5.Resource import *
 
 
 class Eligibility(FhirBaseModel):
-    """Does this service have specific eligibility requirements that need to be met in order to use the service?:param str id: Unique id for inter-element referencing
+    """ Does this service have specific eligibility requirements that need to be met in order to use the service?:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: Coded value for the eligibility
     :param str comment: Describes the eligibility conditions for the service
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        comment: "str" = None,
-    ):
-        self.id = id
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  comment:  'str'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
-        self.comment = comment
+        self.code = code 
+        self.comment = comment 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "HealthcareService":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "HealthcareService":
         return super().from_obj(obj)
@@ -59,7 +58,7 @@ class Eligibility(FhirBaseModel):
 
 
 class HealthcareService(DomainResource):
-    """The details of a healthcare service available at a location or in a catalog.  In the case where there is a hierarchy of services (for example, Lab -> Pathology -> Wound Cultures), this can be represented using a set of linked HealthcareServices.
+    """ The details of a healthcare service available at a location or in a catalog.  In the case where there is a hierarchy of services (for example, Lab -> Pathology -> Wound Cultures), this can be represented using a set of linked HealthcareServices.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -92,94 +91,110 @@ class HealthcareService(DomainResource):
     :param Availability availability: Times the healthcare service is available (including exceptions)
     :param Reference endpoint: Technical endpoints providing access to electronic services operated for the healthcare service
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
         "providedBy": {"class_name": "Reference", "is_contained": False},
+        
+        
         "offeredIn": {"class_name": "Reference", "is_contained": False},
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "specialty": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "location": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
+        
+        
         "photo": {"class_name": "Attachment", "is_contained": False},
+        
+        
         "contact": {"class_name": "ExtendedContactDetail", "is_contained": False},
+        
+        
         "coverageArea": {"class_name": "Reference", "is_contained": False},
-        "serviceProvisionCode": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "serviceProvisionCode": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "eligibility": {"class_name": "Eligibility", "is_contained": True},
+        
+        
         "program": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "characteristic": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "communication": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "referralMethod": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "availability": {"class_name": "Availability", "is_contained": False},
+        
+        
         "endpoint": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        active: "bool" = None,
-        providedBy: "Reference" = None,
-        offeredIn: list["Reference"] = None,
-        category: list["CodeableConcept"] = None,
-        type: list["CodeableConcept"] = None,
-        specialty: list["CodeableConcept"] = None,
-        location: list["Reference"] = None,
-        name: "str" = None,
-        comment: "str" = None,
-        extraDetails: "str" = None,
-        photo: "Attachment" = None,
-        contact: list["ExtendedContactDetail"] = None,
-        coverageArea: list["Reference"] = None,
-        serviceProvisionCode: list["CodeableConcept"] = None,
-        eligibility: list["Eligibility"] = None,
-        program: list["CodeableConcept"] = None,
-        characteristic: list["CodeableConcept"] = None,
-        communication: list["CodeableConcept"] = None,
-        referralMethod: list["CodeableConcept"] = None,
-        appointmentRequired: "bool" = None,
-        availability: list["Availability"] = None,
-        endpoint: list["Reference"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  active:  'bool'  = None,  providedBy:  'Reference'  = None,  offeredIn:  list['Reference']  = None,  category:  list['CodeableConcept']  = None,  type:  list['CodeableConcept']  = None,  specialty:  list['CodeableConcept']  = None,  location:  list['Reference']  = None,  name:  'str'  = None,  comment:  'str'  = None,  extraDetails:  'str'  = None,  photo:  'Attachment'  = None,  contact:  list['ExtendedContactDetail']  = None,  coverageArea:  list['Reference']  = None,  serviceProvisionCode:  list['CodeableConcept']  = None,  eligibility:  list['Eligibility']  = None,  program:  list['CodeableConcept']  = None,  characteristic:  list['CodeableConcept']  = None,  communication:  list['CodeableConcept']  = None,  referralMethod:  list['CodeableConcept']  = None,  appointmentRequired:  'bool'  = None,  availability:  list['Availability']  = None,  endpoint:  list['Reference']  = None, ):
+        
         self.resourceType = "HealthcareService"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.active = active
-        self.providedBy = providedBy
+        self.active = active 
+        self.providedBy = providedBy 
         self.offeredIn = offeredIn or []
         self.category = category or []
         self.type = type or []
         self.specialty = specialty or []
         self.location = location or []
-        self.name = name
-        self.comment = comment
-        self.extraDetails = extraDetails
-        self.photo = photo
+        self.name = name 
+        self.comment = comment 
+        self.extraDetails = extraDetails 
+        self.photo = photo 
         self.contact = contact or []
         self.coverageArea = coverageArea or []
         self.serviceProvisionCode = serviceProvisionCode or []
@@ -188,14 +203,15 @@ class HealthcareService(DomainResource):
         self.characteristic = characteristic or []
         self.communication = communication or []
         self.referralMethod = referralMethod or []
-        self.appointmentRequired = appointmentRequired
+        self.appointmentRequired = appointmentRequired 
         self.availability = availability or []
         self.endpoint = endpoint or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "HealthcareService":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "HealthcareService":
         return super().from_obj(obj)

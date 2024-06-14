@@ -1,8 +1,7 @@
 """
 Generated class for TestPlan. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
@@ -19,38 +18,38 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Dependency(FhirBaseModel):
-    """The required criteria to execute the test plan - e.g. preconditions, previous tests...:param str id: Unique id for inter-element referencing
+    """ The required criteria to execute the test plan - e.g. preconditions, previous tests...:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str description: Description of the dependency criterium
     :param Reference predecessor: Link to predecessor test plans
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "predecessor": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        description: "str" = None,
-        predecessor: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  description:  'str'  = None,  predecessor:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.description = description
-        self.predecessor = predecessor
+        self.description = description 
+        self.predecessor = predecessor 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -59,39 +58,44 @@ class Dependency(FhirBaseModel):
         return super().as_dict()
 
 
+    
+        
+    
+    
+
 class Dependency(FhirBaseModel):
-    """The required criteria to execute the test case - e.g. preconditions, previous tests.:param str id: Unique id for inter-element referencing
+    """ The required criteria to execute the test case - e.g. preconditions, previous tests.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str description: Description of the criteria
     :param Reference predecessor: Link to predecessor test plans
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "predecessor": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        description: "str" = None,
-        predecessor: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  description:  'str'  = None,  predecessor:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.description = description
-        self.predecessor = predecessor
+        self.description = description 
+        self.predecessor = predecessor 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -100,43 +104,49 @@ class Dependency(FhirBaseModel):
         return super().as_dict()
 
 
+    
+        
+    
+    
+
 class Script(FhirBaseModel):
-    """The test cases in a structured language e.g. gherkin, Postman, or FHIR TestScript.:param str id: Unique id for inter-element referencing
+    """ The test cases in a structured language e.g. gherkin, Postman, or FHIR TestScript.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept language: The language for the test cases e.g. 'gherkin', 'testscript'
     :param str sourceString: The actual content of the cases - references to TestScripts or externally defined content
     :param Reference sourceReference: The actual content of the cases - references to TestScripts or externally defined content
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "language": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "sourceReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        language: "CodeableConcept" = None,
-        sourceString: "str" = None,
-        sourceReference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  language:  'CodeableConcept'  = None,  sourceString:  'str'  = None,  sourceReference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.language = language
-        self.sourceString = sourceString
-        self.sourceReference = sourceReference
+        self.language = language 
+        self.sourceString = sourceString 
+        self.sourceReference = sourceReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -145,39 +155,43 @@ class Script(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class TestRun(FhirBaseModel):
-    """The actual test to be executed.:param str id: Unique id for inter-element referencing
+    """ The actual test to be executed.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str narrative: The narrative description of the tests
     :param Script script: The test cases in a structured language e.g. gherkin, Postman, or FHIR TestScript
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "script": {"class_name": "Script", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        narrative: "str" = None,
-        script: "Script" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  narrative:  'str'  = None,  script:  'Script'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.narrative = narrative
-        self.script = script
+        self.narrative = narrative 
+        self.script = script 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -186,8 +200,11 @@ class TestRun(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class TestData(FhirBaseModel):
-    """The test data used in the test case.:param str id: Unique id for inter-element referencing
+    """ The test data used in the test case.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Coding type: The type of test data description, e.g. 'synthea'
@@ -195,38 +212,40 @@ class TestData(FhirBaseModel):
     :param str sourceString: Pointer to a definition of test resources - narrative or structured e.g. synthetic data generation, etc
     :param Reference sourceReference: Pointer to a definition of test resources - narrative or structured e.g. synthetic data generation, etc
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "type": {"class_name": "Coding", "is_contained": False},
+        
+        
         "content": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "sourceReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: "Coding" = None,
-        content: "Reference" = None,
-        sourceString: "str" = None,
-        sourceReference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'Coding'  = None,  content:  'Reference'  = None,  sourceString:  'str'  = None,  sourceReference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type
-        self.content = content
-        self.sourceString = sourceString
-        self.sourceReference = sourceReference
+        self.type = type 
+        self.content = content 
+        self.sourceString = sourceString 
+        self.sourceReference = sourceReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -235,44 +254,49 @@ class TestData(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Assertion(FhirBaseModel):
-    """The test assertions - the expectations of test results from the execution of the test case.:param str id: Unique id for inter-element referencing
+    """ The test assertions - the expectations of test results from the execution of the test case.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
-    :param CodeableConcept type: Assertion type - for example 'informative' or 'required'
+    :param CodeableConcept type: Assertion type - for example 'informative' or 'required' 
     :param CodeableReference object: The focus or object of the assertion
     :param CodeableReference result: The actual result assertion
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "object": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "result": {"class_name": "CodeableReference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        type: list["CodeableConcept"] = None,
-        object: list["CodeableReference"] = None,
-        result: list["CodeableReference"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  list['CodeableConcept']  = None,  object:  list['CodeableReference']  = None,  result:  list['CodeableReference']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.type = type or []
         self.object = object or []
         self.result = result or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -281,8 +305,12 @@ class Assertion(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class TestCase(FhirBaseModel):
-    """The individual test cases that are part of this plan, when they they are made explicit.:param str id: Unique id for inter-element referencing
+    """ The individual test cases that are part of this plan, when they they are made explicit.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param int sequence: Sequence of test case in the test plan
@@ -292,44 +320,48 @@ class TestCase(FhirBaseModel):
     :param TestData testData: The test data used in the test case
     :param Assertion assertion: Test assertions or expectations
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "scope": {"class_name": "Reference", "is_contained": False},
+        
+        
         "dependency": {"class_name": "Dependency", "is_contained": True},
+        
+        
         "testRun": {"class_name": "TestRun", "is_contained": True},
+        
+        
         "testData": {"class_name": "TestData", "is_contained": True},
+        
+        
         "assertion": {"class_name": "Assertion", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        sequence: "int" = None,
-        scope: list["Reference"] = None,
-        dependency: list["Dependency"] = None,
-        testRun: list["TestRun"] = None,
-        testData: list["TestData"] = None,
-        assertion: list["Assertion"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  sequence:  'int'  = None,  scope:  list['Reference']  = None,  dependency:  list['Dependency']  = None,  testRun:  list['TestRun']  = None,  testData:  list['TestData']  = None,  assertion:  list['Assertion']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.sequence = sequence
+        self.sequence = sequence 
         self.scope = scope or []
         self.dependency = dependency or []
         self.testRun = testRun or []
         self.testData = testData or []
         self.assertion = assertion or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)
@@ -339,7 +371,7 @@ class TestCase(FhirBaseModel):
 
 
 class TestPlan(DomainResource):
-    """A plan for executing testing on an artifact or specifications
+    """ A plan for executing testing on an artifact or specifications
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -373,100 +405,111 @@ class TestPlan(DomainResource):
     :param str exitCriteria: The threshold or criteria for the test plan to be considered successfully executed - narrative
     :param TestCase testCase: The test cases that constitute this plan
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
+        
+        
+        
+        
+        
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "scope": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "dependency": {"class_name": "Dependency", "is_contained": True},
+        
+        
+        
         "testCase": {"class_name": "TestCase", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        identifier: list["Identifier"] = None,
-        version: "str" = None,
-        versionAlgorithmString: "str" = None,
-        versionAlgorithmCoding: "Coding" = None,
-        name: "str" = None,
-        title: "str" = None,
-        status: "str" = None,
-        experimental: "bool" = None,
-        date: "str" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        description: "str" = None,
-        useContext: list["UsageContext"] = None,
-        jurisdiction: list["CodeableConcept"] = None,
-        purpose: "str" = None,
-        copyright: "str" = None,
-        copyrightLabel: "str" = None,
-        category: list["CodeableConcept"] = None,
-        scope: list["Reference"] = None,
-        testTools: "str" = None,
-        dependency: list["Dependency"] = None,
-        exitCriteria: "str" = None,
-        testCase: list["TestCase"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  category:  list['CodeableConcept']  = None,  scope:  list['Reference']  = None,  testTools:  'str'  = None,  dependency:  list['Dependency']  = None,  exitCriteria:  'str'  = None,  testCase:  list['TestCase']  = None, ):
+        
         self.resourceType = "TestPlan"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
+        self.url = url 
         self.identifier = identifier or []
-        self.version = version
-        self.versionAlgorithmString = versionAlgorithmString
-        self.versionAlgorithmCoding = versionAlgorithmCoding
-        self.name = name
-        self.title = title
-        self.status = status
-        self.experimental = experimental
-        self.date = date
-        self.publisher = publisher
+        self.version = version 
+        self.versionAlgorithmString = versionAlgorithmString 
+        self.versionAlgorithmCoding = versionAlgorithmCoding 
+        self.name = name 
+        self.title = title 
+        self.status = status 
+        self.experimental = experimental 
+        self.date = date 
+        self.publisher = publisher 
         self.contact = contact or []
-        self.description = description
+        self.description = description 
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose
-        self.copyright = copyright
-        self.copyrightLabel = copyrightLabel
+        self.purpose = purpose 
+        self.copyright = copyright 
+        self.copyrightLabel = copyrightLabel 
         self.category = category or []
         self.scope = scope or []
-        self.testTools = testTools
+        self.testTools = testTools 
         self.dependency = dependency or []
-        self.exitCriteria = exitCriteria
+        self.exitCriteria = exitCriteria 
         self.testCase = testCase or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "TestPlan":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "TestPlan":
         return super().from_obj(obj)

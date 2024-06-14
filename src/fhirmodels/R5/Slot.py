@@ -1,8 +1,7 @@
 """
 Generated class for Slot. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
 from fhirmodels.R5.DomainResource import *
@@ -15,7 +14,7 @@ from fhirmodels.R5.Resource import *
 
 
 class Slot(DomainResource):
-    """A slot of time on a schedule that may be available for booking appointments.
+    """ A slot of time on a schedule that may be available for booking appointments.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -36,52 +35,59 @@ class Slot(DomainResource):
     :param bool overbooked: This slot has already been overbooked, appointments are unlikely to be accepted for this time
     :param str comment: Comments on the slot to describe any extended information. Such as custom constraints on the slot
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "serviceCategory": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "serviceType": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "specialty": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "appointmentType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "schedule": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        serviceCategory: list["CodeableConcept"] = None,
-        serviceType: list["CodeableReference"] = None,
-        specialty: list["CodeableConcept"] = None,
-        appointmentType: list["CodeableConcept"] = None,
-        schedule: "Reference" = None,
-        status: "str" = None,
-        start: "str" = None,
-        end: "str" = None,
-        overbooked: "bool" = None,
-        comment: "str" = None,
-    ):
-
+        
+        
+        
+        
+        
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  serviceCategory:  list['CodeableConcept']  = None,  serviceType:  list['CodeableReference']  = None,  specialty:  list['CodeableConcept']  = None,  appointmentType:  list['CodeableConcept']  = None,  schedule:  'Reference'  = None,  status:  'str'  = None,  start:  'str'  = None,  end:  'str'  = None,  overbooked:  'bool'  = None,  comment:  'str'  = None, ):
+        
         self.resourceType = "Slot"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
@@ -90,17 +96,18 @@ class Slot(DomainResource):
         self.serviceType = serviceType or []
         self.specialty = specialty or []
         self.appointmentType = appointmentType or []
-        self.schedule = schedule
-        self.status = status
-        self.start = start
-        self.end = end
-        self.overbooked = overbooked
-        self.comment = comment
+        self.schedule = schedule 
+        self.status = status 
+        self.start = start 
+        self.end = end 
+        self.overbooked = overbooked 
+        self.comment = comment 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Slot":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "Slot":
         return super().from_obj(obj)

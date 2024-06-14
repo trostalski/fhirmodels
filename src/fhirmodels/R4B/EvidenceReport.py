@@ -1,8 +1,7 @@
 """
 Generated class for EvidenceReport. 
-Time: 2024-06-14 18:37:49
+Time: 2024-06-14 18:55:59
 """
-
 from fhirmodels.R4B.Annotation import *
 from fhirmodels.R4B.BackboneElement import *
 from fhirmodels.R4B.CodeableConcept import *
@@ -22,7 +21,7 @@ from fhirmodels.R4B.UsageContext import *
 
 
 class Characteristic(FhirBaseModel):
-    """Characteristic.:param str id: Unique id for inter-element referencing
+    """ Characteristic.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: Characteristic code
@@ -34,52 +33,54 @@ class Characteristic(FhirBaseModel):
     :param bool exclude: Is used to express not the characteristic
     :param Period period: Timeframe for the characteristic
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "valueReference": {"class_name": "Reference", "is_contained": False},
-        "valueCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "valueRange": {"class_name": "Range", "is_contained": False},
+        
+        
+        
         "period": {"class_name": "Period", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        valueReference: "Reference" = None,
-        valueCodeableConcept: "CodeableConcept" = None,
-        valueBoolean: "bool" = None,
-        valueQuantity: "Quantity" = None,
-        valueRange: "Range" = None,
-        exclude: "bool" = None,
-        period: "Period" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  valueReference:  'Reference'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueBoolean:  'bool'  = None,  valueQuantity:  'Quantity'  = None,  valueRange:  'Range'  = None,  exclude:  'bool'  = None,  period:  'Period'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
-        self.valueReference = valueReference
-        self.valueCodeableConcept = valueCodeableConcept
-        self.valueBoolean = valueBoolean
-        self.valueQuantity = valueQuantity
-        self.valueRange = valueRange
-        self.exclude = exclude
-        self.period = period
+        self.code = code 
+        self.valueReference = valueReference 
+        self.valueCodeableConcept = valueCodeableConcept 
+        self.valueBoolean = valueBoolean 
+        self.valueQuantity = valueQuantity 
+        self.valueRange = valueRange 
+        self.exclude = exclude 
+        self.period = period 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EvidenceReport":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "EvidenceReport":
         return super().from_obj(obj)
@@ -88,40 +89,45 @@ class Characteristic(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class Subject(FhirBaseModel):
-    """Specifies the subject or focus of the report. Answers "What is this report about?".:param str id: Unique id for inter-element referencing
+    """ Specifies the subject or focus of the report. Answers "What is this report about?".:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Characteristic characteristic: Characteristic
     :param Annotation note: Footnotes and/or explanatory notes
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "characteristic": {"class_name": "Characteristic", "is_contained": True},
+        
+        
         "note": {"class_name": "Annotation", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        characteristic: list["Characteristic"] = None,
-        note: list["Annotation"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  characteristic:  list['Characteristic']  = None,  note:  list['Annotation']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.characteristic = characteristic or []
         self.note = note or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EvidenceReport":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "EvidenceReport":
         return super().from_obj(obj)
@@ -130,43 +136,47 @@ class Subject(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class RelatesTo(FhirBaseModel):
-    """Relationships that this composition has with other compositions or documents that already exist.:param str id: Unique id for inter-element referencing
+    """ Relationships that this composition has with other compositions or documents that already exist.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str code: replaces | amends | appends | transforms | replacedWith | amendedWith | appendedWith | transformedWith
     :param Identifier targetIdentifier: Target of the relationship
     :param Reference targetReference: Target of the relationship
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "targetIdentifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "targetReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "str" = None,
-        targetIdentifier: "Identifier" = None,
-        targetReference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'str'  = None,  targetIdentifier:  'Identifier'  = None,  targetReference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
-        self.targetIdentifier = targetIdentifier
-        self.targetReference = targetReference
+        self.code = code 
+        self.targetIdentifier = targetIdentifier 
+        self.targetReference = targetReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EvidenceReport":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "EvidenceReport":
         return super().from_obj(obj)
@@ -175,8 +185,11 @@ class RelatesTo(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class Section(FhirBaseModel):
-    """The root of the sections that make up the composition.:param str id: Unique id for inter-element referencing
+    """ The root of the sections that make up the composition.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str title: Label for section (e.g. for ToC)
@@ -192,61 +205,70 @@ class Section(FhirBaseModel):
     :param CodeableConcept emptyReason: Why the section is empty
     :param Section section: Nested Section
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "focus": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "focusReference": {"class_name": "Reference", "is_contained": False},
+        
+        
         "author": {"class_name": "Reference", "is_contained": False},
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
+        
         "orderedBy": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "entryClassifier": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "entryReference": {"class_name": "Reference", "is_contained": False},
+        
+        
         "entryQuantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "emptyReason": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "section": {"class_name": "Section", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        title: "str" = None,
-        focus: "CodeableConcept" = None,
-        focusReference: "Reference" = None,
-        author: list["Reference"] = None,
-        text: "Narrative" = None,
-        mode: "str" = None,
-        orderedBy: "CodeableConcept" = None,
-        entryClassifier: list["CodeableConcept"] = None,
-        entryReference: list["Reference"] = None,
-        entryQuantity: list["Quantity"] = None,
-        emptyReason: "CodeableConcept" = None,
-        section: list["Section"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  title:  'str'  = None,  focus:  'CodeableConcept'  = None,  focusReference:  'Reference'  = None,  author:  list['Reference']  = None,  text:  'Narrative'  = None,  mode:  'str'  = None,  orderedBy:  'CodeableConcept'  = None,  entryClassifier:  list['CodeableConcept']  = None,  entryReference:  list['Reference']  = None,  entryQuantity:  list['Quantity']  = None,  emptyReason:  'CodeableConcept'  = None,  section:  list['Section']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.title = title
-        self.focus = focus
-        self.focusReference = focusReference
+        self.title = title 
+        self.focus = focus 
+        self.focusReference = focusReference 
         self.author = author or []
-        self.text = text
-        self.mode = mode
-        self.orderedBy = orderedBy
+        self.text = text 
+        self.mode = mode 
+        self.orderedBy = orderedBy 
         self.entryClassifier = entryClassifier or []
         self.entryReference = entryReference or []
         self.entryQuantity = entryQuantity or []
-        self.emptyReason = emptyReason
+        self.emptyReason = emptyReason 
         self.section = section or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EvidenceReport":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "EvidenceReport":
         return super().from_obj(obj)
@@ -256,7 +278,7 @@ class Section(FhirBaseModel):
 
 
 class EvidenceReport(DomainResource):
-    """The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.
+    """ The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -285,84 +307,100 @@ class EvidenceReport(DomainResource):
     :param RelatesTo relatesTo: Relationships to other compositions/documents
     :param Section section: Composition is broken into sections
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
+        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "relatedIdentifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
         "citeAsReference": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "note": {"class_name": "Annotation", "is_contained": False},
+        
+        
         "relatedArtifact": {"class_name": "RelatedArtifact", "is_contained": False},
+        
+        
         "subject": {"class_name": "Subject", "is_contained": True},
+        
+        
+        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "author": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "editor": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "reviewer": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "endorser": {"class_name": "ContactDetail", "is_contained": False},
+        
+        
         "relatesTo": {"class_name": "RelatesTo", "is_contained": True},
+        
+        
         "section": {"class_name": "Section", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        url: "str" = None,
-        status: "str" = None,
-        useContext: list["UsageContext"] = None,
-        identifier: list["Identifier"] = None,
-        relatedIdentifier: list["Identifier"] = None,
-        citeAsReference: "Reference" = None,
-        citeAsMarkdown: "str" = None,
-        type: "CodeableConcept" = None,
-        note: list["Annotation"] = None,
-        relatedArtifact: list["RelatedArtifact"] = None,
-        subject: "Subject" = None,
-        publisher: "str" = None,
-        contact: list["ContactDetail"] = None,
-        author: list["ContactDetail"] = None,
-        editor: list["ContactDetail"] = None,
-        reviewer: list["ContactDetail"] = None,
-        endorser: list["ContactDetail"] = None,
-        relatesTo: list["RelatesTo"] = None,
-        section: list["Section"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  status:  'str'  = None,  useContext:  list['UsageContext']  = None,  identifier:  list['Identifier']  = None,  relatedIdentifier:  list['Identifier']  = None,  citeAsReference:  'Reference'  = None,  citeAsMarkdown:  'str'  = None,  type:  'CodeableConcept'  = None,  note:  list['Annotation']  = None,  relatedArtifact:  list['RelatedArtifact']  = None,  subject:  'Subject'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  author:  list['ContactDetail']  = None,  editor:  list['ContactDetail']  = None,  reviewer:  list['ContactDetail']  = None,  endorser:  list['ContactDetail']  = None,  relatesTo:  list['RelatesTo']  = None,  section:  list['Section']  = None, ):
+        
         self.resourceType = "EvidenceReport"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url
-        self.status = status
+        self.url = url 
+        self.status = status 
         self.useContext = useContext or []
         self.identifier = identifier or []
         self.relatedIdentifier = relatedIdentifier or []
-        self.citeAsReference = citeAsReference
-        self.citeAsMarkdown = citeAsMarkdown
-        self.type = type
+        self.citeAsReference = citeAsReference 
+        self.citeAsMarkdown = citeAsMarkdown 
+        self.type = type 
         self.note = note or []
         self.relatedArtifact = relatedArtifact or []
-        self.subject = subject
-        self.publisher = publisher
+        self.subject = subject 
+        self.publisher = publisher 
         self.contact = contact or []
         self.author = author or []
         self.editor = editor or []
@@ -370,11 +408,12 @@ class EvidenceReport(DomainResource):
         self.endorser = endorser or []
         self.relatesTo = relatesTo or []
         self.section = section or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EvidenceReport":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "EvidenceReport":
         return super().from_obj(obj)

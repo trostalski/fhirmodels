@@ -1,8 +1,7 @@
 """
 Generated class for ServiceRequest. 
-Time: 2024-06-14 18:37:55
+Time: 2024-06-14 18:56:04
 """
-
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -22,7 +21,7 @@ from fhirmodels.R5.Timing import *
 
 
 class Parameter(FhirBaseModel):
-    """The parameter details for the service being requested.:param CodeableReference parameterFocus: The context of the order details by reference
+    """ The parameter details for the service being requested.:param CodeableReference parameterFocus: The context of the order details by reference
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
@@ -35,55 +34,58 @@ class Parameter(FhirBaseModel):
     :param str valueString: The value for the order detail
     :param Period valuePeriod: The value for the order detail
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
         "parameterFocus": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "valueRatio": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "valueRange": {"class_name": "Range", "is_contained": False},
-        "valueCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        
+        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "valuePeriod": {"class_name": "Period", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        parameterFocus: "CodeableReference" = None,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        code: "CodeableConcept" = None,
-        valueQuantity: "Quantity" = None,
-        valueRatio: "Ratio" = None,
-        valueRange: "Range" = None,
-        valueBoolean: "bool" = None,
-        valueCodeableConcept: "CodeableConcept" = None,
-        valueString: "str" = None,
-        valuePeriod: "Period" = None,
-    ):
-        self.parameterFocus = parameterFocus
-        self.id = id
+        
+        }
+    def __init__(self,  parameterFocus:  'CodeableReference'  = None,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  valueQuantity:  'Quantity'  = None,  valueRatio:  'Ratio'  = None,  valueRange:  'Range'  = None,  valueBoolean:  'bool'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueString:  'str'  = None,  valuePeriod:  'Period'  = None, ):
+        self.parameterFocus = parameterFocus 
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code
-        self.valueQuantity = valueQuantity
-        self.valueRatio = valueRatio
-        self.valueRange = valueRange
-        self.valueBoolean = valueBoolean
-        self.valueCodeableConcept = valueCodeableConcept
-        self.valueString = valueString
-        self.valuePeriod = valuePeriod
+        self.code = code 
+        self.valueQuantity = valueQuantity 
+        self.valueRatio = valueRatio 
+        self.valueRange = valueRange 
+        self.valueBoolean = valueBoolean 
+        self.valueCodeableConcept = valueCodeableConcept 
+        self.valueString = valueString 
+        self.valuePeriod = valuePeriod 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ServiceRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ServiceRequest":
         return super().from_obj(obj)
@@ -92,40 +94,45 @@ class Parameter(FhirBaseModel):
         return super().as_dict()
 
 
+  
+    
+    
+
 class OrderDetail(FhirBaseModel):
-    """Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.:param str id: Unique id for inter-element referencing
+    """ Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableReference parameterFocus: The context of the order details by reference
     :param Parameter parameter: The parameter details for the service being requested
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "parameterFocus": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "parameter": {"class_name": "Parameter", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        parameterFocus: "CodeableReference" = None,
-        parameter: list["Parameter"] = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  parameterFocus:  'CodeableReference'  = None,  parameter:  list['Parameter']  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.parameterFocus = parameterFocus
+        self.parameterFocus = parameterFocus 
         self.parameter = parameter or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ServiceRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ServiceRequest":
         return super().from_obj(obj)
@@ -134,39 +141,42 @@ class OrderDetail(FhirBaseModel):
         return super().as_dict()
 
 
+    
+    
+
 class PatientInstruction(FhirBaseModel):
-    """Instructions in terms that are understood by the patient or consumer.:param str id: Unique id for inter-element referencing
+    """ Instructions in terms that are understood by the patient or consumer.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str instructionMarkdown: Patient or consumer-oriented instructions
     :param Reference instructionReference: Patient or consumer-oriented instructions
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
+        
         "instructionReference": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        instructionMarkdown: "str" = None,
-        instructionReference: "Reference" = None,
-    ):
-        self.id = id
+        
+        }
+    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  instructionMarkdown:  'str'  = None,  instructionReference:  'Reference'  = None, ):
+        self.id = id 
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.instructionMarkdown = instructionMarkdown
-        self.instructionReference = instructionReference
+        self.instructionMarkdown = instructionMarkdown 
+        self.instructionReference = instructionReference 
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ServiceRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ServiceRequest":
         return super().from_obj(obj)
@@ -176,7 +186,7 @@ class PatientInstruction(FhirBaseModel):
 
 
 class ServiceRequest(DomainResource):
-    """A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
+    """ A record of a request for service such as diagnostic investigations, treatments, or operations to be performed.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -224,108 +234,132 @@ class ServiceRequest(DomainResource):
     :param PatientInstruction patientInstruction: Patient or consumer-oriented instructions
     :param Reference relevantHistory: Request provenance
     """
-
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
+        
+        
         "meta": {"class_name": "Meta", "is_contained": False},
+        
+        
+        
+        
         "text": {"class_name": "Narrative", "is_contained": False},
+        
+        
         "contained": {"class_name": "Resource", "is_contained": False},
+        
+        
         "extension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        
+        
         "identifier": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "basedOn": {"class_name": "Reference", "is_contained": False},
+        
+        
         "replaces": {"class_name": "Reference", "is_contained": False},
+        
+        
         "requisition": {"class_name": "Identifier", "is_contained": False},
+        
+        
+        
+        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
+        
         "code": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "orderDetail": {"class_name": "OrderDetail", "is_contained": True},
+        
+        
         "quantityQuantity": {"class_name": "Quantity", "is_contained": False},
+        
+        
         "quantityRatio": {"class_name": "Ratio", "is_contained": False},
+        
+        
         "quantityRange": {"class_name": "Range", "is_contained": False},
+        
+        
         "subject": {"class_name": "Reference", "is_contained": False},
+        
+        
         "focus": {"class_name": "Reference", "is_contained": False},
+        
+        
         "encounter": {"class_name": "Reference", "is_contained": False},
+        
+        
+        
         "occurrencePeriod": {"class_name": "Period", "is_contained": False},
+        
+        
         "occurrenceTiming": {"class_name": "Timing", "is_contained": False},
-        "asNeededCodeableConcept": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
+        
+        
+        
+        "asNeededCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
+        
         "requester": {"class_name": "Reference", "is_contained": False},
+        
+        
         "performerType": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "performer": {"class_name": "Reference", "is_contained": False},
+        
+        
         "location": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "reason": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "insurance": {"class_name": "Reference", "is_contained": False},
+        
+        
         "supportingInfo": {"class_name": "CodeableReference", "is_contained": False},
+        
+        
         "specimen": {"class_name": "Reference", "is_contained": False},
+        
+        
         "bodySite": {"class_name": "CodeableConcept", "is_contained": False},
+        
+        
         "bodyStructure": {"class_name": "Reference", "is_contained": False},
+        
+        
         "note": {"class_name": "Annotation", "is_contained": False},
-        "patientInstruction": {
-            "class_name": "PatientInstruction",
-            "is_contained": True,
-        },
+        
+        
+        "patientInstruction": {"class_name": "PatientInstruction", "is_contained": True},
+        
+        
         "relevantHistory": {"class_name": "Reference", "is_contained": False},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        meta: "Meta" = None,
-        implicitRules: "str" = None,
-        language: "str" = None,
-        text: "Narrative" = None,
-        contained: list["Resource"] = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        identifier: list["Identifier"] = None,
-        instantiatesCanonical: list["str"] = None,
-        instantiatesUri: list["str"] = None,
-        basedOn: list["Reference"] = None,
-        replaces: list["Reference"] = None,
-        requisition: "Identifier" = None,
-        status: "str" = None,
-        intent: "str" = None,
-        category: list["CodeableConcept"] = None,
-        priority: "str" = None,
-        doNotPerform: "bool" = None,
-        code: "CodeableReference" = None,
-        orderDetail: list["OrderDetail"] = None,
-        quantityQuantity: "Quantity" = None,
-        quantityRatio: "Ratio" = None,
-        quantityRange: "Range" = None,
-        subject: "Reference" = None,
-        focus: list["Reference"] = None,
-        encounter: "Reference" = None,
-        occurrenceDateTime: "str" = None,
-        occurrencePeriod: "Period" = None,
-        occurrenceTiming: "Timing" = None,
-        asNeededBoolean: "bool" = None,
-        asNeededCodeableConcept: "CodeableConcept" = None,
-        authoredOn: "str" = None,
-        requester: "Reference" = None,
-        performerType: "CodeableConcept" = None,
-        performer: list["Reference"] = None,
-        location: list["CodeableReference"] = None,
-        reason: list["CodeableReference"] = None,
-        insurance: list["Reference"] = None,
-        supportingInfo: list["CodeableReference"] = None,
-        specimen: list["Reference"] = None,
-        bodySite: list["CodeableConcept"] = None,
-        bodyStructure: "Reference" = None,
-        note: list["Annotation"] = None,
-        patientInstruction: list["PatientInstruction"] = None,
-        relevantHistory: list["Reference"] = None,
-    ):
-
+        
+        }
+    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  instantiatesCanonical:  list['str']  = None,  instantiatesUri:  list['str']  = None,  basedOn:  list['Reference']  = None,  replaces:  list['Reference']  = None,  requisition:  'Identifier'  = None,  status:  'str'  = None,  intent:  'str'  = None,  category:  list['CodeableConcept']  = None,  priority:  'str'  = None,  doNotPerform:  'bool'  = None,  code:  'CodeableReference'  = None,  orderDetail:  list['OrderDetail']  = None,  quantityQuantity:  'Quantity'  = None,  quantityRatio:  'Ratio'  = None,  quantityRange:  'Range'  = None,  subject:  'Reference'  = None,  focus:  list['Reference']  = None,  encounter:  'Reference'  = None,  occurrenceDateTime:  'str'  = None,  occurrencePeriod:  'Period'  = None,  occurrenceTiming:  'Timing'  = None,  asNeededBoolean:  'bool'  = None,  asNeededCodeableConcept:  'CodeableConcept'  = None,  authoredOn:  'str'  = None,  requester:  'Reference'  = None,  performerType:  'CodeableConcept'  = None,  performer:  list['Reference']  = None,  location:  list['CodeableReference']  = None,  reason:  list['CodeableReference']  = None,  insurance:  list['Reference']  = None,  supportingInfo:  list['CodeableReference']  = None,  specimen:  list['Reference']  = None,  bodySite:  list['CodeableConcept']  = None,  bodyStructure:  'Reference'  = None,  note:  list['Annotation']  = None,  patientInstruction:  list['PatientInstruction']  = None,  relevantHistory:  list['Reference']  = None, ):
+        
         self.resourceType = "ServiceRequest"
-
-        self.id = id
-        self.meta = meta
-        self.implicitRules = implicitRules
-        self.language = language
-        self.text = text
+        
+        self.id = id 
+        self.meta = meta 
+        self.implicitRules = implicitRules 
+        self.language = language 
+        self.text = text 
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
@@ -334,28 +368,28 @@ class ServiceRequest(DomainResource):
         self.instantiatesUri = instantiatesUri or []
         self.basedOn = basedOn or []
         self.replaces = replaces or []
-        self.requisition = requisition
-        self.status = status
-        self.intent = intent
+        self.requisition = requisition 
+        self.status = status 
+        self.intent = intent 
         self.category = category or []
-        self.priority = priority
-        self.doNotPerform = doNotPerform
-        self.code = code
+        self.priority = priority 
+        self.doNotPerform = doNotPerform 
+        self.code = code 
         self.orderDetail = orderDetail or []
-        self.quantityQuantity = quantityQuantity
-        self.quantityRatio = quantityRatio
-        self.quantityRange = quantityRange
-        self.subject = subject
+        self.quantityQuantity = quantityQuantity 
+        self.quantityRatio = quantityRatio 
+        self.quantityRange = quantityRange 
+        self.subject = subject 
         self.focus = focus or []
-        self.encounter = encounter
-        self.occurrenceDateTime = occurrenceDateTime
-        self.occurrencePeriod = occurrencePeriod
-        self.occurrenceTiming = occurrenceTiming
-        self.asNeededBoolean = asNeededBoolean
-        self.asNeededCodeableConcept = asNeededCodeableConcept
-        self.authoredOn = authoredOn
-        self.requester = requester
-        self.performerType = performerType
+        self.encounter = encounter 
+        self.occurrenceDateTime = occurrenceDateTime 
+        self.occurrencePeriod = occurrencePeriod 
+        self.occurrenceTiming = occurrenceTiming 
+        self.asNeededBoolean = asNeededBoolean 
+        self.asNeededCodeableConcept = asNeededCodeableConcept 
+        self.authoredOn = authoredOn 
+        self.requester = requester 
+        self.performerType = performerType 
         self.performer = performer or []
         self.location = location or []
         self.reason = reason or []
@@ -363,15 +397,16 @@ class ServiceRequest(DomainResource):
         self.supportingInfo = supportingInfo or []
         self.specimen = specimen or []
         self.bodySite = bodySite or []
-        self.bodyStructure = bodyStructure
+        self.bodyStructure = bodyStructure 
         self.note = note or []
         self.patientInstruction = patientInstruction or []
         self.relevantHistory = relevantHistory or []
+        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ServiceRequest":
         return super().from_dict(data)
-
+    
     @classmethod
     def from_obj(self, obj: object) -> "ServiceRequest":
         return super().from_obj(obj)

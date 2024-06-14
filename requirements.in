@@ -4,3 +4,5 @@ click
 pytest
 black
 isort
+build 
+twine
