@@ -1,12 +1,12 @@
 import pytest
 
-from fhirmodels.models.R4.Annotation import Annotation
-from fhirmodels.models.R4.CodeableConcept import CodeableConcept
-from fhirmodels.models.R4.Condition import Condition, Evidence, Stage
-from fhirmodels.models.R4.Identifier import Identifier
-from fhirmodels.models.R4.Meta import Meta
-from fhirmodels.models.R4.Narrative import Narrative
-from fhirmodels.models.R4.Reference import Reference
+from fhirmodels.R4.Annotation import Annotation
+from fhirmodels.R4.CodeableConcept import CodeableConcept
+from fhirmodels.R4.Condition import Condition, Evidence, Stage
+from fhirmodels.R4.Identifier import Identifier
+from fhirmodels.R4.Meta import Meta
+from fhirmodels.R4.Narrative import Narrative
+from fhirmodels.R4.Reference import Reference
 
 # Sample data to be used in tests
 sample_condition_dict = {

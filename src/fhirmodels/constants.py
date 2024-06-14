@@ -1,6 +1,6 @@
 # SETTINGS
-DEFAULT_OUTPUT_DIR = "models"
-TEMPLATE_DIR = "templates"
+DEFAULT_OUTPUT_DIR = "."
+TEMPLATE_DIR = "."
 STRUC_DEF_TEMPLATE_NAME: str = "structure_definition_model.j2"
 MODEL_TEMPLATE_NAME: str = "model_init.j2"
 
