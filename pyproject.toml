@@ -1,6 +1,6 @@
 [project]
 name = "fhirmodels"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python classes for FHIR resources"
 authors = [{ name = "Till Rostalski", email = "tillrostalski@gmail.com" }]
 readme = "README.md"
