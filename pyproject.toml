@@ -1,5 +1,5 @@
 [project]
-name = "fhir-models"
+name = "fhirmodels"
 version = "0.1.0"
 description = "Python classes for FHIR resources"
 authors = [{ name = "Till Rostalski", email = "tillrostalski@gmail.com" }]
@@ -16,11 +16,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.urls]
-Homepage = "https://github.com/trostalski/fhir_models"
-Issues = "https://github.com/trostalski/fhir_models/issues"
+Homepage = "https://github.com/trostalski/fhirmodels"
+Issues = "https://github.com/trostalski/fhirmodels/issues"
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [project.scripts]
-fm = "fhir_models.cli:main"
+fm = "fhirmodels.cli:main"
