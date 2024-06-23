@@ -2,6 +2,7 @@
 Generated class for DeviceUsage. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -18,40 +19,39 @@ from fhirmodels.R5.Timing import *
 
 
 class Adherence(FhirBaseModel):
-    """ This indicates how or if the device is being used.:param str id: Unique id for inter-element referencing
+    """This indicates how or if the device is being used.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: always | never | sometimes
     :param CodeableConcept reason: lost | stolen | prescribed | broken | burned | forgot
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "reason": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  reason:  list['CodeableConcept']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "CodeableConcept" = None,
+        reason: list["CodeableConcept"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
+        self.code = code
         self.reason = reason or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "DeviceUsage":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "DeviceUsage":
         return super().from_obj(obj)
@@ -61,7 +61,7 @@ class Adherence(FhirBaseModel):
 
 
 class DeviceUsage(DomainResource):
-    """ A record of a device being used by a patient where the record is the result of a report from the patient or a clinician.
+    """A record of a device being used by a patient where the record is the result of a report from the patient or a clinician.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -90,115 +90,97 @@ class DeviceUsage(DomainResource):
     :param CodeableReference bodySite: Target body site
     :param Annotation note: Addition details (comments, instructions)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "basedOn": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "patient": {"class_name": "Reference", "is_contained": False},
-        
-        
         "derivedFrom": {"class_name": "Reference", "is_contained": False},
-        
-        
         "context": {"class_name": "Reference", "is_contained": False},
-        
-        
         "timingTiming": {"class_name": "Timing", "is_contained": False},
-        
-        
         "timingPeriod": {"class_name": "Period", "is_contained": False},
-        
-        
-        
-        
         "usageStatus": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "usageReason": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "adherence": {"class_name": "Adherence", "is_contained": True},
-        
-        
         "informationSource": {"class_name": "Reference", "is_contained": False},
-        
-        
         "device": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "reason": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "bodySite": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "note": {"class_name": "Annotation", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  basedOn:  list['Reference']  = None,  status:  'str'  = None,  category:  list['CodeableConcept']  = None,  patient:  'Reference'  = None,  derivedFrom:  list['Reference']  = None,  context:  'Reference'  = None,  timingTiming:  'Timing'  = None,  timingPeriod:  'Period'  = None,  timingDateTime:  'str'  = None,  dateAsserted:  'str'  = None,  usageStatus:  'CodeableConcept'  = None,  usageReason:  list['CodeableConcept']  = None,  adherence:  'Adherence'  = None,  informationSource:  'Reference'  = None,  device:  'CodeableReference'  = None,  reason:  list['CodeableReference']  = None,  bodySite:  'CodeableReference'  = None,  note:  list['Annotation']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        basedOn: list["Reference"] = None,
+        status: "str" = None,
+        category: list["CodeableConcept"] = None,
+        patient: "Reference" = None,
+        derivedFrom: list["Reference"] = None,
+        context: "Reference" = None,
+        timingTiming: "Timing" = None,
+        timingPeriod: "Period" = None,
+        timingDateTime: "str" = None,
+        dateAsserted: "str" = None,
+        usageStatus: "CodeableConcept" = None,
+        usageReason: list["CodeableConcept"] = None,
+        adherence: "Adherence" = None,
+        informationSource: "Reference" = None,
+        device: "CodeableReference" = None,
+        reason: list["CodeableReference"] = None,
+        bodySite: "CodeableReference" = None,
+        note: list["Annotation"] = None,
+    ):
+
         self.resourceType = "DeviceUsage"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
         self.basedOn = basedOn or []
-        self.status = status 
+        self.status = status
         self.category = category or []
-        self.patient = patient 
+        self.patient = patient
         self.derivedFrom = derivedFrom or []
-        self.context = context 
-        self.timingTiming = timingTiming 
-        self.timingPeriod = timingPeriod 
-        self.timingDateTime = timingDateTime 
-        self.dateAsserted = dateAsserted 
-        self.usageStatus = usageStatus 
+        self.context = context
+        self.timingTiming = timingTiming
+        self.timingPeriod = timingPeriod
+        self.timingDateTime = timingDateTime
+        self.dateAsserted = dateAsserted
+        self.usageStatus = usageStatus
         self.usageReason = usageReason or []
-        self.adherence = adherence 
-        self.informationSource = informationSource 
-        self.device = device 
+        self.adherence = adherence
+        self.informationSource = informationSource
+        self.device = device
         self.reason = reason or []
-        self.bodySite = bodySite 
+        self.bodySite = bodySite
         self.note = note or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "DeviceUsage":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "DeviceUsage":
         return super().from_obj(obj)

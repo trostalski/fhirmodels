@@ -2,6 +2,7 @@
 Generated class for Measure. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -20,38 +21,38 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Term(FhirBaseModel):
-    """ Provides a description of an individual term used within the measure.:param str id: Unique id for inter-element referencing
+    """Provides a description of an individual term used within the measure.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: What term?
     :param str definition: Meaning of the term
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  definition:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "CodeableConcept" = None,
+        definition: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.definition = definition 
-        
+        self.code = code
+        self.definition = definition
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -60,13 +61,8 @@ class Term(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Population(FhirBaseModel):
-    """ A population criteria for the measure.:param str id: Unique id for inter-element referencing
+    """A population criteria for the measure.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str linkId: Unique id for population in measure
@@ -77,48 +73,45 @@ class Population(FhirBaseModel):
     :param str inputPopulationId: Which population
     :param CodeableConcept aggregateMethod: Aggregation method for a measure score (e.g. sum, average, median, minimum, maximum, count)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "criteria": {"class_name": "Expression", "is_contained": False},
-        
-        
         "groupDefinition": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "aggregateMethod": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  linkId:  'str'  = None,  code:  'CodeableConcept'  = None,  description:  'str'  = None,  criteria:  'Expression'  = None,  groupDefinition:  'Reference'  = None,  inputPopulationId:  'str'  = None,  aggregateMethod:  'CodeableConcept'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        linkId: "str" = None,
+        code: "CodeableConcept" = None,
+        description: "str" = None,
+        criteria: "Expression" = None,
+        groupDefinition: "Reference" = None,
+        inputPopulationId: "str" = None,
+        aggregateMethod: "CodeableConcept" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.linkId = linkId 
-        self.code = code 
-        self.description = description 
-        self.criteria = criteria 
-        self.groupDefinition = groupDefinition 
-        self.inputPopulationId = inputPopulationId 
-        self.aggregateMethod = aggregateMethod 
-        
+        self.linkId = linkId
+        self.code = code
+        self.description = description
+        self.criteria = criteria
+        self.groupDefinition = groupDefinition
+        self.inputPopulationId = inputPopulationId
+        self.aggregateMethod = aggregateMethod
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -127,13 +120,8 @@ class Population(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Component(FhirBaseModel):
-    """ A component of the stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
+    """A component of the stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str linkId: Unique id for stratifier component in measure
@@ -142,42 +130,40 @@ class Component(FhirBaseModel):
     :param Expression criteria: Component of how the measure should be stratified
     :param Reference groupDefinition: A group resource that defines this population
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "criteria": {"class_name": "Expression", "is_contained": False},
-        
-        
         "groupDefinition": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  linkId:  'str'  = None,  code:  'CodeableConcept'  = None,  description:  'str'  = None,  criteria:  'Expression'  = None,  groupDefinition:  'Reference'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        linkId: "str" = None,
+        code: "CodeableConcept" = None,
+        description: "str" = None,
+        criteria: "Expression" = None,
+        groupDefinition: "Reference" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.linkId = linkId 
-        self.code = code 
-        self.description = description 
-        self.criteria = criteria 
-        self.groupDefinition = groupDefinition 
-        
+        self.linkId = linkId
+        self.code = code
+        self.description = description
+        self.criteria = criteria
+        self.groupDefinition = groupDefinition
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -186,12 +172,8 @@ class Component(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Stratifier(FhirBaseModel):
-    """ The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
+    """The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str linkId: Unique id for stratifier in measure
@@ -201,46 +183,43 @@ class Stratifier(FhirBaseModel):
     :param Reference groupDefinition: A group resource that defines this population
     :param Component component: Stratifier criteria component for the measure
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "criteria": {"class_name": "Expression", "is_contained": False},
-        
-        
         "groupDefinition": {"class_name": "Reference", "is_contained": False},
-        
-        
         "component": {"class_name": "Component", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  linkId:  'str'  = None,  code:  'CodeableConcept'  = None,  description:  'str'  = None,  criteria:  'Expression'  = None,  groupDefinition:  'Reference'  = None,  component:  list['Component']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        linkId: "str" = None,
+        code: "CodeableConcept" = None,
+        description: "str" = None,
+        criteria: "Expression" = None,
+        groupDefinition: "Reference" = None,
+        component: list["Component"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.linkId = linkId 
-        self.code = code 
-        self.description = description 
-        self.criteria = criteria 
-        self.groupDefinition = groupDefinition 
+        self.linkId = linkId
+        self.code = code
+        self.description = description
+        self.criteria = criteria
+        self.groupDefinition = groupDefinition
         self.component = component or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -249,12 +228,8 @@ class Stratifier(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Group(FhirBaseModel):
-    """ A group of population criteria for the measure.:param str id: Unique id for inter-element referencing
+    """A group of population criteria for the measure.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str linkId: Unique id for group in measure
@@ -272,72 +247,67 @@ class Group(FhirBaseModel):
     :param Population population: Population criteria
     :param Stratifier stratifier: Stratifier criteria for the measure
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        "subjectCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "subjectCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "subjectReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "scoring": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "scoringUnit": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "improvementNotation": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "population": {"class_name": "Population", "is_contained": True},
-        
-        
         "stratifier": {"class_name": "Stratifier", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  linkId:  'str'  = None,  code:  'CodeableConcept'  = None,  description:  'str'  = None,  type:  list['CodeableConcept']  = None,  subjectCodeableConcept:  'CodeableConcept'  = None,  subjectReference:  'Reference'  = None,  basis:  'str'  = None,  scoring:  'CodeableConcept'  = None,  scoringUnit:  'CodeableConcept'  = None,  rateAggregation:  'str'  = None,  improvementNotation:  'CodeableConcept'  = None,  library:  list['str']  = None,  population:  list['Population']  = None,  stratifier:  list['Stratifier']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        linkId: "str" = None,
+        code: "CodeableConcept" = None,
+        description: "str" = None,
+        type: list["CodeableConcept"] = None,
+        subjectCodeableConcept: "CodeableConcept" = None,
+        subjectReference: "Reference" = None,
+        basis: "str" = None,
+        scoring: "CodeableConcept" = None,
+        scoringUnit: "CodeableConcept" = None,
+        rateAggregation: "str" = None,
+        improvementNotation: "CodeableConcept" = None,
+        library: list["str"] = None,
+        population: list["Population"] = None,
+        stratifier: list["Stratifier"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.linkId = linkId 
-        self.code = code 
-        self.description = description 
+        self.linkId = linkId
+        self.code = code
+        self.description = description
         self.type = type or []
-        self.subjectCodeableConcept = subjectCodeableConcept 
-        self.subjectReference = subjectReference 
-        self.basis = basis 
-        self.scoring = scoring 
-        self.scoringUnit = scoringUnit 
-        self.rateAggregation = rateAggregation 
-        self.improvementNotation = improvementNotation 
+        self.subjectCodeableConcept = subjectCodeableConcept
+        self.subjectReference = subjectReference
+        self.basis = basis
+        self.scoring = scoring
+        self.scoringUnit = scoringUnit
+        self.rateAggregation = rateAggregation
+        self.improvementNotation = improvementNotation
         self.library = library or []
         self.population = population or []
         self.stratifier = stratifier or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -346,11 +316,8 @@ class Group(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class SupplementalData(FhirBaseModel):
-    """ The supplemental data criteria for the measure report, specified as either the name of a valid CQL expression within a referenced library, or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
+    """The supplemental data criteria for the measure report, specified as either the name of a valid CQL expression within a referenced library, or a valid FHIR Resource Path.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str linkId: Unique id for supplementalData in measure
@@ -359,42 +326,40 @@ class SupplementalData(FhirBaseModel):
     :param str description: The human readable description of this supplemental data
     :param Expression criteria: Expression describing additional data to be reported
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "usage": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "criteria": {"class_name": "Expression", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  linkId:  'str'  = None,  code:  'CodeableConcept'  = None,  usage:  list['CodeableConcept']  = None,  description:  'str'  = None,  criteria:  'Expression'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        linkId: "str" = None,
+        code: "CodeableConcept" = None,
+        usage: list["CodeableConcept"] = None,
+        description: "str" = None,
+        criteria: "Expression" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.linkId = linkId 
-        self.code = code 
+        self.linkId = linkId
+        self.code = code
         self.usage = usage or []
-        self.description = description 
-        self.criteria = criteria 
-        
+        self.description = description
+        self.criteria = criteria
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)
@@ -404,7 +369,7 @@ class SupplementalData(FhirBaseModel):
 
 
 class Measure(DomainResource):
-    """ The Measure resource provides the definition of a quality measure.
+    """The Measure resource provides the definition of a quality measure.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -461,156 +426,136 @@ class Measure(DomainResource):
     :param Group group: Population criteria group
     :param SupplementalData supplementalData: What other data should be reported with the measure
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        "subjectCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "subjectCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "subjectReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "author": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "editor": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "reviewer": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "endorser": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "relatedArtifact": {"class_name": "RelatedArtifact", "is_contained": False},
-        
-        
-        
-        
         "scoring": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "scoringUnit": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "compositeScoring": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
         "improvementNotation": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "term": {"class_name": "Term", "is_contained": True},
-        
-        
-        
         "group": {"class_name": "Group", "is_contained": True},
-        
-        
         "supplementalData": {"class_name": "SupplementalData", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  subtitle:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  subjectCodeableConcept:  'CodeableConcept'  = None,  subjectReference:  'Reference'  = None,  basis:  'str'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  usage:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  topic:  list['CodeableConcept']  = None,  author:  list['ContactDetail']  = None,  editor:  list['ContactDetail']  = None,  reviewer:  list['ContactDetail']  = None,  endorser:  list['ContactDetail']  = None,  relatedArtifact:  list['RelatedArtifact']  = None,  library:  list['str']  = None,  disclaimer:  'str'  = None,  scoring:  'CodeableConcept'  = None,  scoringUnit:  'CodeableConcept'  = None,  compositeScoring:  'CodeableConcept'  = None,  type:  list['CodeableConcept']  = None,  riskAdjustment:  'str'  = None,  rateAggregation:  'str'  = None,  rationale:  'str'  = None,  clinicalRecommendationStatement:  'str'  = None,  improvementNotation:  'CodeableConcept'  = None,  term:  list['Term']  = None,  guidance:  'str'  = None,  group:  list['Group']  = None,  supplementalData:  list['SupplementalData']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        url: "str" = None,
+        identifier: list["Identifier"] = None,
+        version: "str" = None,
+        versionAlgorithmString: "str" = None,
+        versionAlgorithmCoding: "Coding" = None,
+        name: "str" = None,
+        title: "str" = None,
+        subtitle: "str" = None,
+        status: "str" = None,
+        experimental: "bool" = None,
+        subjectCodeableConcept: "CodeableConcept" = None,
+        subjectReference: "Reference" = None,
+        basis: "str" = None,
+        date: "str" = None,
+        publisher: "str" = None,
+        contact: list["ContactDetail"] = None,
+        description: "str" = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        purpose: "str" = None,
+        usage: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        approvalDate: "str" = None,
+        lastReviewDate: "str" = None,
+        effectivePeriod: "Period" = None,
+        topic: list["CodeableConcept"] = None,
+        author: list["ContactDetail"] = None,
+        editor: list["ContactDetail"] = None,
+        reviewer: list["ContactDetail"] = None,
+        endorser: list["ContactDetail"] = None,
+        relatedArtifact: list["RelatedArtifact"] = None,
+        library: list["str"] = None,
+        disclaimer: "str" = None,
+        scoring: "CodeableConcept" = None,
+        scoringUnit: "CodeableConcept" = None,
+        compositeScoring: "CodeableConcept" = None,
+        type: list["CodeableConcept"] = None,
+        riskAdjustment: "str" = None,
+        rateAggregation: "str" = None,
+        rationale: "str" = None,
+        clinicalRecommendationStatement: "str" = None,
+        improvementNotation: "CodeableConcept" = None,
+        term: list["Term"] = None,
+        guidance: "str" = None,
+        group: list["Group"] = None,
+        supplementalData: list["SupplementalData"] = None,
+    ):
+
         self.resourceType = "Measure"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url 
+        self.url = url
         self.identifier = identifier or []
-        self.version = version 
-        self.versionAlgorithmString = versionAlgorithmString 
-        self.versionAlgorithmCoding = versionAlgorithmCoding 
-        self.name = name 
-        self.title = title 
-        self.subtitle = subtitle 
-        self.status = status 
-        self.experimental = experimental 
-        self.subjectCodeableConcept = subjectCodeableConcept 
-        self.subjectReference = subjectReference 
-        self.basis = basis 
-        self.date = date 
-        self.publisher = publisher 
+        self.version = version
+        self.versionAlgorithmString = versionAlgorithmString
+        self.versionAlgorithmCoding = versionAlgorithmCoding
+        self.name = name
+        self.title = title
+        self.subtitle = subtitle
+        self.status = status
+        self.experimental = experimental
+        self.subjectCodeableConcept = subjectCodeableConcept
+        self.subjectReference = subjectReference
+        self.basis = basis
+        self.date = date
+        self.publisher = publisher
         self.contact = contact or []
-        self.description = description 
+        self.description = description
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose 
-        self.usage = usage 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
-        self.approvalDate = approvalDate 
-        self.lastReviewDate = lastReviewDate 
-        self.effectivePeriod = effectivePeriod 
+        self.purpose = purpose
+        self.usage = usage
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
+        self.approvalDate = approvalDate
+        self.lastReviewDate = lastReviewDate
+        self.effectivePeriod = effectivePeriod
         self.topic = topic or []
         self.author = author or []
         self.editor = editor or []
@@ -618,26 +563,25 @@ class Measure(DomainResource):
         self.endorser = endorser or []
         self.relatedArtifact = relatedArtifact or []
         self.library = library or []
-        self.disclaimer = disclaimer 
-        self.scoring = scoring 
-        self.scoringUnit = scoringUnit 
-        self.compositeScoring = compositeScoring 
+        self.disclaimer = disclaimer
+        self.scoring = scoring
+        self.scoringUnit = scoringUnit
+        self.compositeScoring = compositeScoring
         self.type = type or []
-        self.riskAdjustment = riskAdjustment 
-        self.rateAggregation = rateAggregation 
-        self.rationale = rationale 
-        self.clinicalRecommendationStatement = clinicalRecommendationStatement 
-        self.improvementNotation = improvementNotation 
+        self.riskAdjustment = riskAdjustment
+        self.rateAggregation = rateAggregation
+        self.rationale = rationale
+        self.clinicalRecommendationStatement = clinicalRecommendationStatement
+        self.improvementNotation = improvementNotation
         self.term = term or []
-        self.guidance = guidance 
+        self.guidance = guidance
         self.group = group or []
         self.supplementalData = supplementalData or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Measure":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Measure":
         return super().from_obj(obj)

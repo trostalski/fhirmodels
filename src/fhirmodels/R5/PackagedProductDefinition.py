@@ -2,6 +2,7 @@
 Generated class for PackagedProductDefinition. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -19,40 +20,39 @@ from fhirmodels.R5.Resource import *
 
 
 class LegalStatusOfSupply(FhirBaseModel):
-    """ The legal status of supply of the packaged item as classified by the regulator.:param str id: Unique id for inter-element referencing
+    """The legal status of supply of the packaged item as classified by the regulator.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: The actual status of supply. In what situation this package type may be supplied for use
     :param CodeableConcept jurisdiction: The place where the legal status of supply applies
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  jurisdiction:  'CodeableConcept'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "CodeableConcept" = None,
+        jurisdiction: "CodeableConcept" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.jurisdiction = jurisdiction 
-        
+        self.code = code
+        self.jurisdiction = jurisdiction
 
     @classmethod
     def from_dict(cls, data: dict) -> "PackagedProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "PackagedProductDefinition":
         return super().from_obj(obj)
@@ -61,13 +61,8 @@ class LegalStatusOfSupply(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Property(FhirBaseModel):
-    """ General characteristics of this item.:param str id: Unique id for inter-element referencing
+    """General characteristics of this item.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: A code expressing the type of characteristic
@@ -77,46 +72,46 @@ class Property(FhirBaseModel):
     :param bool valueBoolean: A value for the characteristic
     :param Attachment valueAttachment: A value for the characteristic
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "valueCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        
-        
         "valueAttachment": {"class_name": "Attachment", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'CodeableConcept'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueQuantity:  'Quantity'  = None,  valueDate:  'str'  = None,  valueBoolean:  'bool'  = None,  valueAttachment:  'Attachment'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        type: "CodeableConcept" = None,
+        valueCodeableConcept: "CodeableConcept" = None,
+        valueQuantity: "Quantity" = None,
+        valueDate: "str" = None,
+        valueBoolean: "bool" = None,
+        valueAttachment: "Attachment" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type 
-        self.valueCodeableConcept = valueCodeableConcept 
-        self.valueQuantity = valueQuantity 
-        self.valueDate = valueDate 
-        self.valueBoolean = valueBoolean 
-        self.valueAttachment = valueAttachment 
-        
+        self.type = type
+        self.valueCodeableConcept = valueCodeableConcept
+        self.valueQuantity = valueQuantity
+        self.valueDate = valueDate
+        self.valueBoolean = valueBoolean
+        self.valueAttachment = valueAttachment
 
     @classmethod
     def from_dict(cls, data: dict) -> "PackagedProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "PackagedProductDefinition":
         return super().from_obj(obj)
@@ -125,44 +120,40 @@ class Property(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class ContainedItem(FhirBaseModel):
-    """ The item(s) within the packaging.:param str id: Unique id for inter-element referencing
+    """The item(s) within the packaging.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableReference item: The actual item(s) of medication, as manufactured, or a device, or other medically related item (food, biologicals, raw materials, medical fluids, gases etc.), as contained in the package
     :param Quantity amount: The number of this type of item within this packaging or for continuous items such as liquids it is the quantity (for example 25ml). See also PackagedProductDefinition.containedItemQuantity (especially the long definition)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "item": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "amount": {"class_name": "Quantity", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  item:  'CodeableReference'  = None,  amount:  'Quantity'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        item: "CodeableReference" = None,
+        amount: "Quantity" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.item = item 
-        self.amount = amount 
-        
+        self.item = item
+        self.amount = amount
 
     @classmethod
     def from_dict(cls, data: dict) -> "PackagedProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "PackagedProductDefinition":
         return super().from_obj(obj)
@@ -171,12 +162,8 @@ class ContainedItem(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Packaging(FhirBaseModel):
-    """ A packaging item, as a container for medically related items, possibly with other packaging items within, or a packaging component, such as bottle cap (which is not a device or a medication manufactured item).:param str id: Unique id for inter-element referencing
+    """A packaging item, as a container for medically related items, possibly with other packaging items within, or a packaging component, such as bottle cap (which is not a device or a medication manufactured item).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Identifier identifier: An identifier that is specific to this particular part of the packaging. Including possibly a Data Carrier Identifier
@@ -191,53 +178,46 @@ class Packaging(FhirBaseModel):
     :param ContainedItem containedItem: The item(s) within the packaging
     :param Packaging packaging: Allows containers (and parts of containers) within containers, still as a part of single packaged product
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
         "material": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "alternateMaterial": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "shelfLifeStorage": {"class_name": "ProductShelfLife", "is_contained": False},
-        
-        
         "manufacturer": {"class_name": "Reference", "is_contained": False},
-        
-        
         "property": {"class_name": "Property", "is_contained": True},
-        
-        
         "containedItem": {"class_name": "ContainedItem", "is_contained": True},
-        
-        
         "packaging": {"class_name": "Packaging", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  type:  'CodeableConcept'  = None,  componentPart:  'bool'  = None,  quantity:  'int'  = None,  material:  list['CodeableConcept']  = None,  alternateMaterial:  list['CodeableConcept']  = None,  shelfLifeStorage:  list['ProductShelfLife']  = None,  manufacturer:  list['Reference']  = None,  property:  list['Property']  = None,  containedItem:  list['ContainedItem']  = None,  packaging:  list['Packaging']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        type: "CodeableConcept" = None,
+        componentPart: "bool" = None,
+        quantity: "int" = None,
+        material: list["CodeableConcept"] = None,
+        alternateMaterial: list["CodeableConcept"] = None,
+        shelfLifeStorage: list["ProductShelfLife"] = None,
+        manufacturer: list["Reference"] = None,
+        property: list["Property"] = None,
+        containedItem: list["ContainedItem"] = None,
+        packaging: list["Packaging"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.type = type 
-        self.componentPart = componentPart 
-        self.quantity = quantity 
+        self.type = type
+        self.componentPart = componentPart
+        self.quantity = quantity
         self.material = material or []
         self.alternateMaterial = alternateMaterial or []
         self.shelfLifeStorage = shelfLifeStorage or []
@@ -245,12 +225,11 @@ class Packaging(FhirBaseModel):
         self.property = property or []
         self.containedItem = containedItem or []
         self.packaging = packaging or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "PackagedProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "PackagedProductDefinition":
         return super().from_obj(obj)
@@ -260,7 +239,7 @@ class Packaging(FhirBaseModel):
 
 
 class PackagedProductDefinition(DomainResource):
-    """ A medically related item or items, in a container or package.
+    """A medically related item or items, in a container or package.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -285,97 +264,87 @@ class PackagedProductDefinition(DomainResource):
     :param Packaging packaging: A packaging item, as a container for medically related items, possibly with other packaging items within, or a packaging component, such as bottle cap
     :param Characteristic characteristic: Allows the key features to be recorded, such as "hospital pack", "nurse prescribable"
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "packageFor": {"class_name": "Reference", "is_contained": False},
-        
-        
         "status": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "containedItemQuantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        
-        "legalStatusOfSupply": {"class_name": "LegalStatusOfSupply", "is_contained": True},
-        
-        
+        "legalStatusOfSupply": {
+            "class_name": "LegalStatusOfSupply",
+            "is_contained": True,
+        },
         "marketingStatus": {"class_name": "MarketingStatus", "is_contained": False},
-        
-        
-        
         "manufacturer": {"class_name": "Reference", "is_contained": False},
-        
-        
         "attachedDocument": {"class_name": "Reference", "is_contained": False},
-        
-        
         "packaging": {"class_name": "Packaging", "is_contained": True},
-        
-        
         "characteristic": {"class_name": "Characteristic", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  name:  'str'  = None,  type:  'CodeableConcept'  = None,  packageFor:  list['Reference']  = None,  status:  'CodeableConcept'  = None,  statusDate:  'str'  = None,  containedItemQuantity:  list['Quantity']  = None,  description:  'str'  = None,  legalStatusOfSupply:  list['LegalStatusOfSupply']  = None,  marketingStatus:  list['MarketingStatus']  = None,  copackagedIndicator:  'bool'  = None,  manufacturer:  list['Reference']  = None,  attachedDocument:  list['Reference']  = None,  packaging:  'Packaging'  = None,  characteristic:  list['Characteristic']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        name: "str" = None,
+        type: "CodeableConcept" = None,
+        packageFor: list["Reference"] = None,
+        status: "CodeableConcept" = None,
+        statusDate: "str" = None,
+        containedItemQuantity: list["Quantity"] = None,
+        description: "str" = None,
+        legalStatusOfSupply: list["LegalStatusOfSupply"] = None,
+        marketingStatus: list["MarketingStatus"] = None,
+        copackagedIndicator: "bool" = None,
+        manufacturer: list["Reference"] = None,
+        attachedDocument: list["Reference"] = None,
+        packaging: "Packaging" = None,
+        characteristic: list["Characteristic"] = None,
+    ):
+
         self.resourceType = "PackagedProductDefinition"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.name = name 
-        self.type = type 
+        self.name = name
+        self.type = type
         self.packageFor = packageFor or []
-        self.status = status 
-        self.statusDate = statusDate 
+        self.status = status
+        self.statusDate = statusDate
         self.containedItemQuantity = containedItemQuantity or []
-        self.description = description 
+        self.description = description
         self.legalStatusOfSupply = legalStatusOfSupply or []
         self.marketingStatus = marketingStatus or []
-        self.copackagedIndicator = copackagedIndicator 
+        self.copackagedIndicator = copackagedIndicator
         self.manufacturer = manufacturer or []
         self.attachedDocument = attachedDocument or []
-        self.packaging = packaging 
+        self.packaging = packaging
         self.characteristic = characteristic or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "PackagedProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "PackagedProductDefinition":
         return super().from_obj(obj)

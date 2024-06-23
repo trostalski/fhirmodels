@@ -2,6 +2,7 @@
 Generated class for StructureMap. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -16,7 +17,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Structure(FhirBaseModel):
-    """ A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.:param str id: Unique id for inter-element referencing
+    """A structure definition used by this map. The structure definition may describe instances that are converted, or the instances that are produced.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str url: Canonical reference to structure definition
@@ -24,34 +25,35 @@ class Structure(FhirBaseModel):
     :param str alias: Name for type in this map
     :param str documentation: Documentation on use of structure
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  mode:  'str'  = None,  alias:  'str'  = None,  documentation:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        url: "str" = None,
+        mode: "str" = None,
+        alias: "str" = None,
+        documentation: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url 
-        self.mode = mode 
-        self.alias = alias 
-        self.documentation = documentation 
-        
+        self.url = url
+        self.mode = mode
+        self.alias = alias
+        self.documentation = documentation
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -60,40 +62,38 @@ class Structure(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Const(FhirBaseModel):
-    """ Definition of a constant value used in the map rules.:param str id: Unique id for inter-element referencing
+    """Definition of a constant value used in the map rules.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Constant name
     :param str value: FHIRPath exression - value of the constant
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  value:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        value: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
-        self.value = value 
-        
+        self.name = name
+        self.value = value
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -102,13 +102,8 @@ class Const(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Input(FhirBaseModel):
-    """ A name assigned to an instance of data. The instance must be provided when the mapping is invoked.:param str id: Unique id for inter-element referencing
+    """A name assigned to an instance of data. The instance must be provided when the mapping is invoked.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Name for this instance of data
@@ -116,34 +111,35 @@ class Input(FhirBaseModel):
     :param str mode: source | target
     :param str documentation: Documentation for this instance of data
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  type:  'str'  = None,  mode:  'str'  = None,  documentation:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        type: "str" = None,
+        mode: "str" = None,
+        documentation: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
-        self.type = type 
-        self.mode = mode 
-        self.documentation = documentation 
-        
+        self.name = name
+        self.type = type
+        self.mode = mode
+        self.documentation = documentation
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -152,13 +148,8 @@ class Input(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Source(FhirBaseModel):
-    """ Source inputs to the mapping.:param str id: Unique id for inter-element referencing
+    """Source inputs to the mapping.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str context: Type or variable this rule applies to
@@ -173,48 +164,49 @@ class Source(FhirBaseModel):
     :param str check: FHIRPath expression  - must be true or the mapping engine throws an error instead of completing
     :param str logMessage: Message to put in log if source exists (FHIRPath)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  context:  'str'  = None,  min:  'int'  = None,  max:  'str'  = None,  type:  'str'  = None,  defaultValue:  'str'  = None,  element:  'str'  = None,  listMode:  'str'  = None,  variable:  'str'  = None,  condition:  'str'  = None,  check:  'str'  = None,  logMessage:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        context: "str" = None,
+        min: "int" = None,
+        max: "str" = None,
+        type: "str" = None,
+        defaultValue: "str" = None,
+        element: "str" = None,
+        listMode: "str" = None,
+        variable: "str" = None,
+        condition: "str" = None,
+        check: "str" = None,
+        logMessage: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.context = context 
-        self.min = min 
-        self.max = max 
-        self.type = type 
-        self.defaultValue = defaultValue 
-        self.element = element 
-        self.listMode = listMode 
-        self.variable = variable 
-        self.condition = condition 
-        self.check = check 
-        self.logMessage = logMessage 
-        
+        self.context = context
+        self.min = min
+        self.max = max
+        self.type = type
+        self.defaultValue = defaultValue
+        self.element = element
+        self.listMode = listMode
+        self.variable = variable
+        self.condition = condition
+        self.check = check
+        self.logMessage = logMessage
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -223,13 +215,8 @@ class Source(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Parameter(FhirBaseModel):
-    """ Parameters to the transform.:param str id: Unique id for inter-element referencing
+    """Parameters to the transform.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str valueId: Parameter value - variable or literal
@@ -241,42 +228,43 @@ class Parameter(FhirBaseModel):
     :param str valueTime: Parameter value - variable or literal
     :param str valueDateTime: Parameter value - variable or literal
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  valueId:  'str'  = None,  valueString:  'str'  = None,  valueBoolean:  'bool'  = None,  valueInteger:  'int'  = None,  valueDecimal:  'float'  = None,  valueDate:  'str'  = None,  valueTime:  'str'  = None,  valueDateTime:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        valueId: "str" = None,
+        valueString: "str" = None,
+        valueBoolean: "bool" = None,
+        valueInteger: "int" = None,
+        valueDecimal: "float" = None,
+        valueDate: "str" = None,
+        valueTime: "str" = None,
+        valueDateTime: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.valueId = valueId 
-        self.valueString = valueString 
-        self.valueBoolean = valueBoolean 
-        self.valueInteger = valueInteger 
-        self.valueDecimal = valueDecimal 
-        self.valueDate = valueDate 
-        self.valueTime = valueTime 
-        self.valueDateTime = valueDateTime 
-        
+        self.valueId = valueId
+        self.valueString = valueString
+        self.valueBoolean = valueBoolean
+        self.valueInteger = valueInteger
+        self.valueDecimal = valueDecimal
+        self.valueDate = valueDate
+        self.valueTime = valueTime
+        self.valueDateTime = valueDateTime
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -285,12 +273,8 @@ class Parameter(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Target(FhirBaseModel):
-    """ Content to create because of this mapping rule.:param str id: Unique id for inter-element referencing
+    """Content to create because of this mapping rule.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str context: Variable this rule applies to
@@ -301,42 +285,42 @@ class Target(FhirBaseModel):
     :param str transform: create | copy +
     :param Parameter parameter: Parameters to the transform
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "parameter": {"class_name": "Parameter", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  context:  'str'  = None,  element:  'str'  = None,  variable:  'str'  = None,  listMode:  list['str']  = None,  listRuleId:  'str'  = None,  transform:  'str'  = None,  parameter:  list['Parameter']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        context: "str" = None,
+        element: "str" = None,
+        variable: "str" = None,
+        listMode: list["str"] = None,
+        listRuleId: "str" = None,
+        transform: "str" = None,
+        parameter: list["Parameter"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.context = context 
-        self.element = element 
-        self.variable = variable 
+        self.context = context
+        self.element = element
+        self.variable = variable
         self.listMode = listMode or []
-        self.listRuleId = listRuleId 
-        self.transform = transform 
+        self.listRuleId = listRuleId
+        self.transform = transform
         self.parameter = parameter or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -345,42 +329,39 @@ class Target(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Dependent(FhirBaseModel):
-    """ Which other rules to apply in the context of this rule.:param str id: Unique id for inter-element referencing
+    """Which other rules to apply in the context of this rule.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Name of a rule or group to apply
     :param Parameter parameter: Parameter to pass to the rule or group
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "parameter": {"class_name": "Parameter", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  parameter:  list['Parameter']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        parameter: list["Parameter"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
+        self.name = name
         self.parameter = parameter or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -389,12 +370,8 @@ class Dependent(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Rule(FhirBaseModel):
-    """ Transform Rule from source to target.:param str id: Unique id for inter-element referencing
+    """Transform Rule from source to target.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Name of the rule for internal references
@@ -404,46 +381,43 @@ class Rule(FhirBaseModel):
     :param Dependent dependent: Which other rules to apply in the context of this rule
     :param str documentation: Documentation for this instance of data
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "source": {"class_name": "Source", "is_contained": True},
-        
-        
         "target": {"class_name": "Target", "is_contained": True},
-        
-        
         "rule": {"class_name": "Rule", "is_contained": True},
-        
-        
         "dependent": {"class_name": "Dependent", "is_contained": True},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  source:  list['Source']  = None,  target:  list['Target']  = None,  rule:  list['Rule']  = None,  dependent:  list['Dependent']  = None,  documentation:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        source: list["Source"] = None,
+        target: list["Target"] = None,
+        rule: list["Rule"] = None,
+        dependent: list["Dependent"] = None,
+        documentation: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
+        self.name = name
         self.source = source or []
         self.target = target or []
         self.rule = rule or []
         self.dependent = dependent or []
-        self.documentation = documentation 
-        
+        self.documentation = documentation
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -452,12 +426,8 @@ class Rule(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Group(FhirBaseModel):
-    """ Organizes the mapping into managable chunks for human review/ease of maintenance.:param str id: Unique id for inter-element referencing
+    """Organizes the mapping into managable chunks for human review/ease of maintenance.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Human-readable label
@@ -467,42 +437,41 @@ class Group(FhirBaseModel):
     :param Input input: Named instance provided when invoking the map
     :param Rule rule: Transform Rule from source to target
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
         "input": {"class_name": "Input", "is_contained": True},
-        
-        
         "rule": {"class_name": "Rule", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  extends:  'str'  = None,  typeMode:  'str'  = None,  documentation:  'str'  = None,  input:  list['Input']  = None,  rule:  list['Rule']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        extends: "str" = None,
+        typeMode: "str" = None,
+        documentation: "str" = None,
+        input: list["Input"] = None,
+        rule: list["Rule"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
-        self.extends = extends 
-        self.typeMode = typeMode 
-        self.documentation = documentation 
+        self.name = name
+        self.extends = extends
+        self.typeMode = typeMode
+        self.documentation = documentation
         self.input = input or []
         self.rule = rule or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)
@@ -512,7 +481,7 @@ class Group(FhirBaseModel):
 
 
 class StructureMap(DomainResource):
-    """ A Map of relationships between 2 structures that can be used to transform data.
+    """A Map of relationships between 2 structures that can be used to transform data.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -544,105 +513,95 @@ class StructureMap(DomainResource):
     :param Const const: Definition of the constant value used in the map rules
     :param Group group: Named sections for reader convenience
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
         "structure": {"class_name": "Structure", "is_contained": True},
-        
-        
-        
         "const": {"class_name": "Const", "is_contained": True},
-        
-        
         "group": {"class_name": "Group", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  structure:  list['Structure']  = None,  _import:  list['str']  = None,  const:  list['Const']  = None,  group:  list['Group']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        url: "str" = None,
+        identifier: list["Identifier"] = None,
+        version: "str" = None,
+        versionAlgorithmString: "str" = None,
+        versionAlgorithmCoding: "Coding" = None,
+        name: "str" = None,
+        title: "str" = None,
+        status: "str" = None,
+        experimental: "bool" = None,
+        date: "str" = None,
+        publisher: "str" = None,
+        contact: list["ContactDetail"] = None,
+        description: "str" = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        purpose: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        structure: list["Structure"] = None,
+        _import: list["str"] = None,
+        const: list["Const"] = None,
+        group: list["Group"] = None,
+    ):
+
         self.resourceType = "StructureMap"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url 
+        self.url = url
         self.identifier = identifier or []
-        self.version = version 
-        self.versionAlgorithmString = versionAlgorithmString 
-        self.versionAlgorithmCoding = versionAlgorithmCoding 
-        self.name = name 
-        self.title = title 
-        self.status = status 
-        self.experimental = experimental 
-        self.date = date 
-        self.publisher = publisher 
+        self.version = version
+        self.versionAlgorithmString = versionAlgorithmString
+        self.versionAlgorithmCoding = versionAlgorithmCoding
+        self.name = name
+        self.title = title
+        self.status = status
+        self.experimental = experimental
+        self.date = date
+        self.publisher = publisher
         self.contact = contact or []
-        self.description = description 
+        self.description = description
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
+        self.purpose = purpose
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
         self.structure = structure or []
         self._import = _import or []
         self.const = const or []
         self.group = group or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureMap":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "StructureMap":
         return super().from_obj(obj)

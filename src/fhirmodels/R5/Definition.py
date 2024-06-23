@@ -2,6 +2,7 @@
 Generated class for Definition. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
@@ -13,7 +14,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Definition(FhirBaseModel):
-    """ Logical Model: A pattern to be followed by resources that represent a specific proposal, plan and/or order for some sort of action or service.
+    """Logical Model: A pattern to be followed by resources that represent a specific proposal, plan and/or order for some sort of action or service.
     :param str url: Canonical identifier for this {{title}}, represented as an absolute URI (globally unique)
     :param Identifier identifier: Business identifier for {{title}}
     :param str version: Business version of the {{title}}
@@ -44,97 +45,89 @@ class Definition(FhirBaseModel):
     :param CodeableConcept code: Service to be done
     :param CodeableReference product: Product to use/manipulate
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
-        
         "subject": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "performerType": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "product": {"class_name": "CodeableReference", "is_contained": False},
-        
-        }
-    def __init__(self,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  derivedFromCanonical:  list['str']  = None,  derivedFromUri:  list['str']  = None,  partOf:  list['str']  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  subject:  list['CodeableReference']  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  topic:  list['CodeableConcept']  = None,  performerType:  'CodeableConcept'  = None,  code:  'CodeableConcept'  = None,  product:  'CodeableReference'  = None, ):
-        
-        self.url = url 
+    }
+
+    def __init__(
+        self,
+        url: "str" = None,
+        identifier: list["Identifier"] = None,
+        version: "str" = None,
+        versionAlgorithmString: "str" = None,
+        versionAlgorithmCoding: "Coding" = None,
+        name: "str" = None,
+        title: "str" = None,
+        derivedFromCanonical: list["str"] = None,
+        derivedFromUri: list["str"] = None,
+        partOf: list["str"] = None,
+        status: "str" = None,
+        experimental: "bool" = None,
+        subject: list["CodeableReference"] = None,
+        date: "str" = None,
+        publisher: "str" = None,
+        contact: list["ContactDetail"] = None,
+        description: "str" = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        purpose: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        approvalDate: "str" = None,
+        lastReviewDate: "str" = None,
+        effectivePeriod: "Period" = None,
+        topic: list["CodeableConcept"] = None,
+        performerType: "CodeableConcept" = None,
+        code: "CodeableConcept" = None,
+        product: "CodeableReference" = None,
+    ):
+
+        self.url = url
         self.identifier = identifier or []
-        self.version = version 
-        self.versionAlgorithmString = versionAlgorithmString 
-        self.versionAlgorithmCoding = versionAlgorithmCoding 
-        self.name = name 
-        self.title = title 
+        self.version = version
+        self.versionAlgorithmString = versionAlgorithmString
+        self.versionAlgorithmCoding = versionAlgorithmCoding
+        self.name = name
+        self.title = title
         self.derivedFromCanonical = derivedFromCanonical or []
         self.derivedFromUri = derivedFromUri or []
         self.partOf = partOf or []
-        self.status = status 
-        self.experimental = experimental 
+        self.status = status
+        self.experimental = experimental
         self.subject = subject or []
-        self.date = date 
-        self.publisher = publisher 
+        self.date = date
+        self.publisher = publisher
         self.contact = contact or []
-        self.description = description 
+        self.description = description
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
-        self.approvalDate = approvalDate 
-        self.lastReviewDate = lastReviewDate 
-        self.effectivePeriod = effectivePeriod 
+        self.purpose = purpose
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
+        self.approvalDate = approvalDate
+        self.lastReviewDate = lastReviewDate
+        self.effectivePeriod = effectivePeriod
         self.topic = topic or []
-        self.performerType = performerType 
-        self.code = code 
-        self.product = product 
-        
+        self.performerType = performerType
+        self.code = code
+        self.product = product
 
     @classmethod
     def from_dict(cls, data: dict) -> "Definition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Definition":
         return super().from_obj(obj)

@@ -2,6 +2,7 @@
 Generated class for RelatedArtifact. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.CodeableConcept import *
@@ -10,7 +11,7 @@ from fhirmodels.R5.Reference import *
 
 
 class RelatedArtifact(FhirBaseModel):
-    """ RelatedArtifact Type: Related artifacts such as additional documentation, justification, or bibliographic references.
+    """RelatedArtifact Type: Related artifacts such as additional documentation, justification, or bibliographic references.
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param str type: documentation | justification | citation | predecessor | successor | derived-from | depends-on | composed-of | part-of | amends | amended-with | appends | appended-with | cites | cited-by | comments-on | comment-in | contains | contained-in | corrects | correction-in | replaces | replaced-with | retracts | retracted-by | signs | similar-to | supports | supported-with | transforms | transformed-into | transformed-with | documents | specification-of | created-with | cite-as
@@ -24,49 +25,48 @@ class RelatedArtifact(FhirBaseModel):
     :param str publicationStatus: draft | active | retired | unknown
     :param str publicationDate: Date of publication of the artifact being referred to
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "classifier": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
         "document": {"class_name": "Attachment", "is_contained": False},
-        
-        
-        
         "resourceReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  type:  'str'  = None,  classifier:  list['CodeableConcept']  = None,  label:  'str'  = None,  display:  'str'  = None,  citation:  'str'  = None,  document:  'Attachment'  = None,  resource:  'str'  = None,  resourceReference:  'Reference'  = None,  publicationStatus:  'str'  = None,  publicationDate:  'str'  = None, ):
-        
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        type: "str" = None,
+        classifier: list["CodeableConcept"] = None,
+        label: "str" = None,
+        display: "str" = None,
+        citation: "str" = None,
+        document: "Attachment" = None,
+        resource: "str" = None,
+        resourceReference: "Reference" = None,
+        publicationStatus: "str" = None,
+        publicationDate: "str" = None,
+    ):
+
+        self.id = id
         self.extension = extension or []
-        self.type = type 
+        self.type = type
         self.classifier = classifier or []
-        self.label = label 
-        self.display = display 
-        self.citation = citation 
-        self.document = document 
-        self.resource = resource 
-        self.resourceReference = resourceReference 
-        self.publicationStatus = publicationStatus 
-        self.publicationDate = publicationDate 
-        
+        self.label = label
+        self.display = display
+        self.citation = citation
+        self.document = document
+        self.resource = resource
+        self.resourceReference = resourceReference
+        self.publicationStatus = publicationStatus
+        self.publicationDate = publicationDate
 
     @classmethod
     def from_dict(cls, data: dict) -> "RelatedArtifact":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "RelatedArtifact":
         return super().from_obj(obj)

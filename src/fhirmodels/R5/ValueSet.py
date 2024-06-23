@@ -2,6 +2,7 @@
 Generated class for ValueSet. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -18,7 +19,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Designation(FhirBaseModel):
-    """ Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.:param str id: Unique id for inter-element referencing
+    """Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str language: Human language of the designation
@@ -26,38 +27,37 @@ class Designation(FhirBaseModel):
     :param Coding additionalUse: Additional ways how this designation would be used
     :param str value: The text value for this designation
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "use": {"class_name": "Coding", "is_contained": False},
-        
-        
         "additionalUse": {"class_name": "Coding", "is_contained": False},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  language:  'str'  = None,  use:  'Coding'  = None,  additionalUse:  list['Coding']  = None,  value:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        language: "str" = None,
+        use: "Coding" = None,
+        additionalUse: list["Coding"] = None,
+        value: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.language = language 
-        self.use = use 
+        self.language = language
+        self.use = use
         self.additionalUse = additionalUse or []
-        self.value = value 
-        
+        self.value = value
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -66,46 +66,42 @@ class Designation(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Concept(FhirBaseModel):
-    """ Specifies a concept to be included or excluded.:param str id: Unique id for inter-element referencing
+    """Specifies a concept to be included or excluded.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str code: Code or expression from system
     :param str display: Text to display for this code for this value set in this valueset
     :param Designation designation: Additional representations for this concept
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "designation": {"class_name": "Designation", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'str'  = None,  display:  'str'  = None,  designation:  list['Designation']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "str" = None,
+        display: "str" = None,
+        designation: list["Designation"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.display = display 
+        self.code = code
+        self.display = display
         self.designation = designation or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -114,43 +110,41 @@ class Concept(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Filter(FhirBaseModel):
-    """ Select concepts by specifying a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified within the include, they SHALL all be true.:param str id: Unique id for inter-element referencing
+    """Select concepts by specifying a matching criterion based on the properties (including relationships) defined by the system, or on filters defined by the system. If multiple filters are specified within the include, they SHALL all be true.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str property: A property/filter defined by the code system
     :param str op: = | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | child-of | descendent-leaf | exists
     :param str value: Code from the system, or regex criteria, or boolean value for exists
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  property:  'str'  = None,  op:  'str'  = None,  value:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        property: "str" = None,
+        op: "str" = None,
+        value: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.property = property 
-        self.op = op 
-        self.value = value 
-        
+        self.property = property
+        self.op = op
+        self.value = value
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -159,12 +153,8 @@ class Filter(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Include(FhirBaseModel):
-    """ Include one or more codes from a code system or other value set(s).:param str id: Unique id for inter-element referencing
+    """Include one or more codes from a code system or other value set(s).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str system: The system the codes come from
@@ -174,42 +164,41 @@ class Include(FhirBaseModel):
     :param str valueSet: Select the contents included in this value set
     :param str copyright: A copyright statement for the specific code system included in the value set
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "concept": {"class_name": "Concept", "is_contained": True},
-        
-        
         "filter": {"class_name": "Filter", "is_contained": True},
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  system:  'str'  = None,  version:  'str'  = None,  concept:  list['Concept']  = None,  filter:  list['Filter']  = None,  valueSet:  list['str']  = None,  copyright:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        system: "str" = None,
+        version: "str" = None,
+        concept: list["Concept"] = None,
+        filter: list["Filter"] = None,
+        valueSet: list["str"] = None,
+        copyright: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.system = system 
-        self.version = version 
+        self.system = system
+        self.version = version
         self.concept = concept or []
         self.filter = filter or []
         self.valueSet = valueSet or []
-        self.copyright = copyright 
-        
+        self.copyright = copyright
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -218,12 +207,8 @@ class Include(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Compose(FhirBaseModel):
-    """ A set of criteria that define the contents of the value set by including or excluding codes selected from the specified code system(s) that the value set draws from. This is also known as the Content Logical Definition (CLD).:param str id: Unique id for inter-element referencing
+    """A set of criteria that define the contents of the value set by including or excluding codes selected from the specified code system(s) that the value set draws from. This is also known as the Content Logical Definition (CLD).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str lockedDate: Fixed date for references with no specified version (transitive)
@@ -232,40 +217,39 @@ class Compose(FhirBaseModel):
     :param Exclude exclude: Explicitly exclude codes from a code system or other value sets
     :param str property: Property to return if client doesn't override
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "include": {"class_name": "Include", "is_contained": True},
-        
-        
         "exclude": {"class_name": "Exclude", "is_contained": True},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  lockedDate:  'str'  = None,  inactive:  'bool'  = None,  include:  list['Include']  = None,  exclude:  list['Exclude']  = None,  property:  list['str']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        lockedDate: "str" = None,
+        inactive: "bool" = None,
+        include: list["Include"] = None,
+        exclude: list["Exclude"] = None,
+        property: list["str"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.lockedDate = lockedDate 
-        self.inactive = inactive 
+        self.lockedDate = lockedDate
+        self.inactive = inactive
         self.include = include or []
         self.exclude = exclude or []
         self.property = property or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -274,13 +258,8 @@ class Compose(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-    
-
 class Parameter(FhirBaseModel):
-    """ A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.:param str id: Unique id for inter-element referencing
+    """A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Name as assigned by the client or server
@@ -292,42 +271,43 @@ class Parameter(FhirBaseModel):
     :param str valueCode: Value of the named parameter
     :param str valueDateTime: Value of the named parameter
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  name:  'str'  = None,  valueString:  'str'  = None,  valueBoolean:  'bool'  = None,  valueInteger:  'int'  = None,  valueDecimal:  'float'  = None,  valueUri:  'str'  = None,  valueCode:  'str'  = None,  valueDateTime:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        name: "str" = None,
+        valueString: "str" = None,
+        valueBoolean: "bool" = None,
+        valueInteger: "int" = None,
+        valueDecimal: "float" = None,
+        valueUri: "str" = None,
+        valueCode: "str" = None,
+        valueDateTime: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.name = name 
-        self.valueString = valueString 
-        self.valueBoolean = valueBoolean 
-        self.valueInteger = valueInteger 
-        self.valueDecimal = valueDecimal 
-        self.valueUri = valueUri 
-        self.valueCode = valueCode 
-        self.valueDateTime = valueDateTime 
-        
+        self.name = name
+        self.valueString = valueString
+        self.valueBoolean = valueBoolean
+        self.valueInteger = valueInteger
+        self.valueDecimal = valueDecimal
+        self.valueUri = valueUri
+        self.valueCode = valueCode
+        self.valueDateTime = valueDateTime
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -336,40 +316,38 @@ class Parameter(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Property(FhirBaseModel):
-    """ A property defines an additional slot through which additional information can be provided about a concept.:param str id: Unique id for inter-element referencing
+    """A property defines an additional slot through which additional information can be provided about a concept.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str code: Identifies the property on the concepts, and when referred to in operations
     :param str uri: Formal identifier for the property
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'str'  = None,  uri:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "str" = None,
+        uri: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.uri = uri 
-        
+        self.code = code
+        self.uri = uri
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -378,15 +356,8 @@ class Property(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-        
-    
-    
-
 class SubProperty(FhirBaseModel):
-    """ A subproperty value for this concept.:param str id: Unique id for inter-element referencing
+    """A subproperty value for this concept.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str code: Reference to ValueSet.expansion.property.code
@@ -398,44 +369,44 @@ class SubProperty(FhirBaseModel):
     :param str valueDateTime: Value of the subproperty for this concept
     :param float valueDecimal: Value of the subproperty for this concept
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "valueCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'str'  = None,  valueCode:  'str'  = None,  valueCoding:  'Coding'  = None,  valueString:  'str'  = None,  valueInteger:  'int'  = None,  valueBoolean:  'bool'  = None,  valueDateTime:  'str'  = None,  valueDecimal:  'float'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "str" = None,
+        valueCode: "str" = None,
+        valueCoding: "Coding" = None,
+        valueString: "str" = None,
+        valueInteger: "int" = None,
+        valueBoolean: "bool" = None,
+        valueDateTime: "str" = None,
+        valueDecimal: "float" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.valueCode = valueCode 
-        self.valueCoding = valueCoding 
-        self.valueString = valueString 
-        self.valueInteger = valueInteger 
-        self.valueBoolean = valueBoolean 
-        self.valueDateTime = valueDateTime 
-        self.valueDecimal = valueDecimal 
-        
+        self.code = code
+        self.valueCode = valueCode
+        self.valueCoding = valueCoding
+        self.valueString = valueString
+        self.valueInteger = valueInteger
+        self.valueBoolean = valueBoolean
+        self.valueDateTime = valueDateTime
+        self.valueDecimal = valueDecimal
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -444,12 +415,8 @@ class SubProperty(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Property(FhirBaseModel):
-    """ A property value for this concept.:param str id: Unique id for inter-element referencing
+    """A property value for this concept.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str code: Reference to ValueSet.expansion.property.code
@@ -462,48 +429,47 @@ class Property(FhirBaseModel):
     :param float valueDecimal: Value of the property for this concept
     :param SubProperty subProperty: SubProperty value for the concept
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "valueCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
         "subProperty": {"class_name": "SubProperty", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'str'  = None,  valueCode:  'str'  = None,  valueCoding:  'Coding'  = None,  valueString:  'str'  = None,  valueInteger:  'int'  = None,  valueBoolean:  'bool'  = None,  valueDateTime:  'str'  = None,  valueDecimal:  'float'  = None,  subProperty:  list['SubProperty']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "str" = None,
+        valueCode: "str" = None,
+        valueCoding: "Coding" = None,
+        valueString: "str" = None,
+        valueInteger: "int" = None,
+        valueBoolean: "bool" = None,
+        valueDateTime: "str" = None,
+        valueDecimal: "float" = None,
+        subProperty: list["SubProperty"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.valueCode = valueCode 
-        self.valueCoding = valueCoding 
-        self.valueString = valueString 
-        self.valueInteger = valueInteger 
-        self.valueBoolean = valueBoolean 
-        self.valueDateTime = valueDateTime 
-        self.valueDecimal = valueDecimal 
+        self.code = code
+        self.valueCode = valueCode
+        self.valueCoding = valueCoding
+        self.valueString = valueString
+        self.valueInteger = valueInteger
+        self.valueBoolean = valueBoolean
+        self.valueDateTime = valueDateTime
+        self.valueDecimal = valueDecimal
         self.subProperty = subProperty or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -512,12 +478,8 @@ class Property(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Contains(FhirBaseModel):
-    """ The codes that are contained in the value set expansion.:param str id: Unique id for inter-element referencing
+    """The codes that are contained in the value set expansion.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str system: System value for the code
@@ -530,50 +492,48 @@ class Contains(FhirBaseModel):
     :param Property property: Property value for the concept
     :param Contains contains: Codes contained under this entry
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "designation": {"class_name": "Designation", "is_contained": True},
-        
-        
         "property": {"class_name": "Property", "is_contained": True},
-        
-        
         "contains": {"class_name": "Contains", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  system:  'str'  = None,  abstract:  'bool'  = None,  inactive:  'bool'  = None,  version:  'str'  = None,  code:  'str'  = None,  display:  'str'  = None,  designation:  list['Designation']  = None,  property:  list['Property']  = None,  contains:  list['Contains']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        system: "str" = None,
+        abstract: "bool" = None,
+        inactive: "bool" = None,
+        version: "str" = None,
+        code: "str" = None,
+        display: "str" = None,
+        designation: list["Designation"] = None,
+        property: list["Property"] = None,
+        contains: list["Contains"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.system = system 
-        self.abstract = abstract 
-        self.inactive = inactive 
-        self.version = version 
-        self.code = code 
-        self.display = display 
+        self.system = system
+        self.abstract = abstract
+        self.inactive = inactive
+        self.version = version
+        self.code = code
+        self.display = display
         self.designation = designation or []
         self.property = property or []
         self.contains = contains or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -582,12 +542,8 @@ class Contains(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Expansion(FhirBaseModel):
-    """ A value set can also be "expanded", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed.:param str id: Unique id for inter-element referencing
+    """A value set can also be "expanded", where the value set is turned into a simple collection of enumerated codes. This element holds the expansion, if it has been performed.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str identifier: Identifies the value set expansion (business identifier)
@@ -599,48 +555,46 @@ class Expansion(FhirBaseModel):
     :param Property property: Additional information supplied about each concept
     :param Contains contains: Codes in the value set
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
         "parameter": {"class_name": "Parameter", "is_contained": True},
-        
-        
         "property": {"class_name": "Property", "is_contained": True},
-        
-        
         "contains": {"class_name": "Contains", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  'str'  = None,  next:  'str'  = None,  timestamp:  'str'  = None,  total:  'int'  = None,  offset:  'int'  = None,  parameter:  list['Parameter']  = None,  property:  list['Property']  = None,  contains:  list['Contains']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: "str" = None,
+        next: "str" = None,
+        timestamp: "str" = None,
+        total: "int" = None,
+        offset: "int" = None,
+        parameter: list["Parameter"] = None,
+        property: list["Property"] = None,
+        contains: list["Contains"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.identifier = identifier 
-        self.next = next 
-        self.timestamp = timestamp 
-        self.total = total 
-        self.offset = offset 
+        self.identifier = identifier
+        self.next = next
+        self.timestamp = timestamp
+        self.total = total
+        self.offset = offset
         self.parameter = parameter or []
         self.property = property or []
         self.contains = contains or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -649,40 +603,38 @@ class Expansion(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Scope(FhirBaseModel):
-    """ Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description.:param str id: Unique id for inter-element referencing
+    """Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str inclusionCriteria: Criteria describing which concepts or codes should be included and why
     :param str exclusionCriteria: Criteria describing which concepts or codes should be excluded and why
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  inclusionCriteria:  'str'  = None,  exclusionCriteria:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        inclusionCriteria: "str" = None,
+        exclusionCriteria: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.inclusionCriteria = inclusionCriteria 
-        self.exclusionCriteria = exclusionCriteria 
-        
+        self.inclusionCriteria = inclusionCriteria
+        self.exclusionCriteria = exclusionCriteria
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)
@@ -692,7 +644,7 @@ class Scope(FhirBaseModel):
 
 
 class ValueSet(DomainResource):
-    """ A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
+    """A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [[[CodeSystem]]] definitions and their use in [coded elements](terminologies.html).
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -733,137 +685,120 @@ class ValueSet(DomainResource):
     :param Expansion expansion: Used when the value set is "expanded"
     :param Scope scope: Description of the semantic space the Value Set Expansion is intended to cover and should further clarify the text in ValueSet.description
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "author": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "editor": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "reviewer": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "endorser": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "relatedArtifact": {"class_name": "RelatedArtifact", "is_contained": False},
-        
-        
         "compose": {"class_name": "Compose", "is_contained": True},
-        
-        
         "expansion": {"class_name": "Expansion", "is_contained": True},
-        
-        
         "scope": {"class_name": "Scope", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  list['Identifier']  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  immutable:  'bool'  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  topic:  list['CodeableConcept']  = None,  author:  list['ContactDetail']  = None,  editor:  list['ContactDetail']  = None,  reviewer:  list['ContactDetail']  = None,  endorser:  list['ContactDetail']  = None,  relatedArtifact:  list['RelatedArtifact']  = None,  compose:  'Compose'  = None,  expansion:  'Expansion'  = None,  scope:  'Scope'  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        url: "str" = None,
+        identifier: list["Identifier"] = None,
+        version: "str" = None,
+        versionAlgorithmString: "str" = None,
+        versionAlgorithmCoding: "Coding" = None,
+        name: "str" = None,
+        title: "str" = None,
+        status: "str" = None,
+        experimental: "bool" = None,
+        date: "str" = None,
+        publisher: "str" = None,
+        contact: list["ContactDetail"] = None,
+        description: "str" = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        immutable: "bool" = None,
+        purpose: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        approvalDate: "str" = None,
+        lastReviewDate: "str" = None,
+        effectivePeriod: "Period" = None,
+        topic: list["CodeableConcept"] = None,
+        author: list["ContactDetail"] = None,
+        editor: list["ContactDetail"] = None,
+        reviewer: list["ContactDetail"] = None,
+        endorser: list["ContactDetail"] = None,
+        relatedArtifact: list["RelatedArtifact"] = None,
+        compose: "Compose" = None,
+        expansion: "Expansion" = None,
+        scope: "Scope" = None,
+    ):
+
         self.resourceType = "ValueSet"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url 
+        self.url = url
         self.identifier = identifier or []
-        self.version = version 
-        self.versionAlgorithmString = versionAlgorithmString 
-        self.versionAlgorithmCoding = versionAlgorithmCoding 
-        self.name = name 
-        self.title = title 
-        self.status = status 
-        self.experimental = experimental 
-        self.date = date 
-        self.publisher = publisher 
+        self.version = version
+        self.versionAlgorithmString = versionAlgorithmString
+        self.versionAlgorithmCoding = versionAlgorithmCoding
+        self.name = name
+        self.title = title
+        self.status = status
+        self.experimental = experimental
+        self.date = date
+        self.publisher = publisher
         self.contact = contact or []
-        self.description = description 
+        self.description = description
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.immutable = immutable 
-        self.purpose = purpose 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
-        self.approvalDate = approvalDate 
-        self.lastReviewDate = lastReviewDate 
-        self.effectivePeriod = effectivePeriod 
+        self.immutable = immutable
+        self.purpose = purpose
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
+        self.approvalDate = approvalDate
+        self.lastReviewDate = lastReviewDate
+        self.effectivePeriod = effectivePeriod
         self.topic = topic or []
         self.author = author or []
         self.editor = editor or []
         self.reviewer = reviewer or []
         self.endorser = endorser or []
         self.relatedArtifact = relatedArtifact or []
-        self.compose = compose 
-        self.expansion = expansion 
-        self.scope = scope 
-        
+        self.compose = compose
+        self.expansion = expansion
+        self.scope = scope
 
     @classmethod
     def from_dict(cls, data: dict) -> "ValueSet":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "ValueSet":
         return super().from_obj(obj)

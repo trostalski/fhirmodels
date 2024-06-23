@@ -2,6 +2,7 @@
 Generated class for TriggerDefinition. 
 Time: 2024-06-14 18:55:59
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4B.DataRequirement import *
 from fhirmodels.R4B.Expression import *
@@ -11,7 +12,7 @@ from fhirmodels.R4B.Timing import *
 
 
 class TriggerDefinition(FhirBaseModel):
-    """ Base StructureDefinition for TriggerDefinition Type: A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.
+    """Base StructureDefinition for TriggerDefinition Type: A description of a triggering event. Triggering events can be named events, data events, or periodic, as determined by the type element.
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param str type: named-event | periodic | data-changed | data-added | data-modified | data-removed | data-accessed | data-access-ended
@@ -23,47 +24,45 @@ class TriggerDefinition(FhirBaseModel):
     :param DataRequirement data: Triggering data of the event (multiple = 'and')
     :param Expression condition: Whether the event triggers (boolean expression)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
-        
         "timingTiming": {"class_name": "Timing", "is_contained": False},
-        
-        
         "timingReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
-        
         "data": {"class_name": "DataRequirement", "is_contained": False},
-        
-        
         "condition": {"class_name": "Expression", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  type:  'str'  = None,  name:  'str'  = None,  timingTiming:  'Timing'  = None,  timingReference:  'Reference'  = None,  timingDate:  'str'  = None,  timingDateTime:  'str'  = None,  data:  list['DataRequirement']  = None,  condition:  'Expression'  = None, ):
-        
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        type: "str" = None,
+        name: "str" = None,
+        timingTiming: "Timing" = None,
+        timingReference: "Reference" = None,
+        timingDate: "str" = None,
+        timingDateTime: "str" = None,
+        data: list["DataRequirement"] = None,
+        condition: "Expression" = None,
+    ):
+
+        self.id = id
         self.extension = extension or []
-        self.type = type 
-        self.name = name 
-        self.timingTiming = timingTiming 
-        self.timingReference = timingReference 
-        self.timingDate = timingDate 
-        self.timingDateTime = timingDateTime 
+        self.type = type
+        self.name = name
+        self.timingTiming = timingTiming
+        self.timingReference = timingReference
+        self.timingDate = timingDate
+        self.timingDateTime = timingDateTime
         self.data = data or []
-        self.condition = condition 
-        
+        self.condition = condition
 
     @classmethod
     def from_dict(cls, data: dict) -> "TriggerDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "TriggerDefinition":
         return super().from_obj(obj)

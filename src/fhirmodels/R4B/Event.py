@@ -2,6 +2,7 @@
 Generated class for Event. 
 Time: 2024-06-14 18:55:59
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4B.Annotation import *
 from fhirmodels.R4B.CodeableConcept import *
@@ -13,27 +14,28 @@ from fhirmodels.R4B.Timing import *
 
 
 class Performer(FhirBaseModel):
-    """ Indicates who or what performed the {{title}} and how they were involved.:param CodeableConcept function: Type of performance
+    """Indicates who or what performed the {{title}} and how they were involved.:param CodeableConcept function: Type of performance
     :param Reference actor: Who performed {{title}}
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
         "function": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "actor": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  function:  'CodeableConcept'  = None,  actor:  'Reference'  = None, ):
-        self.function = function 
-        self.actor = actor 
-        
+    }
+
+    def __init__(
+        self,
+        function: "CodeableConcept" = None,
+        actor: "Reference" = None,
+    ):
+        self.function = function
+        self.actor = actor
 
     @classmethod
     def from_dict(cls, data: dict) -> "Event":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Event":
         return super().from_obj(obj)
@@ -43,7 +45,7 @@ class Performer(FhirBaseModel):
 
 
 class Event(FhirBaseModel):
-    """ Logical Model: A pattern to be followed by resources that represent the performance of some activity, possibly in accordance with a request or service definition.
+    """Logical Model: A pattern to be followed by resources that represent the performance of some activity, possibly in accordance with a request or service definition.
     :param Identifier identifier: Business Identifier for {{title}}
     :param str instantiatesCanonical: Instantiates FHIR protocol or definition
     :param str instantiatesUri: Instantiates external protocol or definition
@@ -67,93 +69,80 @@ class Event(FhirBaseModel):
     :param Reference reasonReference: Why was {{title}} performed?
     :param Annotation note: Comments made about the event
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "basedOn": {"class_name": "Reference", "is_contained": False},
-        
-        
         "partOf": {"class_name": "Reference", "is_contained": False},
-        
-        
         "researchStudy": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "statusReason": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "encounter": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "occurrencePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "occurrenceTiming": {"class_name": "Timing", "is_contained": False},
-        
-        
-        
-        
         "reportedReference": {"class_name": "Reference", "is_contained": False},
-        
-        
         "performer": {"class_name": "Performer", "is_contained": True},
-        
-        
         "location": {"class_name": "Reference", "is_contained": False},
-        
-        
         "reasonCode": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "reasonReference": {"class_name": "Reference", "is_contained": False},
-        
-        
         "note": {"class_name": "Annotation", "is_contained": False},
-        
-        }
-    def __init__(self,  identifier:  list['Identifier']  = None,  instantiatesCanonical:  list['str']  = None,  instantiatesUri:  list['str']  = None,  basedOn:  list['Reference']  = None,  partOf:  list['Reference']  = None,  researchStudy:  list['Reference']  = None,  status:  'str'  = None,  statusReason:  'CodeableConcept'  = None,  code:  'CodeableConcept'  = None,  subject:  'Reference'  = None,  encounter:  'Reference'  = None,  occurrenceDateTime:  'str'  = None,  occurrencePeriod:  'Period'  = None,  occurrenceTiming:  'Timing'  = None,  recorded:  'str'  = None,  reportedBoolean:  'bool'  = None,  reportedReference:  'Reference'  = None,  performer:  list['Performer']  = None,  location:  'Reference'  = None,  reasonCode:  list['CodeableConcept']  = None,  reasonReference:  list['Reference']  = None,  note:  list['Annotation']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        identifier: list["Identifier"] = None,
+        instantiatesCanonical: list["str"] = None,
+        instantiatesUri: list["str"] = None,
+        basedOn: list["Reference"] = None,
+        partOf: list["Reference"] = None,
+        researchStudy: list["Reference"] = None,
+        status: "str" = None,
+        statusReason: "CodeableConcept" = None,
+        code: "CodeableConcept" = None,
+        subject: "Reference" = None,
+        encounter: "Reference" = None,
+        occurrenceDateTime: "str" = None,
+        occurrencePeriod: "Period" = None,
+        occurrenceTiming: "Timing" = None,
+        recorded: "str" = None,
+        reportedBoolean: "bool" = None,
+        reportedReference: "Reference" = None,
+        performer: list["Performer"] = None,
+        location: "Reference" = None,
+        reasonCode: list["CodeableConcept"] = None,
+        reasonReference: list["Reference"] = None,
+        note: list["Annotation"] = None,
+    ):
+
         self.identifier = identifier or []
         self.instantiatesCanonical = instantiatesCanonical or []
         self.instantiatesUri = instantiatesUri or []
         self.basedOn = basedOn or []
         self.partOf = partOf or []
         self.researchStudy = researchStudy or []
-        self.status = status 
-        self.statusReason = statusReason 
-        self.code = code 
-        self.subject = subject 
-        self.encounter = encounter 
-        self.occurrenceDateTime = occurrenceDateTime 
-        self.occurrencePeriod = occurrencePeriod 
-        self.occurrenceTiming = occurrenceTiming 
-        self.recorded = recorded 
-        self.reportedBoolean = reportedBoolean 
-        self.reportedReference = reportedReference 
+        self.status = status
+        self.statusReason = statusReason
+        self.code = code
+        self.subject = subject
+        self.encounter = encounter
+        self.occurrenceDateTime = occurrenceDateTime
+        self.occurrencePeriod = occurrencePeriod
+        self.occurrenceTiming = occurrenceTiming
+        self.recorded = recorded
+        self.reportedBoolean = reportedBoolean
+        self.reportedReference = reportedReference
         self.performer = performer or []
-        self.location = location 
+        self.location = location
         self.reasonCode = reasonCode or []
         self.reasonReference = reasonReference or []
         self.note = note or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Event":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Event":
         return super().from_obj(obj)

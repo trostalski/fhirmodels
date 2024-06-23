@@ -2,6 +2,7 @@
 Generated class for RegulatedAuthorization. 
 Time: 2024-06-14 18:55:59
 """
+
 from fhirmodels.R4B.BackboneElement import *
 from fhirmodels.R4B.CodeableConcept import *
 from fhirmodels.R4B.CodeableReference import *
@@ -16,7 +17,7 @@ from fhirmodels.R4B.Resource import *
 
 
 class Case(FhirBaseModel):
-    """ The case or regulatory procedure for granting or amending a regulated authorization. An authorization is granted in response to submissions/applications by those seeking authorization. A case is the administrative process that deals with the application(s) that relate to this and assesses them. Note: This area is subject to ongoing review and the workgroup is seeking implementer feedback on its use (see link at bottom of page).:param str id: Unique id for inter-element referencing
+    """The case or regulatory procedure for granting or amending a regulated authorization. An authorization is granted in response to submissions/applications by those seeking authorization. A case is the administrative process that deals with the application(s) that relate to this and assesses them. Note: This area is subject to ongoing review and the workgroup is seeking implementer feedback on its use (see link at bottom of page).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Identifier identifier: Identifier by which this case can be referenced
@@ -26,48 +27,44 @@ class Case(FhirBaseModel):
     :param str dateDateTime: Relevant date for this case
     :param Application application: Applications submitted to obtain a regulated authorization. Steps within the longer running case or procedure
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "status": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "datePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
-        
         "application": {"class_name": "Application", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  'Identifier'  = None,  type:  'CodeableConcept'  = None,  status:  'CodeableConcept'  = None,  datePeriod:  'Period'  = None,  dateDateTime:  'str'  = None,  application:  list['Application']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: "Identifier" = None,
+        type: "CodeableConcept" = None,
+        status: "CodeableConcept" = None,
+        datePeriod: "Period" = None,
+        dateDateTime: "str" = None,
+        application: list["Application"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.identifier = identifier 
-        self.type = type 
-        self.status = status 
-        self.datePeriod = datePeriod 
-        self.dateDateTime = dateDateTime 
+        self.identifier = identifier
+        self.type = type
+        self.status = status
+        self.datePeriod = datePeriod
+        self.dateDateTime = dateDateTime
         self.application = application or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "RegulatedAuthorization":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "RegulatedAuthorization":
         return super().from_obj(obj)
@@ -77,7 +74,7 @@ class Case(FhirBaseModel):
 
 
 class RegulatedAuthorization(DomainResource):
-    """ Regulatory approval, clearance or licencing related to a regulated product, treatment, facility or activity that is cited in a guidance, regulation, rule or legislative act. An example is Market Authorization relating to a Medicinal Product.
+    """Regulatory approval, clearance or licencing related to a regulated product, treatment, facility or activity that is cited in a guidance, regulation, rule or legislative act. An example is Market Authorization relating to a Medicinal Product.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -101,97 +98,83 @@ class RegulatedAuthorization(DomainResource):
     :param Reference regulator: The regulatory authority or authorizing body granting the authorization
     :param Case case: The case or regulatory procedure for granting or amending a regulated authorization. Note: This area is subject to ongoing review and the workgroup is seeking implementer feedback on its use (see link at bottom of page)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "region": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "status": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "validityPeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "indication": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "intendedUse": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "basis": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "holder": {"class_name": "Reference", "is_contained": False},
-        
-        
         "regulator": {"class_name": "Reference", "is_contained": False},
-        
-        
         "case": {"class_name": "Case", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  subject:  list['Reference']  = None,  type:  'CodeableConcept'  = None,  description:  'str'  = None,  region:  list['CodeableConcept']  = None,  status:  'CodeableConcept'  = None,  statusDate:  'str'  = None,  validityPeriod:  'Period'  = None,  indication:  'CodeableReference'  = None,  intendedUse:  'CodeableConcept'  = None,  basis:  list['CodeableConcept']  = None,  holder:  'Reference'  = None,  regulator:  'Reference'  = None,  case:  'Case'  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        subject: list["Reference"] = None,
+        type: "CodeableConcept" = None,
+        description: "str" = None,
+        region: list["CodeableConcept"] = None,
+        status: "CodeableConcept" = None,
+        statusDate: "str" = None,
+        validityPeriod: "Period" = None,
+        indication: "CodeableReference" = None,
+        intendedUse: "CodeableConcept" = None,
+        basis: list["CodeableConcept"] = None,
+        holder: "Reference" = None,
+        regulator: "Reference" = None,
+        case: "Case" = None,
+    ):
+
         self.resourceType = "RegulatedAuthorization"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
         self.subject = subject or []
-        self.type = type 
-        self.description = description 
+        self.type = type
+        self.description = description
         self.region = region or []
-        self.status = status 
-        self.statusDate = statusDate 
-        self.validityPeriod = validityPeriod 
-        self.indication = indication 
-        self.intendedUse = intendedUse 
+        self.status = status
+        self.statusDate = statusDate
+        self.validityPeriod = validityPeriod
+        self.indication = indication
+        self.intendedUse = intendedUse
         self.basis = basis or []
-        self.holder = holder 
-        self.regulator = regulator 
-        self.case = case 
-        
+        self.holder = holder
+        self.regulator = regulator
+        self.case = case
 
     @classmethod
     def from_dict(cls, data: dict) -> "RegulatedAuthorization":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "RegulatedAuthorization":
         return super().from_obj(obj)

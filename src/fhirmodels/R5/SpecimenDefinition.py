@@ -2,6 +2,7 @@
 Generated class for SpecimenDefinition. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.Coding import *
@@ -21,40 +22,42 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Additive(FhirBaseModel):
-    """ Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.:param str id: Unique id for inter-element referencing
+    """Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept additiveCodeableConcept: Additive associated with container
     :param Reference additiveReference: Additive associated with container
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        "additiveCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "additiveCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "additiveReference": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  additiveCodeableConcept:  'CodeableConcept'  = None,  additiveReference:  'Reference'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        additiveCodeableConcept: "CodeableConcept" = None,
+        additiveReference: "Reference" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.additiveCodeableConcept = additiveCodeableConcept 
-        self.additiveReference = additiveReference 
-        
+        self.additiveCodeableConcept = additiveCodeableConcept
+        self.additiveReference = additiveReference
 
     @classmethod
     def from_dict(cls, data: dict) -> "SpecimenDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SpecimenDefinition":
         return super().from_obj(obj)
@@ -63,12 +66,8 @@ class Additive(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class Container(FhirBaseModel):
-    """ The specimen's container.:param str id: Unique id for inter-element referencing
+    """The specimen's container.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept material: The material type used for the container
@@ -81,56 +80,51 @@ class Container(FhirBaseModel):
     :param Additive additive: Additive associated with container
     :param str preparation: Special processing applied to the container for this specimen type
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "material": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "cap": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "capacity": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "minimumVolumeQuantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        
         "additive": {"class_name": "Additive", "is_contained": True},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  material:  'CodeableConcept'  = None,  type:  'CodeableConcept'  = None,  cap:  'CodeableConcept'  = None,  description:  'str'  = None,  capacity:  'Quantity'  = None,  minimumVolumeQuantity:  'Quantity'  = None,  minimumVolumeString:  'str'  = None,  additive:  list['Additive']  = None,  preparation:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        material: "CodeableConcept" = None,
+        type: "CodeableConcept" = None,
+        cap: "CodeableConcept" = None,
+        description: "str" = None,
+        capacity: "Quantity" = None,
+        minimumVolumeQuantity: "Quantity" = None,
+        minimumVolumeString: "str" = None,
+        additive: list["Additive"] = None,
+        preparation: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.material = material 
-        self.type = type 
-        self.cap = cap 
-        self.description = description 
-        self.capacity = capacity 
-        self.minimumVolumeQuantity = minimumVolumeQuantity 
-        self.minimumVolumeString = minimumVolumeString 
+        self.material = material
+        self.type = type
+        self.cap = cap
+        self.description = description
+        self.capacity = capacity
+        self.minimumVolumeQuantity = minimumVolumeQuantity
+        self.minimumVolumeString = minimumVolumeString
         self.additive = additive or []
-        self.preparation = preparation 
-        
+        self.preparation = preparation
 
     @classmethod
     def from_dict(cls, data: dict) -> "SpecimenDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SpecimenDefinition":
         return super().from_obj(obj)
@@ -139,11 +133,8 @@ class Container(FhirBaseModel):
         return super().as_dict()
 
 
-    
-    
-
 class Handling(FhirBaseModel):
-    """ Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.:param str id: Unique id for inter-element referencing
+    """Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept temperatureQualifier: Qualifies the interval of temperature
@@ -151,40 +142,41 @@ class Handling(FhirBaseModel):
     :param Duration maxDuration: Maximum preservation time
     :param str instruction: Preservation instruction
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        "temperatureQualifier": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "temperatureQualifier": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "temperatureRange": {"class_name": "Range", "is_contained": False},
-        
-        
         "maxDuration": {"class_name": "Duration", "is_contained": False},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  temperatureQualifier:  'CodeableConcept'  = None,  temperatureRange:  'Range'  = None,  maxDuration:  'Duration'  = None,  instruction:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        temperatureQualifier: "CodeableConcept" = None,
+        temperatureRange: "Range" = None,
+        maxDuration: "Duration" = None,
+        instruction: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.temperatureQualifier = temperatureQualifier 
-        self.temperatureRange = temperatureRange 
-        self.maxDuration = maxDuration 
-        self.instruction = instruction 
-        
+        self.temperatureQualifier = temperatureQualifier
+        self.temperatureRange = temperatureRange
+        self.maxDuration = maxDuration
+        self.instruction = instruction
 
     @classmethod
     def from_dict(cls, data: dict) -> "SpecimenDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SpecimenDefinition":
         return super().from_obj(obj)
@@ -193,12 +185,8 @@ class Handling(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class TypeTested(FhirBaseModel):
-    """ Specimen conditioned in a container as expected by the testing laboratory.:param str id: Unique id for inter-element referencing
+    """Specimen conditioned in a container as expected by the testing laboratory.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param bool isDerived: Primary or secondary specimen
@@ -212,58 +200,53 @@ class TypeTested(FhirBaseModel):
     :param Handling handling: Specimen handling before testing
     :param CodeableConcept testingDestination: Where the specimen will be tested
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "container": {"class_name": "Container", "is_contained": True},
-        
-        
-        
         "retentionTime": {"class_name": "Duration", "is_contained": False},
-        
-        
-        
         "rejectionCriterion": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "handling": {"class_name": "Handling", "is_contained": True},
-        
-        
         "testingDestination": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  isDerived:  'bool'  = None,  type:  'CodeableConcept'  = None,  preference:  'str'  = None,  container:  'Container'  = None,  requirement:  'str'  = None,  retentionTime:  'Duration'  = None,  singleUse:  'bool'  = None,  rejectionCriterion:  list['CodeableConcept']  = None,  handling:  list['Handling']  = None,  testingDestination:  list['CodeableConcept']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        isDerived: "bool" = None,
+        type: "CodeableConcept" = None,
+        preference: "str" = None,
+        container: "Container" = None,
+        requirement: "str" = None,
+        retentionTime: "Duration" = None,
+        singleUse: "bool" = None,
+        rejectionCriterion: list["CodeableConcept"] = None,
+        handling: list["Handling"] = None,
+        testingDestination: list["CodeableConcept"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.isDerived = isDerived 
-        self.type = type 
-        self.preference = preference 
-        self.container = container 
-        self.requirement = requirement 
-        self.retentionTime = retentionTime 
-        self.singleUse = singleUse 
+        self.isDerived = isDerived
+        self.type = type
+        self.preference = preference
+        self.container = container
+        self.requirement = requirement
+        self.retentionTime = retentionTime
+        self.singleUse = singleUse
         self.rejectionCriterion = rejectionCriterion or []
         self.handling = handling or []
         self.testingDestination = testingDestination or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "SpecimenDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SpecimenDefinition":
         return super().from_obj(obj)
@@ -273,7 +256,7 @@ class TypeTested(FhirBaseModel):
 
 
 class SpecimenDefinition(DomainResource):
-    """ A kind of specimen with associated set of requirements.
+    """A kind of specimen with associated set of requirements.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -313,129 +296,118 @@ class SpecimenDefinition(DomainResource):
     :param CodeableConcept collection: Specimen collection procedure
     :param TypeTested typeTested: Specimen in container intended for testing by lab
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "versionAlgorithmCoding": {"class_name": "Coding", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
-        
-        "subjectCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "subjectCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "subjectReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "typeCollected": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "patientPreparation": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "collection": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "typeTested": {"class_name": "TypeTested", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  url:  'str'  = None,  identifier:  'Identifier'  = None,  version:  'str'  = None,  versionAlgorithmString:  'str'  = None,  versionAlgorithmCoding:  'Coding'  = None,  name:  'str'  = None,  title:  'str'  = None,  derivedFromCanonical:  list['str']  = None,  derivedFromUri:  list['str']  = None,  status:  'str'  = None,  experimental:  'bool'  = None,  subjectCodeableConcept:  'CodeableConcept'  = None,  subjectReference:  'Reference'  = None,  date:  'str'  = None,  publisher:  'str'  = None,  contact:  list['ContactDetail']  = None,  description:  'str'  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  typeCollected:  'CodeableConcept'  = None,  patientPreparation:  list['CodeableConcept']  = None,  timeAspect:  'str'  = None,  collection:  list['CodeableConcept']  = None,  typeTested:  list['TypeTested']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        url: "str" = None,
+        identifier: "Identifier" = None,
+        version: "str" = None,
+        versionAlgorithmString: "str" = None,
+        versionAlgorithmCoding: "Coding" = None,
+        name: "str" = None,
+        title: "str" = None,
+        derivedFromCanonical: list["str"] = None,
+        derivedFromUri: list["str"] = None,
+        status: "str" = None,
+        experimental: "bool" = None,
+        subjectCodeableConcept: "CodeableConcept" = None,
+        subjectReference: "Reference" = None,
+        date: "str" = None,
+        publisher: "str" = None,
+        contact: list["ContactDetail"] = None,
+        description: "str" = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        purpose: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        approvalDate: "str" = None,
+        lastReviewDate: "str" = None,
+        effectivePeriod: "Period" = None,
+        typeCollected: "CodeableConcept" = None,
+        patientPreparation: list["CodeableConcept"] = None,
+        timeAspect: "str" = None,
+        collection: list["CodeableConcept"] = None,
+        typeTested: list["TypeTested"] = None,
+    ):
+
         self.resourceType = "SpecimenDefinition"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.url = url 
-        self.identifier = identifier 
-        self.version = version 
-        self.versionAlgorithmString = versionAlgorithmString 
-        self.versionAlgorithmCoding = versionAlgorithmCoding 
-        self.name = name 
-        self.title = title 
+        self.url = url
+        self.identifier = identifier
+        self.version = version
+        self.versionAlgorithmString = versionAlgorithmString
+        self.versionAlgorithmCoding = versionAlgorithmCoding
+        self.name = name
+        self.title = title
         self.derivedFromCanonical = derivedFromCanonical or []
         self.derivedFromUri = derivedFromUri or []
-        self.status = status 
-        self.experimental = experimental 
-        self.subjectCodeableConcept = subjectCodeableConcept 
-        self.subjectReference = subjectReference 
-        self.date = date 
-        self.publisher = publisher 
+        self.status = status
+        self.experimental = experimental
+        self.subjectCodeableConcept = subjectCodeableConcept
+        self.subjectReference = subjectReference
+        self.date = date
+        self.publisher = publisher
         self.contact = contact or []
-        self.description = description 
+        self.description = description
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
-        self.approvalDate = approvalDate 
-        self.lastReviewDate = lastReviewDate 
-        self.effectivePeriod = effectivePeriod 
-        self.typeCollected = typeCollected 
+        self.purpose = purpose
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
+        self.approvalDate = approvalDate
+        self.lastReviewDate = lastReviewDate
+        self.effectivePeriod = effectivePeriod
+        self.typeCollected = typeCollected
         self.patientPreparation = patientPreparation or []
-        self.timeAspect = timeAspect 
+        self.timeAspect = timeAspect
         self.collection = collection or []
         self.typeTested = typeTested or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "SpecimenDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SpecimenDefinition":
         return super().from_obj(obj)

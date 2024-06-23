@@ -2,6 +2,7 @@
 Generated class for DeviceDispense. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -17,40 +18,39 @@ from fhirmodels.R5.Resource import *
 
 
 class Performer(FhirBaseModel):
-    """ Indicates who or what performed the event.:param str id: Unique id for inter-element referencing
+    """Indicates who or what performed the event.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept function: Who performed the dispense and what they did
     :param Reference actor: Individual who was performing
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "function": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "actor": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  function:  'CodeableConcept'  = None,  actor:  'Reference'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        function: "CodeableConcept" = None,
+        actor: "Reference" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.function = function 
-        self.actor = actor 
-        
+        self.function = function
+        self.actor = actor
 
     @classmethod
     def from_dict(cls, data: dict) -> "DeviceDispense":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "DeviceDispense":
         return super().from_obj(obj)
@@ -60,7 +60,7 @@ class Performer(FhirBaseModel):
 
 
 class DeviceDispense(DomainResource):
-    """ Indicates that a device is to be or has been dispensed for a named person/patient.  This includes a description of the product (supply) provided and the instructions for using the device.
+    """Indicates that a device is to be or has been dispensed for a named person/patient.  This includes a description of the product (supply) provided and the instructions for using the device.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -91,121 +91,102 @@ class DeviceDispense(DomainResource):
     :param str usageInstruction: Full representation of the usage instructions
     :param Reference eventHistory: A list of relevant lifecycle events
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "basedOn": {"class_name": "Reference", "is_contained": False},
-        
-        
         "partOf": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "statusReason": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "device": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "receiver": {"class_name": "Reference", "is_contained": False},
-        
-        
         "encounter": {"class_name": "Reference", "is_contained": False},
-        
-        
         "supportingInformation": {"class_name": "Reference", "is_contained": False},
-        
-        
         "performer": {"class_name": "Performer", "is_contained": True},
-        
-        
         "location": {"class_name": "Reference", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "quantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        
-        
         "destination": {"class_name": "Reference", "is_contained": False},
-        
-        
         "note": {"class_name": "Annotation", "is_contained": False},
-        
-        
-        
         "eventHistory": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  basedOn:  list['Reference']  = None,  partOf:  list['Reference']  = None,  status:  'str'  = None,  statusReason:  'CodeableReference'  = None,  category:  list['CodeableConcept']  = None,  device:  'CodeableReference'  = None,  subject:  'Reference'  = None,  receiver:  'Reference'  = None,  encounter:  'Reference'  = None,  supportingInformation:  list['Reference']  = None,  performer:  list['Performer']  = None,  location:  'Reference'  = None,  type:  'CodeableConcept'  = None,  quantity:  'Quantity'  = None,  preparedDate:  'str'  = None,  whenHandedOver:  'str'  = None,  destination:  'Reference'  = None,  note:  list['Annotation']  = None,  usageInstruction:  'str'  = None,  eventHistory:  list['Reference']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        basedOn: list["Reference"] = None,
+        partOf: list["Reference"] = None,
+        status: "str" = None,
+        statusReason: "CodeableReference" = None,
+        category: list["CodeableConcept"] = None,
+        device: "CodeableReference" = None,
+        subject: "Reference" = None,
+        receiver: "Reference" = None,
+        encounter: "Reference" = None,
+        supportingInformation: list["Reference"] = None,
+        performer: list["Performer"] = None,
+        location: "Reference" = None,
+        type: "CodeableConcept" = None,
+        quantity: "Quantity" = None,
+        preparedDate: "str" = None,
+        whenHandedOver: "str" = None,
+        destination: "Reference" = None,
+        note: list["Annotation"] = None,
+        usageInstruction: "str" = None,
+        eventHistory: list["Reference"] = None,
+    ):
+
         self.resourceType = "DeviceDispense"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
         self.basedOn = basedOn or []
         self.partOf = partOf or []
-        self.status = status 
-        self.statusReason = statusReason 
+        self.status = status
+        self.statusReason = statusReason
         self.category = category or []
-        self.device = device 
-        self.subject = subject 
-        self.receiver = receiver 
-        self.encounter = encounter 
+        self.device = device
+        self.subject = subject
+        self.receiver = receiver
+        self.encounter = encounter
         self.supportingInformation = supportingInformation or []
         self.performer = performer or []
-        self.location = location 
-        self.type = type 
-        self.quantity = quantity 
-        self.preparedDate = preparedDate 
-        self.whenHandedOver = whenHandedOver 
-        self.destination = destination 
+        self.location = location
+        self.type = type
+        self.quantity = quantity
+        self.preparedDate = preparedDate
+        self.whenHandedOver = whenHandedOver
+        self.destination = destination
         self.note = note or []
-        self.usageInstruction = usageInstruction 
+        self.usageInstruction = usageInstruction
         self.eventHistory = eventHistory or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "DeviceDispense":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "DeviceDispense":
         return super().from_obj(obj)

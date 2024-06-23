@@ -2,6 +2,7 @@
 Generated class for EncounterHistory. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.CodeableReference import *
@@ -17,40 +18,39 @@ from fhirmodels.R5.Resource import *
 
 
 class Location(FhirBaseModel):
-    """ The location of the patient at this point in the encounter, the multiple cardinality permits de-normalizing the levels of the location hierarchy, such as site/ward/room/bed.:param str id: Unique id for inter-element referencing
+    """The location of the patient at this point in the encounter, the multiple cardinality permits de-normalizing the levels of the location hierarchy, such as site/ward/room/bed.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Reference location: Location the encounter takes place
     :param CodeableConcept form: The physical type of the location (usually the level in the location hierarchy - bed, room, ward, virtual etc.)
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "location": {"class_name": "Reference", "is_contained": False},
-        
-        
         "form": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  location:  'Reference'  = None,  form:  'CodeableConcept'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        location: "Reference" = None,
+        form: "CodeableConcept" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.location = location 
-        self.form = form 
-        
+        self.location = location
+        self.form = form
 
     @classmethod
     def from_dict(cls, data: dict) -> "EncounterHistory":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "EncounterHistory":
         return super().from_obj(obj)
@@ -60,7 +60,7 @@ class Location(FhirBaseModel):
 
 
 class EncounterHistory(DomainResource):
-    """ A record of significant events/milestones key data throughout the history of an Encounter
+    """A record of significant events/milestones key data throughout the history of an Encounter
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -83,91 +83,79 @@ class EncounterHistory(DomainResource):
     :param Duration length: Actual quantity of time the encounter lasted (less time absent)
     :param Location location: Location of the patient at this point in the encounter
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "encounter": {"class_name": "Reference", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
         "_class": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "serviceType": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "subjectStatus": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "actualPeriod": {"class_name": "Period", "is_contained": False},
-        
-        
-        
-        
         "length": {"class_name": "Duration", "is_contained": False},
-        
-        
         "location": {"class_name": "Location", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  encounter:  'Reference'  = None,  identifier:  list['Identifier']  = None,  status:  'str'  = None,  _class:  'CodeableConcept'  = None,  type:  list['CodeableConcept']  = None,  serviceType:  list['CodeableReference']  = None,  subject:  'Reference'  = None,  subjectStatus:  'CodeableConcept'  = None,  actualPeriod:  'Period'  = None,  plannedStartDate:  'str'  = None,  plannedEndDate:  'str'  = None,  length:  'Duration'  = None,  location:  list['Location']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        encounter: "Reference" = None,
+        identifier: list["Identifier"] = None,
+        status: "str" = None,
+        _class: "CodeableConcept" = None,
+        type: list["CodeableConcept"] = None,
+        serviceType: list["CodeableReference"] = None,
+        subject: "Reference" = None,
+        subjectStatus: "CodeableConcept" = None,
+        actualPeriod: "Period" = None,
+        plannedStartDate: "str" = None,
+        plannedEndDate: "str" = None,
+        length: "Duration" = None,
+        location: list["Location"] = None,
+    ):
+
         self.resourceType = "EncounterHistory"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.encounter = encounter 
+        self.encounter = encounter
         self.identifier = identifier or []
-        self.status = status 
-        self._class = _class 
+        self.status = status
+        self._class = _class
         self.type = type or []
         self.serviceType = serviceType or []
-        self.subject = subject 
-        self.subjectStatus = subjectStatus 
-        self.actualPeriod = actualPeriod 
-        self.plannedStartDate = plannedStartDate 
-        self.plannedEndDate = plannedEndDate 
-        self.length = length 
+        self.subject = subject
+        self.subjectStatus = subjectStatus
+        self.actualPeriod = actualPeriod
+        self.plannedStartDate = plannedStartDate
+        self.plannedEndDate = plannedEndDate
+        self.length = length
         self.location = location or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "EncounterHistory":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "EncounterHistory":
         return super().from_obj(obj)

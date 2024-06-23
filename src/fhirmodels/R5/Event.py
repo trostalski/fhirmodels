@@ -2,6 +2,7 @@
 Generated class for Event. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.CodeableConcept import *
@@ -14,27 +15,28 @@ from fhirmodels.R5.Timing import *
 
 
 class Performer(FhirBaseModel):
-    """ Indicates who or what performed the {{title}} and how they were involved.:param CodeableConcept function: Type of performance
+    """Indicates who or what performed the {{title}} and how they were involved.:param CodeableConcept function: Type of performance
     :param Reference actor: Who performed {{title}}
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
         "function": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "actor": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  function:  'CodeableConcept'  = None,  actor:  'Reference'  = None, ):
-        self.function = function 
-        self.actor = actor 
-        
+    }
+
+    def __init__(
+        self,
+        function: "CodeableConcept" = None,
+        actor: "Reference" = None,
+    ):
+        self.function = function
+        self.actor = actor
 
     @classmethod
     def from_dict(cls, data: dict) -> "Event":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Event":
         return super().from_obj(obj)
@@ -44,7 +46,7 @@ class Performer(FhirBaseModel):
 
 
 class Event(FhirBaseModel):
-    """ Logical Model: A pattern to be followed by resources that represent the performance of some activity, possibly in accordance with a request or service definition.
+    """Logical Model: A pattern to be followed by resources that represent the performance of some activity, possibly in accordance with a request or service definition.
     :param Identifier identifier: Business identifier for {{title}}
     :param Reference basedOn: Fulfills plan, proposal or order
     :param Reference partOf: Part of referenced event
@@ -68,97 +70,82 @@ class Event(FhirBaseModel):
     :param Annotation note: Comments made about the event
     :param Reference relevantHistory: Key events in history of {{title}}
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
         "basedOn": {"class_name": "Reference", "is_contained": False},
-        
-        
         "partOf": {"class_name": "Reference", "is_contained": False},
-        
-        
         "researchStudy": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "statusReason": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "product": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "encounter": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "occurrencePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "occurrenceTiming": {"class_name": "Timing", "is_contained": False},
-        
-        
-        
-        
         "reportedReference": {"class_name": "Reference", "is_contained": False},
-        
-        
         "performer": {"class_name": "Performer", "is_contained": True},
-        
-        
         "location": {"class_name": "Reference", "is_contained": False},
-        
-        
         "reason": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "note": {"class_name": "Annotation", "is_contained": False},
-        
-        
         "relevantHistory": {"class_name": "Reference", "is_contained": False},
-        
-        }
-    def __init__(self,  identifier:  list['Identifier']  = None,  basedOn:  list['Reference']  = None,  partOf:  list['Reference']  = None,  researchStudy:  list['Reference']  = None,  status:  'str'  = None,  statusReason:  'CodeableConcept'  = None,  category:  list['CodeableConcept']  = None,  code:  'CodeableConcept'  = None,  product:  'CodeableReference'  = None,  subject:  'Reference'  = None,  encounter:  'Reference'  = None,  occurrenceDateTime:  'str'  = None,  occurrencePeriod:  'Period'  = None,  occurrenceTiming:  'Timing'  = None,  recorded:  'str'  = None,  reportedBoolean:  'bool'  = None,  reportedReference:  'Reference'  = None,  performer:  list['Performer']  = None,  location:  'Reference'  = None,  reason:  list['CodeableReference']  = None,  note:  list['Annotation']  = None,  relevantHistory:  list['Reference']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        identifier: list["Identifier"] = None,
+        basedOn: list["Reference"] = None,
+        partOf: list["Reference"] = None,
+        researchStudy: list["Reference"] = None,
+        status: "str" = None,
+        statusReason: "CodeableConcept" = None,
+        category: list["CodeableConcept"] = None,
+        code: "CodeableConcept" = None,
+        product: "CodeableReference" = None,
+        subject: "Reference" = None,
+        encounter: "Reference" = None,
+        occurrenceDateTime: "str" = None,
+        occurrencePeriod: "Period" = None,
+        occurrenceTiming: "Timing" = None,
+        recorded: "str" = None,
+        reportedBoolean: "bool" = None,
+        reportedReference: "Reference" = None,
+        performer: list["Performer"] = None,
+        location: "Reference" = None,
+        reason: list["CodeableReference"] = None,
+        note: list["Annotation"] = None,
+        relevantHistory: list["Reference"] = None,
+    ):
+
         self.identifier = identifier or []
         self.basedOn = basedOn or []
         self.partOf = partOf or []
         self.researchStudy = researchStudy or []
-        self.status = status 
-        self.statusReason = statusReason 
+        self.status = status
+        self.statusReason = statusReason
         self.category = category or []
-        self.code = code 
-        self.product = product 
-        self.subject = subject 
-        self.encounter = encounter 
-        self.occurrenceDateTime = occurrenceDateTime 
-        self.occurrencePeriod = occurrencePeriod 
-        self.occurrenceTiming = occurrenceTiming 
-        self.recorded = recorded 
-        self.reportedBoolean = reportedBoolean 
-        self.reportedReference = reportedReference 
+        self.code = code
+        self.product = product
+        self.subject = subject
+        self.encounter = encounter
+        self.occurrenceDateTime = occurrenceDateTime
+        self.occurrencePeriod = occurrencePeriod
+        self.occurrenceTiming = occurrenceTiming
+        self.recorded = recorded
+        self.reportedBoolean = reportedBoolean
+        self.reportedReference = reportedReference
         self.performer = performer or []
-        self.location = location 
+        self.location = location
         self.reason = reason or []
         self.note = note or []
         self.relevantHistory = relevantHistory or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Event":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Event":
         return super().from_obj(obj)

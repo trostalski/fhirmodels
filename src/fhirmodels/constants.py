@@ -12,6 +12,12 @@ FHIR_VERSION_PACKAGE_URLS = {
 }
 DOMAIN_RESOURCE_STRUC_DEF_URL = "http://hl7.org/fhir/StructureDefinition/DomainResource"
 
+# PACKAGE
+STRUC_DEF_COMPLEX_TYPE = "complex-type"
+STRUC_DEF_RESOURCE = "resource"
+STRUC_DEF_LOGICAL = "logical"
+STRUC_DEF_PRIMITIVE_TYPE = "primitive-type"
+
 # RESOURCE TYPES
 ACCOUNT = "Account"
 ACTIVITYDEFINITION = "ActivityDefinition"
@@ -196,6 +202,7 @@ PYTHON_KEYWORDS = [
     "with",
     "yield",
 ]
+
 FHIR_PRIMITIVES_TO_PYTHON_MAP = {
     "base64Binary": str,
     "boolean": bool,
@@ -219,6 +226,7 @@ FHIR_PRIMITIVES_TO_PYTHON_MAP = {
     "uuid": str,
     "xhtml": str,
 }
+
 FHIR_PRIMITIVE_EXPANSION_MAP = {
     "http://hl7.org/fhirpath/System.String": "string",
     "http://hl7.org/fhirpath/System.Boolean": "boolean",

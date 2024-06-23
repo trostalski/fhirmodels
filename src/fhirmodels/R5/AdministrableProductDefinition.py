@@ -2,6 +2,7 @@
 Generated class for AdministrableProductDefinition. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.BackboneElement import *
 from fhirmodels.R5.CodeableConcept import *
@@ -18,7 +19,7 @@ from fhirmodels.R5.Resource import *
 
 
 class Property(FhirBaseModel):
-    """ Characteristics e.g. a product's onset of action.:param str id: Unique id for inter-element referencing
+    """Characteristics e.g. a product's onset of action.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: A code expressing the type of characteristic
@@ -31,56 +32,54 @@ class Property(FhirBaseModel):
     :param Reference valueReference: A value for the characteristic
     :param CodeableConcept status: The status of characteristic e.g. assigned or pending
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "type": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        "valueCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "valueCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "valueQuantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        
-        
-        
         "valueAttachment": {"class_name": "Attachment", "is_contained": False},
-        
-        
         "valueReference": {"class_name": "Reference", "is_contained": False},
-        
-        
         "status": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  type:  'CodeableConcept'  = None,  valueCodeableConcept:  'CodeableConcept'  = None,  valueQuantity:  'Quantity'  = None,  valueDate:  'str'  = None,  valueBoolean:  'bool'  = None,  valueMarkdown:  'str'  = None,  valueAttachment:  'Attachment'  = None,  valueReference:  'Reference'  = None,  status:  'CodeableConcept'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        type: "CodeableConcept" = None,
+        valueCodeableConcept: "CodeableConcept" = None,
+        valueQuantity: "Quantity" = None,
+        valueDate: "str" = None,
+        valueBoolean: "bool" = None,
+        valueMarkdown: "str" = None,
+        valueAttachment: "Attachment" = None,
+        valueReference: "Reference" = None,
+        status: "CodeableConcept" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.type = type 
-        self.valueCodeableConcept = valueCodeableConcept 
-        self.valueQuantity = valueQuantity 
-        self.valueDate = valueDate 
-        self.valueBoolean = valueBoolean 
-        self.valueMarkdown = valueMarkdown 
-        self.valueAttachment = valueAttachment 
-        self.valueReference = valueReference 
-        self.status = status 
-        
+        self.type = type
+        self.valueCodeableConcept = valueCodeableConcept
+        self.valueQuantity = valueQuantity
+        self.valueDate = valueDate
+        self.valueBoolean = valueBoolean
+        self.valueMarkdown = valueMarkdown
+        self.valueAttachment = valueAttachment
+        self.valueReference = valueReference
+        self.status = status
 
     @classmethod
     def from_dict(cls, data: dict) -> "AdministrableProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "AdministrableProductDefinition":
         return super().from_obj(obj)
@@ -89,51 +88,43 @@ class Property(FhirBaseModel):
         return super().as_dict()
 
 
-    
-        
-    
-        
-    
-    
-
 class WithdrawalPeriod(FhirBaseModel):
-    """ A species specific time during which consumption of animal product is not appropriate.:param str id: Unique id for inter-element referencing
+    """A species specific time during which consumption of animal product is not appropriate.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept tissue: The type of tissue for which the withdrawal period applies, e.g. meat, milk
     :param Quantity value: A value for the time
     :param str supportingInformation: Extra information about the withdrawal period
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "tissue": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "value": {"class_name": "Quantity", "is_contained": False},
-        
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  tissue:  'CodeableConcept'  = None,  value:  'Quantity'  = None,  supportingInformation:  'str'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        tissue: "CodeableConcept" = None,
+        value: "Quantity" = None,
+        supportingInformation: "str" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.tissue = tissue 
-        self.value = value 
-        self.supportingInformation = supportingInformation 
-        
+        self.tissue = tissue
+        self.value = value
+        self.supportingInformation = supportingInformation
 
     @classmethod
     def from_dict(cls, data: dict) -> "AdministrableProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "AdministrableProductDefinition":
         return super().from_obj(obj)
@@ -142,45 +133,40 @@ class WithdrawalPeriod(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class TargetSpecies(FhirBaseModel):
-    """ A species for which this route applies.:param str id: Unique id for inter-element referencing
+    """A species for which this route applies.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: Coded expression for the species
     :param WithdrawalPeriod withdrawalPeriod: A species specific time during which consumption of animal product is not appropriate
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "withdrawalPeriod": {"class_name": "WithdrawalPeriod", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  withdrawalPeriod:  list['WithdrawalPeriod']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "CodeableConcept" = None,
+        withdrawalPeriod: list["WithdrawalPeriod"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
+        self.code = code
         self.withdrawalPeriod = withdrawalPeriod or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "AdministrableProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "AdministrableProductDefinition":
         return super().from_obj(obj)
@@ -189,12 +175,8 @@ class TargetSpecies(FhirBaseModel):
         return super().as_dict()
 
 
-  
-    
-    
-
 class RouteOfAdministration(FhirBaseModel):
-    """ The path by which the product is taken into or makes contact with the body. In some regions this is referred to as the licenced or approved route. RouteOfAdministration cannot be used when the 'formOf' product already uses MedicinalProductDefinition.route (and vice versa).:param str id: Unique id for inter-element referencing
+    """The path by which the product is taken into or makes contact with the body. In some regions this is referred to as the licenced or approved route. RouteOfAdministration cannot be used when the 'formOf' product already uses MedicinalProductDefinition.route (and vice versa).:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept code: Coded expression for the route
@@ -205,54 +187,48 @@ class RouteOfAdministration(FhirBaseModel):
     :param Duration maxTreatmentPeriod: The maximum treatment period during which the product can be administered
     :param TargetSpecies targetSpecies: A species for which this route applies
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "code": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "firstDose": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "maxSingleDose": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "maxDosePerDay": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "maxDosePerTreatmentPeriod": {"class_name": "Ratio", "is_contained": False},
-        
-        
         "maxTreatmentPeriod": {"class_name": "Duration", "is_contained": False},
-        
-        
         "targetSpecies": {"class_name": "TargetSpecies", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  code:  'CodeableConcept'  = None,  firstDose:  'Quantity'  = None,  maxSingleDose:  'Quantity'  = None,  maxDosePerDay:  'Quantity'  = None,  maxDosePerTreatmentPeriod:  'Ratio'  = None,  maxTreatmentPeriod:  'Duration'  = None,  targetSpecies:  list['TargetSpecies']  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        code: "CodeableConcept" = None,
+        firstDose: "Quantity" = None,
+        maxSingleDose: "Quantity" = None,
+        maxDosePerDay: "Quantity" = None,
+        maxDosePerTreatmentPeriod: "Ratio" = None,
+        maxTreatmentPeriod: "Duration" = None,
+        targetSpecies: list["TargetSpecies"] = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.code = code 
-        self.firstDose = firstDose 
-        self.maxSingleDose = maxSingleDose 
-        self.maxDosePerDay = maxDosePerDay 
-        self.maxDosePerTreatmentPeriod = maxDosePerTreatmentPeriod 
-        self.maxTreatmentPeriod = maxTreatmentPeriod 
+        self.code = code
+        self.firstDose = firstDose
+        self.maxSingleDose = maxSingleDose
+        self.maxDosePerDay = maxDosePerDay
+        self.maxDosePerTreatmentPeriod = maxDosePerTreatmentPeriod
+        self.maxTreatmentPeriod = maxTreatmentPeriod
         self.targetSpecies = targetSpecies or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "AdministrableProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "AdministrableProductDefinition":
         return super().from_obj(obj)
@@ -262,7 +238,7 @@ class RouteOfAdministration(FhirBaseModel):
 
 
 class AdministrableProductDefinition(DomainResource):
-    """ A medicinal product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).
+    """A medicinal product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -283,85 +259,80 @@ class AdministrableProductDefinition(DomainResource):
     :param Property property: Characteristics e.g. a product's onset of action
     :param RouteOfAdministration routeOfAdministration: The path by which the product is taken into or makes contact with the body
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
         "formOf": {"class_name": "Reference", "is_contained": False},
-        
-        
-        "administrableDoseForm": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
+        "administrableDoseForm": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
         "unitOfPresentation": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "producedFrom": {"class_name": "Reference", "is_contained": False},
-        
-        
         "ingredient": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "device": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "property": {"class_name": "Property", "is_contained": True},
-        
-        
-        "routeOfAdministration": {"class_name": "RouteOfAdministration", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  status:  'str'  = None,  formOf:  list['Reference']  = None,  administrableDoseForm:  'CodeableConcept'  = None,  unitOfPresentation:  'CodeableConcept'  = None,  producedFrom:  list['Reference']  = None,  ingredient:  list['CodeableConcept']  = None,  device:  'Reference'  = None,  description:  'str'  = None,  property:  list['Property']  = None,  routeOfAdministration:  list['RouteOfAdministration']  = None, ):
-        
+        "routeOfAdministration": {
+            "class_name": "RouteOfAdministration",
+            "is_contained": True,
+        },
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        status: "str" = None,
+        formOf: list["Reference"] = None,
+        administrableDoseForm: "CodeableConcept" = None,
+        unitOfPresentation: "CodeableConcept" = None,
+        producedFrom: list["Reference"] = None,
+        ingredient: list["CodeableConcept"] = None,
+        device: "Reference" = None,
+        description: "str" = None,
+        property: list["Property"] = None,
+        routeOfAdministration: list["RouteOfAdministration"] = None,
+    ):
+
         self.resourceType = "AdministrableProductDefinition"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.identifier = identifier or []
-        self.status = status 
+        self.status = status
         self.formOf = formOf or []
-        self.administrableDoseForm = administrableDoseForm 
-        self.unitOfPresentation = unitOfPresentation 
+        self.administrableDoseForm = administrableDoseForm
+        self.unitOfPresentation = unitOfPresentation
         self.producedFrom = producedFrom or []
         self.ingredient = ingredient or []
-        self.device = device 
-        self.description = description 
+        self.device = device
+        self.description = description
         self.property = property or []
         self.routeOfAdministration = routeOfAdministration or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "AdministrableProductDefinition":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "AdministrableProductDefinition":
         return super().from_obj(obj)

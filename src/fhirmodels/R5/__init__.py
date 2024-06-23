@@ -1,4 +1,3 @@
-
 from .Account import Account
 from .ActivityDefinition import ActivityDefinition
 from .ActorDefinition import ActorDefinition
@@ -20,8 +19,7 @@ from .Base import Base
 from .Basic import Basic
 from .Binary import Binary
 from .BiologicallyDerivedProduct import BiologicallyDerivedProduct
-from .BiologicallyDerivedProductDispense import \
-    BiologicallyDerivedProductDispense
+from .BiologicallyDerivedProductDispense import BiologicallyDerivedProductDispense
 from .BodyStructure import BodyStructure
 from .Bundle import Bundle
 from .CanonicalResource import CanonicalResource

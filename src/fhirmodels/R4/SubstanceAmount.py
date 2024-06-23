@@ -2,6 +2,7 @@
 Generated class for SubstanceAmount. 
 Time: 2024-06-14 18:55:42
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4.CodeableConcept import *
 from fhirmodels.R4.Element import *
@@ -11,35 +12,35 @@ from fhirmodels.R4.Range import *
 
 
 class ReferenceRange(FhirBaseModel):
-    """ Reference range of possible or expected values.:param str id: Unique id for inter-element referencing
+    """Reference range of possible or expected values.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Quantity lowLimit: Lower limit possible or expected
     :param Quantity highLimit: Upper limit possible or expected
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "lowLimit": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "highLimit": {"class_name": "Quantity", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  lowLimit:  'Quantity'  = None,  highLimit:  'Quantity'  = None, ):
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        lowLimit: "Quantity" = None,
+        highLimit: "Quantity" = None,
+    ):
+        self.id = id
         self.extension = extension or []
-        self.lowLimit = lowLimit 
-        self.highLimit = highLimit 
-        
+        self.lowLimit = lowLimit
+        self.highLimit = highLimit
 
     @classmethod
     def from_dict(cls, data: dict) -> "SubstanceAmount":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SubstanceAmount":
         return super().from_obj(obj)
@@ -49,7 +50,7 @@ class ReferenceRange(FhirBaseModel):
 
 
 class SubstanceAmount(FhirBaseModel):
-    """ Base StructureDefinition for SubstanceAmount Type: Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.
+    """Base StructureDefinition for SubstanceAmount Type: Chemical substances are a single substance type whose primary defining element is the molecular structure. Chemical substances shall be defined on the basis of their complete covalent molecular structure; the presence of a salt (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade, physical form or particle size are not taken into account in the definition of a chemical substance or in the assignment of a Substance ID.
     :param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
@@ -60,47 +61,44 @@ class SubstanceAmount(FhirBaseModel):
     :param str amountText: A textual comment on a numeric value
     :param ReferenceRange referenceRange: Reference range of possible or expected values
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "amountQuantity": {"class_name": "Quantity", "is_contained": False},
-        
-        
         "amountRange": {"class_name": "Range", "is_contained": False},
-        
-        
-        
         "amountType": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "referenceRange": {"class_name": "ReferenceRange", "is_contained": True},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  amountQuantity:  'Quantity'  = None,  amountRange:  'Range'  = None,  amountString:  'str'  = None,  amountType:  'CodeableConcept'  = None,  amountText:  'str'  = None,  referenceRange:  'ReferenceRange'  = None, ):
-        
-        self.id = id 
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        amountQuantity: "Quantity" = None,
+        amountRange: "Range" = None,
+        amountString: "str" = None,
+        amountType: "CodeableConcept" = None,
+        amountText: "str" = None,
+        referenceRange: "ReferenceRange" = None,
+    ):
+
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.amountQuantity = amountQuantity 
-        self.amountRange = amountRange 
-        self.amountString = amountString 
-        self.amountType = amountType 
-        self.amountText = amountText 
-        self.referenceRange = referenceRange 
-        
+        self.amountQuantity = amountQuantity
+        self.amountRange = amountRange
+        self.amountString = amountString
+        self.amountType = amountType
+        self.amountText = amountText
+        self.referenceRange = referenceRange
 
     @classmethod
     def from_dict(cls, data: dict) -> "SubstanceAmount":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "SubstanceAmount":
         return super().from_obj(obj)

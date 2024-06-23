@@ -2,25 +2,26 @@
 Generated class for Base. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 
 
 class Base(FhirBaseModel):
-    """ Base Type: Base definition for all types defined in FHIR type system.
-    """
+    """Base Type: Base definition for all types defined in FHIR type system."""
+
     # needed for complex properties where the element name is different from the class name
-    property_class_info = {
-        }
-    def __init__(self, ):
-        
+    property_class_info = {}
+
+    def __init__(
+        self,
+    ):
+
         self.resourceType = "Base"
-        
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Base":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Base":
         return super().from_obj(obj)

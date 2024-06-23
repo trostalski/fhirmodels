@@ -1,4 +1,3 @@
-
 from .Account import Account
 from .ActivityDefinition import ActivityDefinition
 from .Address import Address
@@ -114,8 +113,7 @@ from .MedicinalProductInteraction import MedicinalProductInteraction
 from .MedicinalProductManufactured import MedicinalProductManufactured
 from .MedicinalProductPackaged import MedicinalProductPackaged
 from .MedicinalProductPharmaceutical import MedicinalProductPharmaceutical
-from .MedicinalProductUndesirableEffect import \
-    MedicinalProductUndesirableEffect
+from .MedicinalProductUndesirableEffect import MedicinalProductUndesirableEffect
 from .MessageDefinition import MessageDefinition
 from .MessageHeader import MessageHeader
 from .Meta import Meta

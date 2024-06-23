@@ -2,6 +2,7 @@
 Generated class for Communication. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.R5.Annotation import *
 from fhirmodels.R5.Attachment import *
 from fhirmodels.R5.BackboneElement import *
@@ -17,45 +18,46 @@ from fhirmodels.R5.Resource import *
 
 
 class Payload(FhirBaseModel):
-    """ Text, attachment(s), or resource(s) that was communicated to the recipient.:param str id: Unique id for inter-element referencing
+    """Text, attachment(s), or resource(s) that was communicated to the recipient.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Attachment contentAttachment: Message part content
     :param Reference contentReference: Message part content
     :param CodeableConcept contentCodeableConcept: Message part content
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "contentAttachment": {"class_name": "Attachment", "is_contained": False},
-        
-        
         "contentReference": {"class_name": "Reference", "is_contained": False},
-        
-        
-        "contentCodeableConcept": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  contentAttachment:  'Attachment'  = None,  contentReference:  'Reference'  = None,  contentCodeableConcept:  'CodeableConcept'  = None, ):
-        self.id = id 
+        "contentCodeableConcept": {
+            "class_name": "CodeableConcept",
+            "is_contained": False,
+        },
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        contentAttachment: "Attachment" = None,
+        contentReference: "Reference" = None,
+        contentCodeableConcept: "CodeableConcept" = None,
+    ):
+        self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
-        self.contentAttachment = contentAttachment 
-        self.contentReference = contentReference 
-        self.contentCodeableConcept = contentCodeableConcept 
-        
+        self.contentAttachment = contentAttachment
+        self.contentReference = contentReference
+        self.contentCodeableConcept = contentCodeableConcept
 
     @classmethod
     def from_dict(cls, data: dict) -> "Communication":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Communication":
         return super().from_obj(obj)
@@ -65,7 +67,7 @@ class Payload(FhirBaseModel):
 
 
 class Communication(DomainResource):
-    """ A clinical or business level record of information being transmitted or shared; e.g. an alert that was sent to a responsible provider, a public health agency communication to a provider/reporter in response to a case report for a reportable condition.
+    """A clinical or business level record of information being transmitted or shared; e.g. an alert that was sent to a responsible provider, a public health agency communication to a provider/reporter in response to a case report for a reportable condition.
     :param str id: Logical id of this artifact
     :param Meta meta: Metadata about the resource
     :param str implicitRules: A set of rules under which this content was created
@@ -97,90 +99,73 @@ class Communication(DomainResource):
     :param Payload payload: Message payload
     :param Annotation note: Comments made about the communication
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
-        
         "meta": {"class_name": "Meta", "is_contained": False},
-        
-        
-        
-        
         "text": {"class_name": "Narrative", "is_contained": False},
-        
-        
         "contained": {"class_name": "Resource", "is_contained": False},
-        
-        
         "extension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
-        
         "basedOn": {"class_name": "Reference", "is_contained": False},
-        
-        
         "partOf": {"class_name": "Reference", "is_contained": False},
-        
-        
         "inResponseTo": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
         "statusReason": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "category": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
         "medium": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "subject": {"class_name": "Reference", "is_contained": False},
-        
-        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "about": {"class_name": "Reference", "is_contained": False},
-        
-        
         "encounter": {"class_name": "Reference", "is_contained": False},
-        
-        
-        
-        
         "recipient": {"class_name": "Reference", "is_contained": False},
-        
-        
         "sender": {"class_name": "Reference", "is_contained": False},
-        
-        
         "reason": {"class_name": "CodeableReference", "is_contained": False},
-        
-        
         "payload": {"class_name": "Payload", "is_contained": True},
-        
-        
         "note": {"class_name": "Annotation", "is_contained": False},
-        
-        }
-    def __init__(self,  id:  'str'  = None,  meta:  'Meta'  = None,  implicitRules:  'str'  = None,  language:  'str'  = None,  text:  'Narrative'  = None,  contained:  list['Resource']  = None,  extension:  list['Extension']  = None,  modifierExtension:  list['Extension']  = None,  identifier:  list['Identifier']  = None,  instantiatesCanonical:  list['str']  = None,  instantiatesUri:  list['str']  = None,  basedOn:  list['Reference']  = None,  partOf:  list['Reference']  = None,  inResponseTo:  list['Reference']  = None,  status:  'str'  = None,  statusReason:  'CodeableConcept'  = None,  category:  list['CodeableConcept']  = None,  priority:  'str'  = None,  medium:  list['CodeableConcept']  = None,  subject:  'Reference'  = None,  topic:  'CodeableConcept'  = None,  about:  list['Reference']  = None,  encounter:  'Reference'  = None,  sent:  'str'  = None,  received:  'str'  = None,  recipient:  list['Reference']  = None,  sender:  'Reference'  = None,  reason:  list['CodeableReference']  = None,  payload:  list['Payload']  = None,  note:  list['Annotation']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        meta: "Meta" = None,
+        implicitRules: "str" = None,
+        language: "str" = None,
+        text: "Narrative" = None,
+        contained: list["Resource"] = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        identifier: list["Identifier"] = None,
+        instantiatesCanonical: list["str"] = None,
+        instantiatesUri: list["str"] = None,
+        basedOn: list["Reference"] = None,
+        partOf: list["Reference"] = None,
+        inResponseTo: list["Reference"] = None,
+        status: "str" = None,
+        statusReason: "CodeableConcept" = None,
+        category: list["CodeableConcept"] = None,
+        priority: "str" = None,
+        medium: list["CodeableConcept"] = None,
+        subject: "Reference" = None,
+        topic: "CodeableConcept" = None,
+        about: list["Reference"] = None,
+        encounter: "Reference" = None,
+        sent: "str" = None,
+        received: "str" = None,
+        recipient: list["Reference"] = None,
+        sender: "Reference" = None,
+        reason: list["CodeableReference"] = None,
+        payload: list["Payload"] = None,
+        note: list["Annotation"] = None,
+    ):
+
         self.resourceType = "Communication"
-        
-        self.id = id 
-        self.meta = meta 
-        self.implicitRules = implicitRules 
-        self.language = language 
-        self.text = text 
+
+        self.id = id
+        self.meta = meta
+        self.implicitRules = implicitRules
+        self.language = language
+        self.text = text
         self.contained = contained or []
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
@@ -190,28 +175,27 @@ class Communication(DomainResource):
         self.basedOn = basedOn or []
         self.partOf = partOf or []
         self.inResponseTo = inResponseTo or []
-        self.status = status 
-        self.statusReason = statusReason 
+        self.status = status
+        self.statusReason = statusReason
         self.category = category or []
-        self.priority = priority 
+        self.priority = priority
         self.medium = medium or []
-        self.subject = subject 
-        self.topic = topic 
+        self.subject = subject
+        self.topic = topic
         self.about = about or []
-        self.encounter = encounter 
-        self.sent = sent 
-        self.received = received 
+        self.encounter = encounter
+        self.sent = sent
+        self.received = received
         self.recipient = recipient or []
-        self.sender = sender 
+        self.sender = sender
         self.reason = reason or []
         self.payload = payload or []
         self.note = note or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Communication":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Communication":
         return super().from_obj(obj)

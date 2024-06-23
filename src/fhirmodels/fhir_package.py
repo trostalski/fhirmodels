@@ -103,14 +103,14 @@ class FhirPackage:
 
     def __init__(
         self,
-        package_info: PackageInfo | None = None,
-        code_systems: list[dict] | None = None,
-        search_parameters: list[dict] | None = None,
-        structure_definitions: list[dict] | None = None,
-        value_sets: list[dict] | None = None,
-        capability_statements: list[dict] | None = None,
-        concept_maps: list[dict] | None = None,
-        name: str | None = None,
+        package_info: t.Optional[dict] = None,
+        code_systems: t.Optional[list[dict]] = None,
+        search_parameters: t.Optional[list[dict]] = None,
+        structure_definitions: t.Optional[list[dict]] = None,
+        value_sets: t.Optional[list[dict]] = None,
+        capability_statements: t.Optional[list[dict]] = None,
+        concept_maps: t.Optional[list[dict]] = None,
+        name: t.Optional[str] = None,
     ):
         self.package_info = package_info
         self.code_systems = code_systems or []
@@ -120,6 +120,26 @@ class FhirPackage:
         self.capability_statements = capability_statements or []
         self.concept_maps = concept_maps or []
         self.name = name
+
+        # Initialize dictionaries for O(1) lookup by URL
+        self._code_systems_by_url = {
+            cs["url"]: cs for cs in self.code_systems if "url" in cs
+        }
+        self._value_sets_by_url = {
+            vs["url"]: vs for vs in self.value_sets if "url" in vs
+        }
+        self._search_parameters_by_url = {
+            sp["url"]: sp for sp in self.search_parameters if "url" in sp
+        }
+        self._structure_definitions_by_url = {
+            sd["url"]: sd for sd in self.structure_definitions if "url" in sd
+        }
+        self._capability_statements_by_url = {
+            cs["url"]: cs for cs in self.capability_statements if "url" in cs
+        }
+        self._concept_maps_by_url = {
+            cm["url"]: cm for cm in self.concept_maps if "url" in cm
+        }
 
     @classmethod
     def from_npm_file(cls, npm_file: t.BinaryIO, name: str = None):
@@ -164,18 +184,30 @@ class FhirPackage:
         )
 
     def get_codesystem_by_url(self, url: str):
-        for cs in self.code_systems:
-            if cs["url"] == url:
-                return cs
-        return None
+        return self._code_systems_by_url.get(url)
+
+    def get_valueset_by_url(self, url: str):
+        return self._value_sets_by_url.get(url)
+
+    def get_searchparameter_by_url(self, url: str):
+        return self._search_parameters_by_url.get(url)
+
+    def get_structuredefinition_by_url(self, url: str):
+        return self._structure_definitions_by_url.get(url)
+
+    def get_capabilitystatement_by_url(self, url: str):
+        return self._capability_statements_by_url.get(url)
+
+    def get_conceptmap_by_url(self, url: str):
+        return self._concept_maps_by_url.get(url)
 
     @property
     def resource_structure_definitions(self):
-        return self._get_structure_definitions_by_kind("resource")
+        return self._get_structure_definitions_by_kind(_c.STRUC_DEF_RESOURCE)
 
     @property
     def base_resource_structure_definitions(self):
-        resources = self._get_structure_definitions_by_kind("resource")
+        resources = self._get_structure_definitions_by_kind(_c.STRUC_DEF_RESOURCE)
         base_resources = [
             r
             for r in resources
@@ -185,15 +217,15 @@ class FhirPackage:
 
     @property
     def complex_type_structure_definitions(self):
-        return self._get_structure_definitions_by_kind("complex-type")
+        return self._get_structure_definitions_by_kind(_c.STRUC_DEF_COMPLEX_TYPE)
 
     @property
     def primitive_type_structure_definitions(self):
-        return self._get_structure_definitions_by_kind("primitive-type")
+        return self._get_structure_definitions_by_kind(_c.STRUC_DEF_PRIMITIVE_TYPE)
 
     @property
     def logical_structure_definitions(self):
-        return self._get_structure_definitions_by_kind("logical")
+        return self._get_structure_definitions_by_kind(_c.STRUC_DEF_LOGICAL)
 
     @property
     def base_capability_statement(self) -> dict | None:
@@ -232,21 +264,31 @@ class FhirPackage:
 
     def add_structure_definition(self, structure_definition: dict):
         self.structure_definitions.append(structure_definition)
+        self._structure_definitions_by_url[structure_definition["url"]] = (
+            structure_definition
+        )
 
     def add_code_system(self, code_system: dict):
         self.code_systems.append(code_system)
+        self._code_systems_by_url[code_system["url"]] = code_system
 
     def add_search_parameter(self, search_parameter: dict):
         self.search_parameters.append(search_parameter)
+        self._search_parameters_by_url[search_parameter["url"]] = search_parameter
 
     def add_value_set(self, value_set: dict):
         self.value_sets.append(value_set)
+        self._value_sets_by_url[value_set["url"]] = value_set
 
     def add_capability_statement(self, capability_statement: dict):
         self.capability_statements.append(capability_statement)
+        self._capability_statements_by_url[capability_statement["url"]] = (
+            capability_statement
+        )
 
     def add_concept_map(self, concept_map: dict):
         self.concept_maps.append(concept_map)
+        self._concept_maps_by_url[concept_map["url"]] = concept_map
 
     def _get_structure_definitions_by_kind(
         self, kind: t.Literal["resource", "complex-type", "primitive-type", "logical"]

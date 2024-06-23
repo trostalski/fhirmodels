@@ -2,6 +2,7 @@
 Generated class for Publishable. 
 Time: 2024-06-14 18:56:04
 """
+
 from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R5.CodeableConcept import *
 from fhirmodels.R5.ContactDetail import *
@@ -12,7 +13,7 @@ from fhirmodels.R5.UsageContext import *
 
 
 class Publishable(FhirBaseModel):
-    """ Logical Model: A pattern to be followed by resources that represent a publishable knowledge artifact such as a ValueSet, Profile, Library, Decision Support Rule, or Quality Measure.
+    """Logical Model: A pattern to be followed by resources that represent a publishable knowledge artifact such as a ValueSet, Profile, Library, Decision Support Rule, or Quality Measure.
     :param Identifier identifier: Additional identifier for the {{title}}
     :param str date: Date last changed
     :param ContactDetail contact: Contact details for the publisher
@@ -31,73 +32,65 @@ class Publishable(FhirBaseModel):
     :param ContactDetail endorser: Who endorsed the {{title}}
     :param RelatedArtifact relatedArtifact: Additional documentation, citations, etc.
     """
+
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        
         "identifier": {"class_name": "Identifier", "is_contained": False},
-        
-        
-        
         "contact": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "useContext": {"class_name": "UsageContext", "is_contained": False},
-        
-        
         "jurisdiction": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
-        
-        
-        
-        
-        
         "effectivePeriod": {"class_name": "Period", "is_contained": False},
-        
-        
         "topic": {"class_name": "CodeableConcept", "is_contained": False},
-        
-        
         "author": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "editor": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "reviewer": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "endorser": {"class_name": "ContactDetail", "is_contained": False},
-        
-        
         "relatedArtifact": {"class_name": "RelatedArtifact", "is_contained": False},
-        
-        }
-    def __init__(self,  identifier:  list['Identifier']  = None,  date:  'str'  = None,  contact:  list['ContactDetail']  = None,  useContext:  list['UsageContext']  = None,  jurisdiction:  list['CodeableConcept']  = None,  purpose:  'str'  = None,  copyright:  'str'  = None,  copyrightLabel:  'str'  = None,  approvalDate:  'str'  = None,  lastReviewDate:  'str'  = None,  effectivePeriod:  'Period'  = None,  topic:  list['CodeableConcept']  = None,  author:  list['ContactDetail']  = None,  editor:  list['ContactDetail']  = None,  reviewer:  list['ContactDetail']  = None,  endorser:  list['ContactDetail']  = None,  relatedArtifact:  list['RelatedArtifact']  = None, ):
-        
+    }
+
+    def __init__(
+        self,
+        identifier: list["Identifier"] = None,
+        date: "str" = None,
+        contact: list["ContactDetail"] = None,
+        useContext: list["UsageContext"] = None,
+        jurisdiction: list["CodeableConcept"] = None,
+        purpose: "str" = None,
+        copyright: "str" = None,
+        copyrightLabel: "str" = None,
+        approvalDate: "str" = None,
+        lastReviewDate: "str" = None,
+        effectivePeriod: "Period" = None,
+        topic: list["CodeableConcept"] = None,
+        author: list["ContactDetail"] = None,
+        editor: list["ContactDetail"] = None,
+        reviewer: list["ContactDetail"] = None,
+        endorser: list["ContactDetail"] = None,
+        relatedArtifact: list["RelatedArtifact"] = None,
+    ):
+
         self.identifier = identifier or []
-        self.date = date 
+        self.date = date
         self.contact = contact or []
         self.useContext = useContext or []
         self.jurisdiction = jurisdiction or []
-        self.purpose = purpose 
-        self.copyright = copyright 
-        self.copyrightLabel = copyrightLabel 
-        self.approvalDate = approvalDate 
-        self.lastReviewDate = lastReviewDate 
-        self.effectivePeriod = effectivePeriod 
+        self.purpose = purpose
+        self.copyright = copyright
+        self.copyrightLabel = copyrightLabel
+        self.approvalDate = approvalDate
+        self.lastReviewDate = lastReviewDate
+        self.effectivePeriod = effectivePeriod
         self.topic = topic or []
         self.author = author or []
         self.editor = editor or []
         self.reviewer = reviewer or []
         self.endorser = endorser or []
         self.relatedArtifact = relatedArtifact or []
-        
 
     @classmethod
     def from_dict(cls, data: dict) -> "Publishable":
         return super().from_dict(data)
-    
+
     @classmethod
     def from_obj(self, obj: object) -> "Publishable":
         return super().from_obj(obj)
