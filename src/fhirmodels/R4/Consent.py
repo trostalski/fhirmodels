@@ -1,20 +1,20 @@
 """
 Generated class for Consent. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Attachment import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Coding import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Period import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Attachment import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Coding import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Policy(FhirBaseModel):
@@ -23,14 +23,12 @@ class Policy(FhirBaseModel):
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str authority: Enforcement source for policy
     :param str uri: Specific policy covered by this consent
-    :param CodeableConcept policyRule: Regulation that this consents to
     """
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        "policyRule": {"class_name": "CodeableConcept", "is_contained": False},
     }
 
     def __init__(
@@ -40,14 +38,12 @@ class Policy(FhirBaseModel):
         modifierExtension: list["Extension"] = None,
         authority: "str" = None,
         uri: "str" = None,
-        policyRule: "CodeableConcept" = None,
     ):
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.authority = authority
         self.uri = uri
-        self.policyRule = policyRule
 
     @classmethod
     def from_dict(cls, data: dict) -> "Consent":
@@ -148,8 +144,7 @@ class Actor(FhirBaseModel):
 
 
 class Data(FhirBaseModel):
-    """The resources controlled by this rule if specific resources are referenced.:param Period dataPeriod: Timeframe for data controlled by this rule
-    :param str id: Unique id for inter-element referencing
+    """The resources controlled by this rule if specific resources are referenced.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str meaning: instance | related | dependents | authoredby
@@ -158,7 +153,6 @@ class Data(FhirBaseModel):
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        "dataPeriod": {"class_name": "Period", "is_contained": False},
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "reference": {"class_name": "Reference", "is_contained": False},
@@ -166,14 +160,12 @@ class Data(FhirBaseModel):
 
     def __init__(
         self,
-        dataPeriod: "Period" = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
         meaning: "str" = None,
         reference: "Reference" = None,
     ):
-        self.dataPeriod = dataPeriod
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
@@ -290,6 +282,7 @@ class Consent(DomainResource):
     :param Attachment sourceAttachment: Source from which this consent is taken
     :param Reference sourceReference: Source from which this consent is taken
     :param Policy policy: Policies covered by this consent
+    :param CodeableConcept policyRule: Regulation that this consents to
     :param Verification verification: Consent Verified by patient or family
     :param Provision provision: Constraints to the base Consent.policyRule
     """
@@ -310,6 +303,7 @@ class Consent(DomainResource):
         "sourceAttachment": {"class_name": "Attachment", "is_contained": False},
         "sourceReference": {"class_name": "Reference", "is_contained": False},
         "policy": {"class_name": "Policy", "is_contained": True},
+        "policyRule": {"class_name": "CodeableConcept", "is_contained": False},
         "verification": {"class_name": "Verification", "is_contained": True},
         "provision": {"class_name": "Provision", "is_contained": True},
     }
@@ -335,6 +329,7 @@ class Consent(DomainResource):
         sourceAttachment: "Attachment" = None,
         sourceReference: "Reference" = None,
         policy: list["Policy"] = None,
+        policyRule: "CodeableConcept" = None,
         verification: list["Verification"] = None,
         provision: "Provision" = None,
     ):
@@ -360,6 +355,7 @@ class Consent(DomainResource):
         self.sourceAttachment = sourceAttachment
         self.sourceReference = sourceReference
         self.policy = policy or []
+        self.policyRule = policyRule
         self.verification = verification or []
         self.provision = provision
 

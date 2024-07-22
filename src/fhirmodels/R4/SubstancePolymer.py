@@ -1,17 +1,17 @@
 """
 Generated class for SubstancePolymer. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Attachment import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
-from fhirmodels.R4.Resource import *
 from fhirmodels.R4.SubstanceAmount import *
+from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Attachment import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class StartingMaterial(FhirBaseModel):
@@ -193,8 +193,7 @@ class StructuralRepresentation(FhirBaseModel):
 
 
 class RepeatUnit(FhirBaseModel):
-    """Todo.:param CodeableConcept repeatUnitAmountType: Todo
-    :param str id: Unique id for inter-element referencing
+    """Todo.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept orientationOfPolymerisation: Todo
@@ -206,10 +205,6 @@ class RepeatUnit(FhirBaseModel):
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        "repeatUnitAmountType": {
-            "class_name": "CodeableConcept",
-            "is_contained": False,
-        },
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "orientationOfPolymerisation": {
@@ -229,7 +224,6 @@ class RepeatUnit(FhirBaseModel):
 
     def __init__(
         self,
-        repeatUnitAmountType: "CodeableConcept" = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
@@ -239,7 +233,6 @@ class RepeatUnit(FhirBaseModel):
         degreeOfPolymerisation: list["DegreeOfPolymerisation"] = None,
         structuralRepresentation: list["StructuralRepresentation"] = None,
     ):
-        self.repeatUnitAmountType = repeatUnitAmountType
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []

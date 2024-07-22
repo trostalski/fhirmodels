@@ -1,20 +1,20 @@
 """
 Generated class for StructureDefinition. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Coding import *
 from fhirmodels.R4.ContactDetail import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.ElementDefinition import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
 from fhirmodels.R4.UsageContext import *
+from fhirmodels.R4.ElementDefinition import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Coding import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Mapping(FhirBaseModel):
@@ -69,7 +69,6 @@ class Context(FhirBaseModel):
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str type: fhirpath | element | extension
     :param str expression: Where the extension can be used in instances
-    :param str contextInvariant: FHIRPath invariants - when the extension can be used
     """
 
     # needed for complex properties where the element name is different from the class name
@@ -85,14 +84,12 @@ class Context(FhirBaseModel):
         modifierExtension: list["Extension"] = None,
         type: "str" = None,
         expression: "str" = None,
-        contextInvariant: list["str"] = None,
     ):
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.type = type
         self.expression = expression
-        self.contextInvariant = contextInvariant or []
 
     @classmethod
     def from_dict(cls, data: dict) -> "StructureDefinition":
@@ -213,6 +210,7 @@ class StructureDefinition(DomainResource):
     :param str kind: primitive-type | complex-type | resource | logical
     :param bool abstract: Whether the structure is abstract
     :param Context context: If an extension, where it can be used in instances
+    :param str contextInvariant: FHIRPath invariants - when the extension can be used
     :param str type: Type defined or constrained by this structure
     :param str baseDefinition: Definition that this type is constrained/specialized from
     :param str derivation: specialization | constraint - How relates to base definition
@@ -269,6 +267,7 @@ class StructureDefinition(DomainResource):
         kind: "str" = None,
         abstract: "bool" = None,
         context: list["Context"] = None,
+        contextInvariant: list["str"] = None,
         type: "str" = None,
         baseDefinition: "str" = None,
         derivation: "str" = None,
@@ -307,6 +306,7 @@ class StructureDefinition(DomainResource):
         self.kind = kind
         self.abstract = abstract
         self.context = context or []
+        self.contextInvariant = contextInvariant or []
         self.type = type
         self.baseDefinition = baseDefinition
         self.derivation = derivation

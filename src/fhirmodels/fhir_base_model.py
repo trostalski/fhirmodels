@@ -16,11 +16,12 @@ class FhirBaseModel:
         """Create a model instance from a dict. The instance is recursively
         created by importing the classes for complex FHIR types."""
         instance = cls()
+        print(hasattr(instance, "contextInvariant"))
         models_path = utils.remove_n_parts_from_end(cls.__module__, 1)
 
         def handle_dict_value(key: str, value: dict):
-            # Capitalize the class name if it's not
             if key not in cls.property_class_info:
+                # primitive type
                 setattr(instance, key, value)
                 return
             class_name = instance.property_class_info[key]["class_name"]

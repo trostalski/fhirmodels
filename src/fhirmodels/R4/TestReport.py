@@ -1,16 +1,16 @@
 """
 Generated class for TestReport. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.BackboneElement import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Participant(FhirBaseModel):
@@ -265,9 +265,7 @@ class Action(FhirBaseModel):
 
 
 class Test(FhirBaseModel):
-    """A test executed from the test script.:param Reference testScript: Reference to the  version-specific TestScript that was executed to produce this TestReport
-    :param str tester: Name of the tester producing this report (Organization or individual)
-    :param str id: Unique id for inter-element referencing
+    """A test executed from the test script.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param str name: Tracking/logging name of this test
@@ -277,7 +275,6 @@ class Test(FhirBaseModel):
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        "testScript": {"class_name": "Reference", "is_contained": False},
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "action": {"class_name": "Action", "is_contained": True},
@@ -285,8 +282,6 @@ class Test(FhirBaseModel):
 
     def __init__(
         self,
-        testScript: "Reference" = None,
-        tester: "str" = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
@@ -294,8 +289,6 @@ class Test(FhirBaseModel):
         description: "str" = None,
         action: list["Action"] = None,
     ):
-        self.testScript = testScript
-        self.tester = tester
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []

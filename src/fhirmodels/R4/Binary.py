@@ -1,11 +1,11 @@
 """
 Generated class for Binary. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Meta import *
 from fhirmodels.R4.Reference import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Binary(DomainResource):

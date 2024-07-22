@@ -1,22 +1,22 @@
 """
 Generated class for ClaimResponse. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Address import *
-from fhirmodels.R4.Attachment import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Money import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Period import *
 from fhirmodels.R4.Quantity import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Money import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Address import *
+from fhirmodels.R4.Attachment import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Adjudication(FhirBaseModel):
@@ -273,8 +273,7 @@ class SubDetail(FhirBaseModel):
 
 
 class Detail(FhirBaseModel):
-    """The second-tier service adjudications for payor added services.:param int detailSequence: Detail sequence number
-    :param str id: Unique id for inter-element referencing
+    """The second-tier service adjudications for payor added services.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept productOrService: Billing, service, product, or drug code
@@ -303,7 +302,6 @@ class Detail(FhirBaseModel):
 
     def __init__(
         self,
-        detailSequence: list["int"] = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
@@ -317,7 +315,6 @@ class Detail(FhirBaseModel):
         adjudication: list["Adjudication"] = None,
         subDetail: list["SubDetail"] = None,
     ):
-        self.detailSequence = detailSequence or []
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []

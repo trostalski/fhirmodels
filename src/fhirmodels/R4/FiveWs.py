@@ -1,14 +1,14 @@
 """
 Generated class for FiveWs. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Identifier import *
 from fhirmodels.R4.Period import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Timing import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.fhir_base_model import FhirBaseModel
 
 
 class FiveWs(FhirBaseModel):

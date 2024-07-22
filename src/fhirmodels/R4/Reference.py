@@ -1,11 +1,11 @@
 """
 Generated class for Reference. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.fhir_base_model import FhirBaseModel
-from fhirmodels.R4.Extension import *
 from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.fhir_base_model import FhirBaseModel
 
 
 class Reference(FhirBaseModel):

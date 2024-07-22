@@ -1,23 +1,23 @@
 """
 Generated class for InsurancePlan. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Address import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.ContactPoint import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.HumanName import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Money import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Period import *
 from fhirmodels.R4.Quantity import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Money import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Address import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.HumanName import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.ContactPoint import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Contact(FhirBaseModel):
@@ -158,8 +158,7 @@ class Benefit(FhirBaseModel):
 
 
 class Coverage(FhirBaseModel):
-    """Details about the coverage offered by the insurance product.:param Reference coverageArea: Where product applies
-    :param str id: Unique id for inter-element referencing
+    """Details about the coverage offered by the insurance product.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param CodeableConcept type: Type of coverage
@@ -169,7 +168,6 @@ class Coverage(FhirBaseModel):
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        "coverageArea": {"class_name": "Reference", "is_contained": False},
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "type": {"class_name": "CodeableConcept", "is_contained": False},
@@ -179,7 +177,6 @@ class Coverage(FhirBaseModel):
 
     def __init__(
         self,
-        coverageArea: list["Reference"] = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
@@ -187,7 +184,6 @@ class Coverage(FhirBaseModel):
         network: list["Reference"] = None,
         benefit: list["Benefit"] = None,
     ):
-        self.coverageArea = coverageArea or []
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []

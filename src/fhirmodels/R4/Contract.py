@@ -1,25 +1,25 @@
 """
 Generated class for Contract. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Annotation import *
-from fhirmodels.R4.Attachment import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Coding import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Money import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Period import *
 from fhirmodels.R4.Quantity import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
-from fhirmodels.R4.Signature import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Money import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Annotation import *
 from fhirmodels.R4.Timing import *
+from fhirmodels.R4.Signature import *
+from fhirmodels.R4.Attachment import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Coding import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class ContentDefinition(FhirBaseModel):
@@ -873,46 +873,34 @@ class Friendly(FhirBaseModel):
 
 
 class Legal(FhirBaseModel):
-    """List of Legal expressions or representations of this Contract.:param CodeableConcept legalState: Negotiation status
-    :param str id: Unique id for inter-element referencing
+    """List of Legal expressions or representations of this Contract.:param str id: Unique id for inter-element referencing
     :param Extension extension: Additional content defined by implementations
     :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
     :param Attachment contentAttachment: Contract Legal Text
     :param Reference contentReference: Contract Legal Text
-    :param Attachment legallyBindingAttachment: Binding Contract
-    :param Reference legallyBindingReference: Binding Contract
     """
 
     # needed for complex properties where the element name is different from the class name
     property_class_info = {
-        "legalState": {"class_name": "CodeableConcept", "is_contained": False},
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "contentAttachment": {"class_name": "Attachment", "is_contained": False},
         "contentReference": {"class_name": "Reference", "is_contained": False},
-        "legallyBindingAttachment": {"class_name": "Attachment", "is_contained": False},
-        "legallyBindingReference": {"class_name": "Reference", "is_contained": False},
     }
 
     def __init__(
         self,
-        legalState: "CodeableConcept" = None,
         id: "str" = None,
         extension: list["Extension"] = None,
         modifierExtension: list["Extension"] = None,
         contentAttachment: "Attachment" = None,
         contentReference: "Reference" = None,
-        legallyBindingAttachment: "Attachment" = None,
-        legallyBindingReference: "Reference" = None,
     ):
-        self.legalState = legalState
         self.id = id
         self.extension = extension or []
         self.modifierExtension = modifierExtension or []
         self.contentAttachment = contentAttachment
         self.contentReference = contentReference
-        self.legallyBindingAttachment = legallyBindingAttachment
-        self.legallyBindingReference = legallyBindingReference
 
     @classmethod
     def from_dict(cls, data: dict) -> "Contract":
@@ -1011,6 +999,8 @@ class Contract(DomainResource):
     :param Friendly friendly: Contract Friendly Language
     :param Legal legal: Contract Legal Language
     :param Rule rule: Computable Contract Language
+    :param Attachment legallyBindingAttachment: Binding Contract
+    :param Reference legallyBindingReference: Binding Contract
     """
 
     # needed for complex properties where the element name is different from the class name
@@ -1047,6 +1037,8 @@ class Contract(DomainResource):
         "friendly": {"class_name": "Friendly", "is_contained": True},
         "legal": {"class_name": "Legal", "is_contained": True},
         "rule": {"class_name": "Rule", "is_contained": True},
+        "legallyBindingAttachment": {"class_name": "Attachment", "is_contained": False},
+        "legallyBindingReference": {"class_name": "Reference", "is_contained": False},
     }
 
     def __init__(
@@ -1092,6 +1084,8 @@ class Contract(DomainResource):
         friendly: list["Friendly"] = None,
         legal: list["Legal"] = None,
         rule: list["Rule"] = None,
+        legallyBindingAttachment: "Attachment" = None,
+        legallyBindingReference: "Reference" = None,
     ):
 
         self.resourceType = "Contract"
@@ -1137,6 +1131,8 @@ class Contract(DomainResource):
         self.friendly = friendly or []
         self.legal = legal or []
         self.rule = rule or []
+        self.legallyBindingAttachment = legallyBindingAttachment
+        self.legallyBindingReference = legallyBindingReference
 
     @classmethod
     def from_dict(cls, data: dict) -> "Contract":

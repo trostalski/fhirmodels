@@ -1,21 +1,21 @@
 """
 Generated class for NutritionOrder. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.Annotation import *
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Quantity import *
-from fhirmodels.R4.Ratio import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Annotation import *
 from fhirmodels.R4.Timing import *
+from fhirmodels.R4.Ratio import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Nutrient(FhirBaseModel):
@@ -222,7 +222,6 @@ class Administration(FhirBaseModel):
     :param Quantity quantity: The volume of formula to provide
     :param Quantity rateQuantity: Speed with which the formula is provided per period of time
     :param Ratio rateRatio: Speed with which the formula is provided per period of time
-    :param str administrationInstruction: Formula feeding instructions expressed as text
     """
 
     # needed for complex properties where the element name is different from the class name
@@ -244,7 +243,6 @@ class Administration(FhirBaseModel):
         quantity: "Quantity" = None,
         rateQuantity: "Quantity" = None,
         rateRatio: "Ratio" = None,
-        administrationInstruction: "str" = None,
     ):
         self.id = id
         self.extension = extension or []
@@ -253,7 +251,6 @@ class Administration(FhirBaseModel):
         self.quantity = quantity
         self.rateQuantity = rateQuantity
         self.rateRatio = rateRatio
-        self.administrationInstruction = administrationInstruction
 
     @classmethod
     def from_dict(cls, data: dict) -> "NutritionOrder":
@@ -279,6 +276,7 @@ class EnteralFormula(FhirBaseModel):
     :param CodeableConcept routeofAdministration: How the formula should enter the patient's gastrointestinal tract
     :param Administration administration: Formula feeding instruction as structured data
     :param Quantity maxVolumeToDeliver: Upper limit on formula volume per unit of time
+    :param str administrationInstruction: Formula feeding instructions expressed as text
     """
 
     # needed for complex properties where the element name is different from the class name
@@ -309,6 +307,7 @@ class EnteralFormula(FhirBaseModel):
         routeofAdministration: "CodeableConcept" = None,
         administration: list["Administration"] = None,
         maxVolumeToDeliver: "Quantity" = None,
+        administrationInstruction: "str" = None,
     ):
         self.id = id
         self.extension = extension or []
@@ -321,6 +320,7 @@ class EnteralFormula(FhirBaseModel):
         self.routeofAdministration = routeofAdministration
         self.administration = administration or []
         self.maxVolumeToDeliver = maxVolumeToDeliver
+        self.administrationInstruction = administrationInstruction
 
     @classmethod
     def from_dict(cls, data: dict) -> "NutritionOrder":

@@ -1,10 +1,10 @@
 """
 Generated class for Resource. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.fhir_base_model import FhirBaseModel
 from fhirmodels.R4.Meta import *
+from fhirmodels.fhir_base_model import FhirBaseModel
 
 
 class Resource(FhirBaseModel):

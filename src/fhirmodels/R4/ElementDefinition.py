@@ -1,42 +1,42 @@
 """
 Generated class for ElementDefinition. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.fhir_base_model import FhirBaseModel
-from fhirmodels.R4.Address import *
-from fhirmodels.R4.Age import *
-from fhirmodels.R4.Annotation import *
-from fhirmodels.R4.Attachment import *
-from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Coding import *
-from fhirmodels.R4.ContactDetail import *
-from fhirmodels.R4.ContactPoint import *
 from fhirmodels.R4.Contributor import *
-from fhirmodels.R4.Count import *
-from fhirmodels.R4.DataRequirement import *
-from fhirmodels.R4.Distance import *
-from fhirmodels.R4.Dosage import *
-from fhirmodels.R4.Duration import *
-from fhirmodels.R4.Element import *
-from fhirmodels.R4.Expression import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.HumanName import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Money import *
-from fhirmodels.R4.ParameterDefinition import *
-from fhirmodels.R4.Period import *
-from fhirmodels.R4.Quantity import *
-from fhirmodels.R4.Range import *
-from fhirmodels.R4.Ratio import *
-from fhirmodels.R4.Reference import *
 from fhirmodels.R4.RelatedArtifact import *
+from fhirmodels.R4.Money import *
+from fhirmodels.R4.Attachment import *
+from fhirmodels.R4.Coding import *
+from fhirmodels.R4.UsageContext import *
+from fhirmodels.R4.ContactPoint import *
 from fhirmodels.R4.SampledData import *
+from fhirmodels.R4.Period import *
+from fhirmodels.R4.DataRequirement import *
+from fhirmodels.R4.TriggerDefinition import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Duration import *
+from fhirmodels.R4.HumanName import *
+from fhirmodels.R4.CodeableConcept import *
+from fhirmodels.R4.Quantity import *
+from fhirmodels.R4.ContactDetail import *
+from fhirmodels.R4.Reference import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.Count import *
+from fhirmodels.R4.Annotation import *
+from fhirmodels.R4.Address import *
 from fhirmodels.R4.Signature import *
 from fhirmodels.R4.Timing import *
-from fhirmodels.R4.TriggerDefinition import *
-from fhirmodels.R4.UsageContext import *
+from fhirmodels.R4.Ratio import *
+from fhirmodels.R4.Range import *
+from fhirmodels.R4.Expression import *
+from fhirmodels.R4.ParameterDefinition import *
+from fhirmodels.R4.Distance import *
+from fhirmodels.R4.Element import *
+from fhirmodels.R4.Age import *
+from fhirmodels.R4.Dosage import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.fhir_base_model import FhirBaseModel
 
 
 class Discriminator(FhirBaseModel):

@@ -94,7 +94,7 @@ class GeneratorElement:
 
 
 class GeneratorStructureDefinition:
-    """Represents a FHIR StructureDefinition that is used to generate downsream objects."""
+    """Represents a FHIR StructureDefinition that is used to generate downstream objects."""
 
     def __init__(self, structure_definition: dict):
         self._structure_definition = structure_definition
@@ -237,7 +237,9 @@ def _filter_contained_elements(
             children = [
                 e
                 for e in elements
-                if e.path.startswith(element.path)
+                if e.path.startswith(
+                    element.path + "."
+                )  # . because the children must have a longer path
                 and e.path
                 != element.path  # All children of the contained element without the element itself
             ]

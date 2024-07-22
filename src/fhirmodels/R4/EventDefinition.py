@@ -1,21 +1,21 @@
 """
 Generated class for EventDefinition. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.ContactDetail import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Period import *
-from fhirmodels.R4.Reference import *
 from fhirmodels.R4.RelatedArtifact import *
+from fhirmodels.R4.ContactDetail import *
+from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
 from fhirmodels.R4.TriggerDefinition import *
+from fhirmodels.R4.Meta import *
 from fhirmodels.R4.UsageContext import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class EventDefinition(DomainResource):

@@ -1,19 +1,65 @@
 """
 Generated class for SubstanceReferenceInformation. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Identifier import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Quantity import *
-from fhirmodels.R4.Range import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Identifier import *
+from fhirmodels.R4.Range import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
+
+
+class Gene(FhirBaseModel):
+    """Todo.:param str id: Unique id for inter-element referencing
+    :param Extension extension: Additional content defined by implementations
+    :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
+    :param CodeableConcept geneSequenceOrigin: Todo
+    :param CodeableConcept gene: Todo
+    :param Reference source: Todo
+    """
+
+    # needed for complex properties where the element name is different from the class name
+    property_class_info = {
+        "extension": {"class_name": "Extension", "is_contained": False},
+        "modifierExtension": {"class_name": "Extension", "is_contained": False},
+        "geneSequenceOrigin": {"class_name": "CodeableConcept", "is_contained": False},
+        "gene": {"class_name": "CodeableConcept", "is_contained": False},
+        "source": {"class_name": "Reference", "is_contained": False},
+    }
+
+    def __init__(
+        self,
+        id: "str" = None,
+        extension: list["Extension"] = None,
+        modifierExtension: list["Extension"] = None,
+        geneSequenceOrigin: "CodeableConcept" = None,
+        gene: "CodeableConcept" = None,
+        source: list["Reference"] = None,
+    ):
+        self.id = id
+        self.extension = extension or []
+        self.modifierExtension = modifierExtension or []
+        self.geneSequenceOrigin = geneSequenceOrigin
+        self.gene = gene
+        self.source = source or []
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "SubstanceReferenceInformation":
+        return super().from_dict(data)
+
+    @classmethod
+    def from_obj(self, obj: object) -> "SubstanceReferenceInformation":
+        return super().from_obj(obj)
+
+    def as_dict(self) -> dict:
+        return super().as_dict()
 
 
 class GeneElement(FhirBaseModel):
@@ -49,56 +95,6 @@ class GeneElement(FhirBaseModel):
         self.type = type
         self.element = element
         self.source = source or []
-
-    @classmethod
-    def from_dict(cls, data: dict) -> "SubstanceReferenceInformation":
-        return super().from_dict(data)
-
-    @classmethod
-    def from_obj(self, obj: object) -> "SubstanceReferenceInformation":
-        return super().from_obj(obj)
-
-    def as_dict(self) -> dict:
-        return super().as_dict()
-
-
-class Gene(FhirBaseModel):
-    """Todo.:param str id: Unique id for inter-element referencing
-    :param Extension extension: Additional content defined by implementations
-    :param Extension modifierExtension: Extensions that cannot be ignored even if unrecognized
-    :param CodeableConcept geneSequenceOrigin: Todo
-    :param CodeableConcept gene: Todo
-    :param Reference source: Todo
-    :param GeneElement geneElement: Todo
-    """
-
-    # needed for complex properties where the element name is different from the class name
-    property_class_info = {
-        "extension": {"class_name": "Extension", "is_contained": False},
-        "modifierExtension": {"class_name": "Extension", "is_contained": False},
-        "geneSequenceOrigin": {"class_name": "CodeableConcept", "is_contained": False},
-        "gene": {"class_name": "CodeableConcept", "is_contained": False},
-        "source": {"class_name": "Reference", "is_contained": False},
-        "geneElement": {"class_name": "GeneElement", "is_contained": True},
-    }
-
-    def __init__(
-        self,
-        id: "str" = None,
-        extension: list["Extension"] = None,
-        modifierExtension: list["Extension"] = None,
-        geneSequenceOrigin: "CodeableConcept" = None,
-        gene: "CodeableConcept" = None,
-        source: list["Reference"] = None,
-        geneElement: list["GeneElement"] = None,
-    ):
-        self.id = id
-        self.extension = extension or []
-        self.modifierExtension = modifierExtension or []
-        self.geneSequenceOrigin = geneSequenceOrigin
-        self.gene = gene
-        self.source = source or []
-        self.geneElement = geneElement or []
 
     @classmethod
     def from_dict(cls, data: dict) -> "SubstanceReferenceInformation":
@@ -247,6 +243,7 @@ class SubstanceReferenceInformation(DomainResource):
     :param Extension modifierExtension: Extensions that cannot be ignored
     :param str comment: Todo
     :param Gene gene: Todo
+    :param GeneElement geneElement: Todo
     :param Classification classification: Todo
     :param Target target: Todo
     """
@@ -259,6 +256,7 @@ class SubstanceReferenceInformation(DomainResource):
         "extension": {"class_name": "Extension", "is_contained": False},
         "modifierExtension": {"class_name": "Extension", "is_contained": False},
         "gene": {"class_name": "Gene", "is_contained": True},
+        "geneElement": {"class_name": "GeneElement", "is_contained": True},
         "classification": {"class_name": "Classification", "is_contained": True},
         "target": {"class_name": "Target", "is_contained": True},
     }
@@ -275,6 +273,7 @@ class SubstanceReferenceInformation(DomainResource):
         modifierExtension: list["Extension"] = None,
         comment: "str" = None,
         gene: list["Gene"] = None,
+        geneElement: list["GeneElement"] = None,
         classification: list["Classification"] = None,
         target: list["Target"] = None,
     ):
@@ -291,6 +290,7 @@ class SubstanceReferenceInformation(DomainResource):
         self.modifierExtension = modifierExtension or []
         self.comment = comment
         self.gene = gene or []
+        self.geneElement = geneElement or []
         self.classification = classification or []
         self.target = target or []
 

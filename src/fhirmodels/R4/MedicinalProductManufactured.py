@@ -1,17 +1,17 @@
 """
 Generated class for MedicinalProductManufactured. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.ProdCharacteristic import *
 from fhirmodels.R4.Quantity import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.Meta import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class MedicinalProductManufactured(DomainResource):

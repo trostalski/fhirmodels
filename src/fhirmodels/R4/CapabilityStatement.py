@@ -1,19 +1,19 @@
 """
 Generated class for CapabilityStatement. 
-Time: 2024-06-14 18:55:42
+Time: 2024-07-22 14:02:49
 """
 
-from fhirmodels.R4.BackboneElement import *
 from fhirmodels.R4.CodeableConcept import *
-from fhirmodels.R4.Coding import *
 from fhirmodels.R4.ContactDetail import *
-from fhirmodels.R4.DomainResource import *
-from fhirmodels.R4.Extension import *
-from fhirmodels.R4.Meta import *
-from fhirmodels.R4.Narrative import *
 from fhirmodels.R4.Reference import *
 from fhirmodels.R4.Resource import *
+from fhirmodels.R4.Extension import *
+from fhirmodels.R4.BackboneElement import *
+from fhirmodels.R4.Meta import *
 from fhirmodels.R4.UsageContext import *
+from fhirmodels.R4.Coding import *
+from fhirmodels.R4.Narrative import *
+from fhirmodels.R4.DomainResource import *
 
 
 class Software(FhirBaseModel):
@@ -66,7 +66,6 @@ class Implementation(FhirBaseModel):
     :param str description: Describes this specific instance
     :param str url: Base URL for the installation
     :param Reference custodian: Organization that manages the data
-    :param str implementationGuide: Implementation guides supported
     """
 
     # needed for complex properties where the element name is different from the class name
@@ -84,7 +83,6 @@ class Implementation(FhirBaseModel):
         description: "str" = None,
         url: "str" = None,
         custodian: "Reference" = None,
-        implementationGuide: list["str"] = None,
     ):
         self.id = id
         self.extension = extension or []
@@ -92,7 +90,6 @@ class Implementation(FhirBaseModel):
         self.description = description
         self.url = url
         self.custodian = custodian
-        self.implementationGuide = implementationGuide or []
 
     @classmethod
     def from_dict(cls, data: dict) -> "CapabilityStatement":
@@ -674,6 +671,7 @@ class CapabilityStatement(DomainResource):
     :param str fhirVersion: FHIR Version the system supports
     :param str format: formats supported (xml | json | ttl | mime type)
     :param str patchFormat: Patch formats supported
+    :param str implementationGuide: Implementation guides supported
     :param Rest rest: If the endpoint is a RESTful one
     :param Messaging messaging: If messaging is supported
     :param Document document: Document definition
@@ -728,6 +726,7 @@ class CapabilityStatement(DomainResource):
         fhirVersion: "str" = None,
         format: list["str"] = None,
         patchFormat: list["str"] = None,
+        implementationGuide: list["str"] = None,
         rest: list["Rest"] = None,
         messaging: list["Messaging"] = None,
         document: list["Document"] = None,
@@ -765,6 +764,7 @@ class CapabilityStatement(DomainResource):
         self.fhirVersion = fhirVersion
         self.format = format or []
         self.patchFormat = patchFormat or []
+        self.implementationGuide = implementationGuide or []
         self.rest = rest or []
         self.messaging = messaging or []
         self.document = document or []
